@@ -1,0 +1,83 @@
+/*=============================
+	01. Variable CSS
+===============================*/
+
+:root {
+    --tg-body-font-family: 'DM Sans', sans-serif;
+    --tg-heading-font-family: 'Poppins', sans-serif;
+    --tg-primary-color: #f8ae18;
+    --tg-secondary-color: #0f184b;
+    --tg-body-font-color: #00416e;
+    --tg-heading-font-color: #1C1C1C;
+    --tg-paragraph-color: #00416e;
+    --tg-menu-color: #0C1239;
+    --tg-body-font-size: 16px;
+    --tg-body-font-weight: 400;
+    --tg-heading-font-weight: 700;
+    --tg-body-line-height: 1.62;
+    --tg-heading-line-height: 1.2;
+    --tg-blue-lite: #2696d4;
+    --tg-blue: #161C49;
+    --tg-blue-two: #0F1437;
+    --tg-blue-three: #0A0E21;
+    --tg-border-color: #D8DEFC;
+    --tg-input-border-color: #CFCFCF;
+    --tg-indigo: #6610f2;
+    --tg-purple: #6f42c1;
+    --tg-pink: #d63384;
+    --tg-red: #dc3545;
+    --tg-orange: #fd7e14;
+    --tg-seashell: #FFF3ED;
+    --tg-unbleached-silk: #FFDAC9;
+    --tg-yellow: #ffc107;
+    --tg-green: #198754;
+    --tg-teal: #20c997;
+    --tg-cyan: #0dcaf0;
+    --tg-white: #ffffff;
+    --tg-gray: #F4F6FF;
+    --tg-gray-two: #EDF0FF;
+    --tg-gray-three: #B8B8B8;
+    --facebook: #3b5998;
+    --twitter: #00acee;
+    --linkedin: #1976d2;
+    --pinterest: #3b5998;
+    --youtube: #c4302b;
+    --skype: #00aff0;
+}
+
+.bg-main {
+    background-color: var(--tg-blue-two);
+}
+
+.bg-grey {
+    background-color: #dadfe4;
+}
+
+.footer-social .list-wrap li a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--tg-primary-color);
+    color: var(--tg-white);
+    font-size: 20px;
+}
+
+.footer-contact {
+    background: var(--tg-blue-lite);
+}
+
+.footer-contact .icon {
+    color: var(--tg-white);
+    background: var(--tg-primary-color);
+}
+
+.footer-contact .content a {
+    color: var(--tg-white);
+}
+
+.footer-contact .content span {
+    color: var(--tg-white);
+}
