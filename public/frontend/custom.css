@@ -34,7 +34,7 @@
     --tg-teal: #20c997;
     --tg-cyan: #0dcaf0;
     --tg-white: #ffffff;
-    --tg-gray: #F4F6FF;
+    --tg-gray: #eef7ff;
     --tg-gray-two: #EDF0FF;
     --tg-gray-three: #B8B8B8;
     --facebook: #3b5998;
@@ -88,4 +88,14 @@
 
 .slider-shape {
     z-index: 0;
+    top: -100px;
+}
+
+.slider-area {
+    padding: 0px 0 0 500px;
+    margin-bottom: 0px;
+}
+
+.navbar-wrap {
+    justify-content: right !important;
 }

@@ -29,7 +29,7 @@
 
 <body>
 
-    <!-- Preloader-start -->
+    {{-- <!-- Preloader-start -->
     <div id="preloader">
         <div class="ta-preloader-block">
             <div class="ta-spinner-eff">
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <!-- Preloader-start-end -->
+    <!-- Preloader-start-end --> --}}
 
     <!-- Scroll-top -->
     <button class="scroll-top scroll-to-target" data-target="html">
@@ -50,7 +50,48 @@
 
     <!-- header-area -->
     <header>
-        <div id="sticky-header" class="menu-area menu-area-two transparent-header">
+        <div id="header-fixed-height"></div>
+        <div class="header-top-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-9">
+                        <div class="header-top-left">
+                            <ul class="list-wrap">
+                                <li>Welcome to Gtrust</li>
+                                <li><i class="fas fa-phone-alt"></i><a href="tel:0123456789">(+62) 82336548</a></li>
+                                <li><i class="fas fa-envelope"></i><a
+                                        href="mailto:info@gtrust.id">info@gtrust.id</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-3">
+                        <div class="header-top-right">
+                            {{-- <div class="header-lang">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="assets/img/icon/united-states.jpg" alt=""> English
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/russia.jpg"
+                                                alt="">English</a>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="header-social">
+                                <ul class="list-wrap">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-header" class="menu-area menu-area-three">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -58,7 +99,7 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('frontend/img/logo/logo_02.png') }}"
+                                    <a href="/"><img src="{{ asset('frontend/img/logo/logo_02.png') }}"
                                             alt="Logo"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
@@ -74,14 +115,14 @@
                                         <li class="menu-item-has-children"><a href="#">Other Services</a>
                                             <ul class="sub-menu">
                                                 <li><a href="#">Kelas Gemilang</a></li>
-                                                <li><a href="#">Learning</a></li>
+                                                <li><a href="#">Talenesia</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about.html">About us</a>
+                                        <li><a href="/about">About us</a>
                                         </li>
-                                        <li><a href="#">Blog</a>
+                                        <li><a href="/blog">Blog</a>
                                         </li>
-                                        <li><a href="#">Kontak</a></li>
+                                        <li><a href="/kontak">Kontak</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-md-block">

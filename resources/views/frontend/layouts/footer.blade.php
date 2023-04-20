@@ -111,19 +111,19 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 text-center">
                         <div class="copyright-text">
-                            <p>© Copyright 2023. All Right Reserved</p>
+                            <p>© Gtrust 2023. All Right Reserved</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="footer-bootom-menu">
                             <ul class="list-wrap">
                                 <li><a href="contact.html">Privacy Policy</a></li>
                                 <li><a href="contact.html">Terms & Conditions</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

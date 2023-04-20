@@ -22,4 +22,4 @@ Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name
 Route::get('/blog/{id}', [App\Http\Controllers\BlogController::class, 'detail'])->name('blog.detail');
 Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->name('kontak');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services');
-Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');

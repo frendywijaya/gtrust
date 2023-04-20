@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="col-lg-6">
-                        <h6 class="brand-title">Trusted by big brands</h6>
+                        <h6 class="brand-title">Trusted by established brands</h6>
                         <div class="row brand-active-two">
                             <div class="col-12">
                                 <div class="brand-item">
@@ -108,7 +108,7 @@
                     <div class="about-content-two">
                         <div class="section-title mb-30">
                             <span class="sub-title">About Our Company</span>
-                            <h2 class="title">We’re Committed to Managementing Excellence</h2>
+                            <h2 class="title">We’re Committed to Deliver Excellence</h2>
                         </div>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majori have suffered
                             alteration in some form, by injected humour, or randomised word which don't look even slightly
@@ -120,7 +120,7 @@
                                         <img src="{{ asset('frontend/img/icon/h2_about_icon01.svg') }}" alt="">
                                     </div>
                                     <div class="content">
-                                        <h5 class="title">Mission Statement Managementing</h5>
+                                        <h5 class="title">Value Proposition Here</h5>
                                     </div>
                                 </li>
                                 <li class="list-item">
@@ -138,13 +138,13 @@
                 </div>
             </div>
         </div>
-        <div class="about-shape-wrap">
+        {{-- <div class="about-shape-wrap">
             <ul class="list-wrap">
                 <li><img src="{{ asset('frontend/img/images/about_shape01.png') }}" class="layer" data-depth="0.3" alt=""></li>
                 <li><img src="{{ asset('frontend/img/images/about_shape02.png') }}" class="layer" data-depth="0.3" alt=""></li>
                 <li><img src="{{ asset('frontend/img/images/about_shape03.png') }}" class="layer" data-depth="0.2" alt=""></li>
             </ul>
-        </div>
+        </div> --}}
     </section>
     <!-- about-area-end -->
 
