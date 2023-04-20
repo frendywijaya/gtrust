@@ -16,7 +16,8 @@
                     <h1 class="overly-text">Our <br> Services</h1>
                     <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Smart
                         Solutions</span>
-                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Excellent Team Building
+                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Excellent Team
+                        Building
                         Starts Here</h2>
                     <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
                         building bigger, better,faster, and products than ever Our mbrace.</p>
@@ -89,18 +90,19 @@
                         <ul class="list-wrap">
                             <li>
                                 <div class="year-experience-wrap wow fadeInDown" data-wow-delay=".2s">
-                                    <div class="icon"><img src="{{ asset('frontend/img/icon/h2_about_icon03.svg') }}" alt=""></div>
+                                    <div class="icon"><img src="{{ asset('frontend/img/icon/h2_about_icon03.svg') }}"
+                                            alt=""></div>
                                     <h2 class="title">07 Years <span>Experience</span></h2>
                                 </div>
                             </li>
-                            <li><img src="{{ asset('frontend/img/images/h2_about_img01.jpg') }}" alt="" class="wow fadeInLeft"
-                                    data-wow-delay=".4s"></li>
+                            <li><img src="{{ asset('frontend/img/images/h2_about_img01.jpg') }}" alt=""
+                                    class="wow fadeInLeft" data-wow-delay=".4s"></li>
                         </ul>
                         <ul class="list-wrap">
-                            <li><img src="{{ asset('frontend/img/images/h2_about_img02.jpg') }}" alt="" class="wow fadeInRight"
-                                    data-wow-delay=".2s"></li>
-                            <li><img src="{{ asset('frontend/img/images/h2_about_img03.jpg') }}" alt="" class="wow fadeInUp"
-                                    data-wow-delay=".4s"></li>
+                            <li><img src="{{ asset('frontend/img/images/h2_about_img02.jpg') }}" alt=""
+                                    class="wow fadeInRight" data-wow-delay=".2s"></li>
+                            <li><img src="{{ asset('frontend/img/images/h2_about_img03.jpg') }}" alt=""
+                                    class="wow fadeInUp" data-wow-delay=".4s"></li>
                         </ul>
                     </div>
                 </div>
@@ -181,7 +183,8 @@
                                 aria-labelledby="building-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
-                                        <img src="{{ asset('frontend/img/services/h4_services_img01.jpg') }}" alt="">
+                                        <img src="{{ asset('frontend/img/services/h4_services_img01.jpg') }}"
+                                            alt="">
                                     </div>
                                     <div class="services-content-three">
                                         <div class="section-title mb-30">
@@ -207,7 +210,8 @@
                                 aria-labelledby="maintenance-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
-                                        <img src="{{ asset('frontend/img/services/h4_services_img01.jpg') }}" alt="">
+                                        <img src="{{ asset('frontend/img/services/h4_services_img01.jpg') }}"
+                                            alt="">
                                     </div>
                                     <div class="services-content-three">
                                         <div class="section-title mb-30">
@@ -296,7 +300,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}"
+                                <a href="project-details.html"><img
+                                        src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
@@ -317,7 +322,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
+                                <a href="project-details.html"><img
+                                        src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
@@ -338,7 +344,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}"
+                                <a href="project-details.html"><img
+                                        src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
@@ -359,7 +366,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
+                                <a href="project-details.html"><img
+                                        src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
@@ -384,7 +392,8 @@
     </div>
 
     <!-- newsletter-area -->
-    <section class="newsletter-area jarallax newsletter-bg" data-background="{{ asset('frontend/img/bg/newsletter_bg.jpg') }}">
+    <section class="newsletter-area jarallax newsletter-bg"
+        data-background="{{ asset('frontend/img/bg/newsletter_bg.jpg') }}">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 d-flex justify-content-center">
@@ -428,7 +437,8 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}" alt=""></a>
+                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}"
+                                    alt=""></a>
                         </div>
                         <div class="blog-post-content">
                             <a href="blog.html" class="tag">Quality Materials</a>
@@ -438,7 +448,8 @@
                                     <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">Co-worker help each other with at business site</a></h2>
+                            <h2 class="title"><a href="blog-details.html">Co-worker help each other with at business
+                                    site</a></h2>
                             <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -446,7 +457,8 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}" alt=""></a>
+                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}"
+                                    alt=""></a>
                         </div>
                         <div class="blog-post-content">
                             <a href="blog.html" class="tag">House Management Work</a>
@@ -456,7 +468,8 @@
                                     <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">Full shot Managementers working together with helmets</a></h2>
+                            <h2 class="title"><a href="blog-details.html">Full shot Managementers working together with
+                                    helmets</a></h2>
                             <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -464,7 +477,8 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}" alt=""></a>
+                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}"
+                                    alt=""></a>
                         </div>
                         <div class="blog-post-content">
                             <a href="blog.html" class="tag">Business Analyst</a>
@@ -474,7 +488,8 @@
                                     <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">Hard hatswork at the heavy manufacturing factory industrial</a></h2>
+                            <h2 class="title"><a href="blog-details.html">Hard hatswork at the heavy manufacturing
+                                    factory industrial</a></h2>
                             <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -483,6 +498,4 @@
         </div>
     </section>
     <!-- blog-area-end -->
-
-
 @endsection

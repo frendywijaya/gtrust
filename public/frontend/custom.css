@@ -92,8 +92,37 @@
 }
 
 .slider-area {
-    padding: 0px 0 0 500px;
+    position: relative;
+    padding: 0px 0 0 484px;
     margin-bottom: 0px;
+}
+
+@media (max-width: 1800px) {
+    .slider-area {
+        padding: 0px 0 0 440px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .slider-area {
+        padding: 0px 0 0 400px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .slider-area {
+        padding: 0px 0 0 200px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .slider-area {
+        padding: 0px 0 0 0;
+        margin-bottom: 0;
+    }
+    .header-top-wrap {
+        display: none;
+    }
 }
 
 .navbar-wrap {

@@ -59,8 +59,8 @@
                             <ul class="list-wrap">
                                 <li>Welcome to Gtrust</li>
                                 <li><i class="fas fa-phone-alt"></i><a href="tel:0123456789">(+62) 82336548</a></li>
-                                <li><i class="fas fa-envelope"></i><a
-                                        href="mailto:info@gtrust.id">info@gtrust.id</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:info@gtrust.id">info@gtrust.id</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
