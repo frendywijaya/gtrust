@@ -71,11 +71,17 @@
                                                 <li><a href="#">Learning</a></li>
                                             </ul>
                                         </li>
+                                        <li class="menu-item-has-children"><a href="#">Other Services</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Kelas Gemilang</a></li>
+                                                <li><a href="#">Learning</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="about.html">About us</a>
                                         </li>
                                         <li><a href="#">Blog</a>
                                         </li>
-                                        <li><a href="contact.html">Kontak</a></li>
+                                        <li><a href="#">Kontak</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-md-block">

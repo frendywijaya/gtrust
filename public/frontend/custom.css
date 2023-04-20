@@ -6,7 +6,7 @@
     --tg-body-font-family: 'DM Sans', sans-serif;
     --tg-heading-font-family: 'Poppins', sans-serif;
     --tg-primary-color: #f8ae18;
-    --tg-secondary-color: #0f184b;
+    --tg-secondary-color: #061544;
     --tg-body-font-color: #00416e;
     --tg-heading-font-color: #1C1C1C;
     --tg-paragraph-color: #00416e;
@@ -18,8 +18,8 @@
     --tg-heading-line-height: 1.2;
     --tg-blue-lite: #2696d4;
     --tg-blue: #161C49;
-    --tg-blue-two: #0F1437;
-    --tg-blue-three: #0A0E21;
+    --tg-blue-two: #001334;
+    --tg-blue-three: #000a29;
     --tg-border-color: #D8DEFC;
     --tg-input-border-color: #CFCFCF;
     --tg-indigo: #6610f2;
@@ -80,4 +80,12 @@
 
 .footer-contact .content span {
     color: var(--tg-white);
+}
+
+.logo img {
+    max-width: 180px;
+}
+
+.slider-shape {
+    z-index: 0;
 }

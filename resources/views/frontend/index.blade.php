@@ -6,8 +6,8 @@
         <div class="slider-shape" data-background="{{ asset('frontend/img/slider/slider_shape.png') }}"></div>
         <div class="slider-img-wrap">
             <div class="sliderNav-active">
-                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider_img01.jpg') }}"></div>
-                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider_img02.jpg') }}"></div>
+                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider03.jpg') }}"></div>
+                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider02.jpg') }}"></div>
             </div>
         </div>
         <div class="slider-content-wrap">
@@ -16,8 +16,8 @@
                     <h1 class="overly-text">Our <br> Services</h1>
                     <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Smart
                         Solutions</span>
-                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Best Our
-                        Services and Consulting</h2>
+                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Excellent Team Building
+                        Starts Here</h2>
                     <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
                         building bigger, better,faster, and products than ever Our mbrace.</p>
                     <a href="project.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
@@ -27,8 +27,8 @@
                     <h1 class="overly-text">Our <br> Services</h1>
                     <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Smart
                         Solutions</span>
-                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Best Our
-                        Services and Consulting</h2>
+                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Unique
+                        Strategic Development</h2>
                     <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
                         building bigger, better,faster, and products than ever Our mbrace.</p>
                     <a href="project.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
