@@ -31,147 +31,147 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Team Building</a>
+                                    <a href="#" class="tag">Team Building</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Building Management help each other with at Data site</a>
+                                    <h2 class="title"><a href="/blog-detail">Building Management help each other with at Data site</a>
                                     </h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Management Work</a>
+                                    <a href="#" class="tag">Management Work</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Full shot Marketer working together with Plan</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <h2 class="title"><a href="/blog-detail">Full shot Marketer working together with Plan</a></h2>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Data Analyst</a>
+                                    <a href="#" class="tag">Data Analyst</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Hard hatswork at the heavy manufacturing factory
+                                    <h2 class="title"><a href="/blog-detail">Hard hatswork at the heavy manufacturing factory
                                             industrial</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img04.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img04.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Team Building</a>
+                                    <a href="#" class="tag">Team Building</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Building Management help each other with at Data site</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <h2 class="title"><a href="/blog-detail">Building Management help each other with at Data site</a></h2>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img05.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img05.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Management Work</a>
+                                    <a href="#" class="tag">Management Work</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Full shot Marketer working together with Plan</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <h2 class="title"><a href="/blog-detail">Full shot Marketer working together with Plan</a></h2>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img06.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img06.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Data Analyst</a>
+                                    <a href="#" class="tag">Data Analyst</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Hard hatswork at the heavy industry manufacturing factory industrial</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <h2 class="title"><a href="/blog-detail">Hard hatswork at the heavy industry manufacturing factory industrial</a></h2>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img07.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img07.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Management Work</a>
+                                    <a href="#" class="tag">Management Work</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Hard hatswork at the heavy manufacturing factory
+                                    <h2 class="title"><a href="/blog-detail">Hard hatswork at the heavy manufacturing factory
                                     industrial</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img08.jpg') }}" alt=""></a>
+                                    <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img08.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="blog-post-content">
-                                    <a href="blog.html" class="tag">Data Analyst</a>
+                                    <a href="#" class="tag">Data Analyst</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="blog-details.html">Full shot Marketer working together with Plan</a></h2>
-                                    <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <h2 class="title"><a href="/blog-detail">Full shot Marketer working together with Plan</a></h2>
+                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
