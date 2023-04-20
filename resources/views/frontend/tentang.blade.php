@@ -68,7 +68,7 @@
                                 <li><i class="fas fa-check"></i>Provide the best consulting services</li>
                             </ul>
                         </div>
-                        <a href="about.html" class="btn">Learn More</a>
+                        {{-- <a href="about.html" class="btn">Learn More</a> --}}
                     </div>
                 </div>
             </div>
