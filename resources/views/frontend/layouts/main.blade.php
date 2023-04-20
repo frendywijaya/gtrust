@@ -73,7 +73,7 @@
                                         <img src="assets/img/icon/united-states.jpg" alt=""> English
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/russia.jpg"
+                                        <a class="dropdown-item" href="#"><img src="assets/img/icon/russia.jpg"
                                                 alt="">English</a>
                                     </div>
                                 </div>
@@ -104,18 +104,18 @@
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li><a href="#">Home</a>
+                                        <li><a href="/">Home</a>
                                         </li>
                                         <li class="menu-item-has-children"><a href="#">Services</a>
                                             <ul class="sub-menu">
-                                                <li><a href="#">Facilitation</a></li>
-                                                <li><a href="#">Learning</a></li>
+                                                <li><a href="/services">Facilitation</a></li>
+                                                <li><a href="/services">Learning</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children"><a href="#">Other Services</a>
                                             <ul class="sub-menu">
-                                                <li><a href="#">Kelas Gemilang</a></li>
-                                                <li><a href="#">Talenesia</a></li>
+                                                <li><a href="https://kelasgemilang.id">Kelas Gemilang</a></li>
+                                                <li><a href="https://talenesia.com">Talenesia</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="/about">About us</a>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="header-action d-none d-md-block">
                                     <ul class="list-wrap">
-                                        <li class="header-btn"><a href="contact.html" class="btn">Get a Quoute</a>
+                                        <li class="header-btn"><a href="/kontak" class="btn">Get a Quoute</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -139,7 +139,7 @@
                             <nav class="menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html"><img src="{{ asset('frontend/img/logo/logo_02.png') }}"
+                                    <a href="/"><img src="{{ asset('frontend/img/logo/logo_02.png') }}"
                                             alt="Logo"></a>
                                 </div>
                                 <div class="menu-outer">

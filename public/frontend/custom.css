@@ -50,7 +50,7 @@
 }
 
 .bg-grey {
-    background-color: #dadfe4;
+    background-color: #ebf5ff;
 }
 
 .footer-social .list-wrap li a {
@@ -98,4 +98,8 @@
 
 .navbar-wrap {
     justify-content: right !important;
+}
+
+.area-bg-four {
+    padding: 90px 0 90px;
 }
