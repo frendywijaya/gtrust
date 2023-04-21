@@ -212,14 +212,8 @@
                                         class="fas fa-file-pdf"></i>Company Profile.pdf<br>48 KB</a>
                             </div>
                         </div>
-                        <div class="services-widget widget-bg" data-background="{{ asset('frontend/img/services/sw_bg.jpg') }}">
-                            <h4 class="widget-title">Need Help?</h4>
-                            <div class="sidebar-content">
-                                <h4 class="title">Tell Us Your Problem To Us</h4>
-                                <p>Sit amet consectetur adipiscing elseds do eius mod tempor incididunt</p>
-                                <a href="contact.html" class="btn btn-two">Contact Us</a>
-                            </div>
-                        </div>
+
+                        @include('frontend.component.contact-widget')
 
                     </aside>
                 </div>
@@ -295,18 +289,18 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}" alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Replacement of Analyst</a></h2>
+                                    <h2 class="title"><a href="/project">Replacement of Analyst</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Analyst</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Analyst</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -314,18 +308,18 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}" alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Fixing of Analytic Damage</a></h2>
+                                    <h2 class="title"><a href="/project">Fixing of Analytic Damage</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Analytic</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Analytic</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -333,18 +327,18 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}" alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Modern Analyticing Style</a></h2>
+                                    <h2 class="title"><a href="/project">Modern Analyticing Style</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Analytic</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Analytic</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -352,18 +346,18 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}" alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Fixing of Analytic Damage</a></h2>
+                                    <h2 class="title"><a href="/project">Fixing of Analytic Damage</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Analytic</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Analytic</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

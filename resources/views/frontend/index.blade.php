@@ -21,7 +21,7 @@
                         Starts Here</h2>
                     <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
                         building bigger, better,faster, and products than ever Our mbrace.</p>
-                    <a href="project.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
+                    <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
                         data-duration-in=".6">Discover More</a>
                 </div>
                 <div class="slider-content">
@@ -32,7 +32,7 @@
                         Strategic Development</h2>
                     <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
                         building bigger, better,faster, and products than ever Our mbrace.</p>
-                    <a href="project.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
+                    <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
                         data-duration-in=".6">Discover More</a>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="about.html" class="btn">Learn More</a>
+                        <a href="/about" class="btn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -202,7 +202,7 @@
                                                 <li><i class="fas fa-check-circle"></i>Network Administration</li>
                                             </ul>
                                         </div>
-                                        <a href="services-details.html" class="btn">Book Service</a>
+                                        <a href="/services" class="btn">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +229,7 @@
                                                 <li><i class="fas fa-check-circle"></i>Network Administration</li>
                                             </ul>
                                         </div>
-                                        <a href="services-details.html" class="btn">Book Service</a>
+                                        <a href="/services" class="btn">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -300,20 +300,20 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img
+                                <a href="/project"><img
                                         src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Replacement of Management</a></h2>
+                                    <h2 class="title"><a href="/project">Replacement of Management</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Management</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Management</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i
+                                    <a href="/project" class="link-btn"><i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -322,20 +322,20 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img
+                                <a href="/project"><img
                                         src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Fixing of Management Damage</a></h2>
+                                    <h2 class="title"><a href="/project">Fixing of Management Damage</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Management</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Management</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i
+                                    <a href="/project" class="link-btn"><i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -344,20 +344,20 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img
+                                <a href="/project"><img
                                         src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Modern Management Style</a></h2>
+                                    <h2 class="title"><a href="/project">Modern Management Style</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Management</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Management</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i
+                                    <a href="/project" class="link-btn"><i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -366,20 +366,20 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="project-details.html"><img
+                                <a href="/project"><img
                                         src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="project-details.html">Fixing of Management Damage</a></h2>
+                                    <h2 class="title"><a href="/project">Fixing of Management Damage</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="project-details.html">Management</a></li>
-                                        <li><a href="project-details.html">Ideas</a></li>
+                                        <li><a href="/project">Management</a></li>
+                                        <li><a href="/project">Ideas</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="project-details.html" class="link-btn"><i
+                                    <a href="/project" class="link-btn"><i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -437,60 +437,60 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}"
+                            <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}"
                                     alt=""></a>
                         </div>
                         <div class="blog-post-content">
-                            <a href="blog.html" class="tag">Quality Materials</a>
+                            <a href="/blog" class="tag">Quality Materials</a>
                             <div class="blog-meta">
                                 <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                    <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                     <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">Co-worker help each other with at business
+                            <h2 class="title"><a href="/blog-detail">Co-worker help each other with at business
                                     site</a></h2>
-                            <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                            <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}"
+                            <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}"
                                     alt=""></a>
                         </div>
                         <div class="blog-post-content">
-                            <a href="blog.html" class="tag">House Management Work</a>
+                            <a href="/blog" class="tag">House Management Work</a>
                             <div class="blog-meta">
                                 <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                    <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                     <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">Full shot Managementers working together with
+                            <h2 class="title"><a href="/blog-detail">Full shot Managementers working together with
                                     helmets</a></h2>
-                            <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                            <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}"
+                            <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}"
                                     alt=""></a>
                         </div>
                         <div class="blog-post-content">
-                            <a href="blog.html" class="tag">Business Analyst</a>
+                            <a href="/blog" class="tag">Business Analyst</a>
                             <div class="blog-meta">
                                 <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By <a href="blog-details.html">Admin</a></li>
+                                    <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
                                     <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">Hard hatswork at the heavy manufacturing
+                            <h2 class="title"><a href="/blog-detail">Hard hatswork at the heavy manufacturing
                                     factory industrial</a></h2>
-                            <a href="blog-details.html" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                            <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
