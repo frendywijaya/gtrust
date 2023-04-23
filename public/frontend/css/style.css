@@ -1566,8 +1566,13 @@ label {
     border-radius: 0px 150px 12px 0px;
 }
 
-.slider-content {
+
+/* .slider-content {
     padding: 120px 40px 120px 240px;
+} */
+
+.slider-content {
+    padding: 90px 75px 90px 180px;
 }
 
 .slider-content .overly-text {
@@ -1599,7 +1604,7 @@ label {
 .slider-content .title {
     color: var(--tg-white);
     margin-bottom: 16px;
-    font-size: 60px;
+    font-size: 52px;
 }
 
 .slider-content p {

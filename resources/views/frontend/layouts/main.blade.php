@@ -29,7 +29,7 @@
 
 <body>
 
-    {{-- <!-- Preloader-start -->
+    <!-- Preloader-start -->
     <div id="preloader">
         <div class="ta-preloader-block">
             <div class="ta-spinner-eff">
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <!-- Preloader-start-end --> --}}
+    <!-- Preloader-start-end -->
 
     <!-- Scroll-top -->
     <button class="scroll-top scroll-to-target" data-target="html">
