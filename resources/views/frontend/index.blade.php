@@ -6,12 +6,22 @@
         <div class="slider-shape" data-background="{{ asset('frontend/img/slider/slider_shape.png') }}"></div>
         <div class="slider-img-wrap">
             <div class="sliderNav-active">
-                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider02.jpg') }}"></div>
                 <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider03.jpg') }}"></div>
+                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider02.jpg') }}"></div>
             </div>
         </div>
         <div class="slider-content-wrap">
             <div class="sliderContent-active">
+
+                <div class="slider-content">
+                    {{-- <h1 class="overly-text">Our <br> Services</h1> --}}
+                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Company Facilitation</span>
+                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Fun Way to Challenge Serious Problems</h2>
+                    <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
+                        building bigger, better,faster, and products than ever Our mbrace.</p>
+                    <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
+                        data-duration-in=".6">Discover More</a>
+                </div>
                 <div class="slider-content">
                     {{-- <h1 class="overly-text">Our <br> Services</h1> --}}
                     <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Team Learning</span>
@@ -22,16 +32,6 @@
                     <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
                         data-duration-in=".6">Discover More</a>
                 </div>
-                <div class="slider-content">
-                    {{-- <h1 class="overly-text">Our <br> Services</h1> --}}
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Company Facilitation</span>
-                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Fun Way to Challenge Serious Problems</h2>
-                    <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
-                        building bigger, better,faster, and products than ever Our mbrace.</p>
-                    <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
-                        data-duration-in=".6">Discover More</a>
-                </div>
-
             </div>
         </div>
         <div class="banner-nav"></div>
