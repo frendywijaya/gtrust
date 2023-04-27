@@ -167,7 +167,9 @@
                             <span class="sub-title">Our Consulting History</span>
                             <h2 class="title">Consulting when an unknown printer took to make type book</h2>
                         </div>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majori our as have suffered alteration in some form, by injected humour, or randomised word which don't look even slightly believable.</p>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majori our as have
+                            suffered alteration in some form, by injected humour, or randomised word which don't look even
+                            slightly believable.</p>
                         <div class="history-list">
                             <ul class="list-wrap">
                                 <li><i class="fas fa-check-circle"></i>Technology management</li>
@@ -198,50 +200,20 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    @for($i = 0; $i < 4; $i++)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
                         <div class="team-item">
                             <div class="team-thumb">
-                                <a href="#"><img src="{{ asset('frontend/img/team/team_img01.jpg') }}" alt=""></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{ asset('frontend/img/team/team_img01.jpg') }}"
+                                        alt=""></a>
                             </div>
-                            <div class="team-content">
-                                <h2 class="title"><a href="team-details.html">Star Hasugian</a></h2>
+                            <div class="team-content" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <h2 class="title"><a>Star Hasugian</a></h2>
                                 <span>Founder</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <a href="#"><img src="{{ asset('frontend/img/team/team_img01.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="team-content">
-                                <h2 class="title"><a href="team-details.html">Star Hasugian</a></h2>
-                                <span>Founder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <a href="#"><img src="{{ asset('frontend/img/team/team_img01.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="team-content">
-                                <h2 class="title"><a href="team-details.html">Star Hasugian</a></h2>
-                                <span>Founder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <a href="#"><img src="{{ asset('frontend/img/team/team_img01.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="team-content">
-                                <h2 class="title"><a href="team-details.html">Star Hasugian</a></h2>
-                                <span>Founder</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endfor
                 </div>
             </div>
         </section>
@@ -264,7 +236,8 @@
                             <div class="testimonial-active-two">
                                 <div class="testimonial-item-two">
                                     <div class="testimonial-avatar-two">
-                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar01.png') }}" alt="">
+                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar01.png') }}"
+                                            alt="">
                                     </div>
                                     <div class="testimonial-content-two">
                                         <div class="content-top">
@@ -279,7 +252,10 @@
                                                 <i class="fas fa-star"></i>
                                             </div>
                                         </div>
-                                        <p>There are many varation of paissages of Lorem as the Ipum available but our majority have sufferied alterations in some form, by our by injected hsumour randomised worids which don't looks even slightly there as believable. If you going to use a passage of Lorem Ipsum.</p>
+                                        <p>There are many varation of paissages of Lorem as the Ipum available but our
+                                            majority have sufferied alterations in some form, by our by injected hsumour
+                                            randomised worids which don't looks even slightly there as believable. If you
+                                            going to use a passage of Lorem Ipsum.</p>
                                         <div class="content-bottom">
                                             <h4 class="title">Darrell Steward</h4>
                                             <span>Consulting Expert</span>
@@ -288,7 +264,8 @@
                                 </div>
                                 <div class="testimonial-item-two">
                                     <div class="testimonial-avatar-two">
-                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar02.png') }}" alt="">
+                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar02.png') }}"
+                                            alt="">
                                     </div>
                                     <div class="testimonial-content-two">
                                         <div class="content-top">
@@ -303,7 +280,10 @@
                                                 <i class="fas fa-star"></i>
                                             </div>
                                         </div>
-                                        <p>Lorem Ipsum are many varation of paissages of Lorem as the Ipum available but our majority have sufferied alterations in some form, by our by injected hsumour randomised worids which don't looks even slightly there as believable. If you going to use a passage of Lorem Ipsum.</p>
+                                        <p>Lorem Ipsum are many varation of paissages of Lorem as the Ipum available but our
+                                            majority have sufferied alterations in some form, by our by injected hsumour
+                                            randomised worids which don't looks even slightly there as believable. If you
+                                            going to use a passage of Lorem Ipsum.</p>
                                         <div class="content-bottom">
                                             <h4 class="title">Robert C. Simmons</h4>
                                             <span>Consulting Expert</span>
@@ -312,7 +292,8 @@
                                 </div>
                                 <div class="testimonial-item-two">
                                     <div class="testimonial-avatar-two">
-                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar03.png') }}" alt="">
+                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar03.png') }}"
+                                            alt="">
                                     </div>
                                     <div class="testimonial-content-two">
                                         <div class="content-top">
@@ -327,7 +308,10 @@
                                                 <i class="fas fa-star"></i>
                                             </div>
                                         </div>
-                                        <p>Lorem Ipsum are many varation of paissages of Lorem as the Ipum available but our majority have sufferied alterations in some form, by our by injected hsumour randomised worids which don't looks even slightly there as believable. If you going to use a passage of Lorem Ipsum.</p>
+                                        <p>Lorem Ipsum are many varation of paissages of Lorem as the Ipum available but our
+                                            majority have sufferied alterations in some form, by our by injected hsumour
+                                            randomised worids which don't looks even slightly there as believable. If you
+                                            going to use a passage of Lorem Ipsum.</p>
                                         <div class="content-bottom">
                                             <h4 class="title">Karikoka Ahli</h4>
                                             <span>Executive Manager</span>
@@ -410,4 +394,23 @@
         </div>
     </div>
     <!-- brand-area-end -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header px-4">
+                    <h5 class="modal-title" id="exampleModalLabel">Team Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h4>Star Hasugian</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum sem eget purus dapibus, eget molestie nisi dignissim. Quisque id cursus magna. Morbi tellus diam, rhoncus eu interdum non, malesuada egestas felis. Nulla vehicula sed ex eget pharetra. Pellentesque viverra risus vitae quam condimentum vehicula.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
