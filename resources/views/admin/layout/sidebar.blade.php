@@ -25,7 +25,7 @@
 
         <!-- Main navigation -->
         <div class="sidebar-section">
-            {{-- <ul class="nav nav-sidebar" data-nav-type="accordion">
+            <ul class="nav nav-sidebar" data-nav-type="accordion">
 
                 <!-- Main -->
                 <li class="nav-item-header pt-0">
@@ -44,7 +44,7 @@
                     <a href="/customer" class="nav-link {{ request()->routeIs('customer.*') ? 'active' : '' }}">
                         <i class="ph-user-list"></i>
                         <span>
-                            Customer
+
                         </span>
                     </a>
                 </li>
@@ -86,7 +86,7 @@
                         </span>
                     </a>
                 </li>
-            </ul> --}}
+            </ul>
 
         </div>
         <!-- /main navigation -->

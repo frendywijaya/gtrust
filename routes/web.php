@@ -27,11 +27,11 @@ Route::get('/blog-detail', [App\Http\Controllers\BlogController::class, 'detail'
 Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->name('kontak');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
-
-// Route::get('/login', function() {
-//     return view('auth.login');
-// });
-
-require __DIR__.'/auth.php';
 Route::get('/project', [App\Http\Controllers\ProjectController::class, 'detail'])->name('project');
 
+require __DIR__.'/auth.php';
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/blog', [BlogController::class, 'edit'])->name('profile.edit');
+});
