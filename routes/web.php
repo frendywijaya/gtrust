@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', [DashboardController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
@@ -31,7 +30,20 @@ Route::get('/project', [App\Http\Controllers\ProjectController::class, 'detail']
 
 require __DIR__.'/auth.php';
 
+// grouping route admin with middleware auth
+Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], function () {
+    // dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'] )->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/blog', [BlogController::class, 'edit'])->name('profile.edit');
+    // blog
+    Route::group(['as' => 'blog.', 'prefix' => '/blog'], function () {
+        Route::get('/', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('index');
+        Route::get('/create', [App\Http\Controllers\Admin\BlogController::class, 'create'])->name('create');
+        Route::post('/store', [App\Http\Controllers\Admin\BlogController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\BlogController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\BlogController::class, 'delete'])->name('delete');
+    });
+
+
 });
