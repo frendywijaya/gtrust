@@ -65,8 +65,17 @@
     font-size: 20px;
 }
 
-.footer-contact {
+
+/* .footer-contact {
     background: var(--tg-blue-lite);
+} */
+
+.footer-contact {
+    background: transparent;
+}
+
+.footer-contact .content a:hover {
+    color: var(--tg-primary-color);
 }
 
 .footer-contact .icon {
