@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class FacilitationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin.blog.blog_list');
+        return view('admin.services.facilitation_list');
     }
 
     /**

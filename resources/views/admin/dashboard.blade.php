@@ -2,7 +2,7 @@
 
 @section('content')
 
-				<!-- Page header -->
+				{{-- <!-- Page header -->
 				<div class="page-header page-header-light shadow">
 					<div class="page-header-content d-lg-flex">
 						<div class="d-flex">
@@ -30,7 +30,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- /page header -->
+				<!-- /page header --> --}}
 
 
 				<!-- Content area -->

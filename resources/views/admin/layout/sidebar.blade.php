@@ -28,10 +28,6 @@
             <ul class="nav nav-sidebar" data-nav-type="accordion">
 
                 <!-- Main -->
-                <li class="nav-item-header pt-0">
-                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Fitur Utama</div>
-                    <i class="ph-dots-three sidebar-resize-show"></i>
-                </li>
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="ph-house"></i>
@@ -40,49 +36,112 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="/customer" class="nav-link {{ request()->routeIs('customer.*') ? 'active' : '' }}">
-                        <i class="ph-user-list"></i>
-                        <span>
 
+                <li class="nav-item-header">
+                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Content Management</div>
+                    <i class="ph-dots-three sidebar-resize-show"></i>
+                </li>
+
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link {{ request()->routeIs('customer.*') ? 'active' : '' }}">
+                        <i class="ph-article-medium"></i>
+                        <span>
+                            Pages
                         </span>
                     </a>
+                    <ul class="nav-group-sub collapse">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact Us</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/produk" class="nav-link {{ request()->routeIs('produk.*') ? 'active' : '' }}">
-                        <i class="ph-package"></i>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link {{ request()->routeIs('admin.global.*') ? 'active' : '' }}">
+                        <i class="ph-planet"></i>
                         <span>
-                            Item Produk
+                            Global Section
                         </span>
                     </a>
+                    <ul class="nav-group-sub collapse">
+                        <li class="nav-item">
+                            <a href="{{ route("admin.global.header.index") }}" class="nav-link {{ request()->routeIs('admin.global.header.*') ? 'active' : '' }}">Header</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("admin.global.footer.index") }}" class="nav-link {{ request()->routeIs('admin.global.footer.*') ? 'active' : '' }}">Footer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact Widget</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("admin.global.brand_logo.index") }}" class="nav-link {{ request()->routeIs('admin.global.brand_logo.*') ? 'active' : '' }}">Brand Logo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("admin.global.social_media.index") }}" class="nav-link {{ request()->routeIs('admin.global.social_media.*') ? 'active' : '' }}">Social Media</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/quote" class="nav-link {{ request()->routeIs('quote.*') ? 'active' : '' }}">
-                        <i class="ph-file-text"></i>
+                <li class="nav-item-header">
+                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Services</div>
+                    <i class="ph-dots-three sidebar-resize-show"></i>
+                </li>
+
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
+                        <i class="ph-handshake"></i>
                         <span>
-                            Quote / Penawaran
+                            Main Services
                         </span>
                     </a>
+                    <ul class="nav-group-sub collapse">
+                        <li class="nav-item">
+                            <a href="{{ route("admin.services.facilitation.index") }}" class="nav-link {{ request()->routeIs('admin.services.facilitation.*') ? 'active' : '' }}">Facilitation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("admin.services.learning.index") }}" class="nav-link {{ request()->routeIs('admin.services.learning.*') ? 'active' : '' }}">Learning</a>
+                        </li>
+                    </ul>
                 </li>
+
                 <li class="nav-item">
-                    <a href="/invoice" class="nav-link {{ request()->routeIs('invoice.*') ? 'active' : '' }}">
-                        <i class="ph-file-lock"></i>
+                    <a href="{{ route("admin.project.index") }}" class="nav-link {{ request()->routeIs('admin.learning.*') ? 'active' : '' }}">
+                        <i class="ph-flag-banner"></i>
                         <span>
-                            Invoice / Tagihan
+                            Projects
                         </span>
                     </a>
                 </li>
 
                 <li class="nav-item-header">
-                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Lainnya</div>
+                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Blog</div>
                     <i class="ph-dots-three sidebar-resize-show"></i>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/pengaturan" class="nav-link {{ request()->routeIs('setting.*') ? 'active' : '' }}">
-                        <i class="ph-sliders-horizontal"></i>
+                    <a href="{{ route("admin.blog.index") }}" class="nav-link {{ request()->routeIs('admin.blog.*') ? 'active' : '' }}">
+                        <i class="ph-newspaper-clipping"></i>
                         <span>
-                            Pengaturan Umum
+                            Blog Data
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item-header">
+                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Data Input</div>
+                    <i class="ph-dots-three sidebar-resize-show"></i>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route("admin.inbox.index") }}" class="nav-link {{ request()->routeIs('admin.inbox.*') ? 'active' : '' }}">
+                        <i class="ph-envelope"></i>
+                        <span>
+                            Contact Inbox
                         </span>
                     </a>
                 </li>

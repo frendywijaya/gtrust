@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,12 +28,12 @@ Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/project', [App\Http\Controllers\ProjectController::class, 'detail'])->name('project');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // grouping route admin with middleware auth
 Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], function () {
     // dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'] )->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // blog
     Route::group(['as' => 'blog.', 'prefix' => '/blog'], function () {
@@ -45,5 +45,82 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\BlogController::class, 'delete'])->name('delete');
     });
 
+    // project
+    Route::group(['as' => 'project.', 'prefix' => '/project'], function () {
+        Route::get('/', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('index');
+        Route::get('/create', [App\Http\Controllers\Admin\ProjectController::class, 'create'])->name('create');
+        Route::post('/store', [App\Http\Controllers\Admin\ProjectController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'delete'])->name('delete');
+    });
 
+    // Contact Inbox
+    Route::group(['as' => 'inbox.', 'prefix' => '/inbox'], function () {
+        Route::get('/', [App\Http\Controllers\Admin\InboxController::class, 'index'])->name('index');
+        Route::get('/create', [App\Http\Controllers\Admin\InboxController::class, 'create'])->name('create');
+        Route::post('/store', [App\Http\Controllers\Admin\InboxController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [App\Http\Controllers\Admin\InboxController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\InboxController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\InboxController::class, 'delete'])->name('delete');
+    });
+
+
+    Route::group(['as' => 'services.', 'prefix' => '/services'], function () {
+
+        // facilitation
+        Route::group(['as' => 'facilitation.', 'prefix' => '/facilitation'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\FacilitationController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\FacilitationController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\FacilitationController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\FacilitationController::class, 'update'])->name('update');
+        });
+
+        // learning
+        Route::group(['as' => 'learning.', 'prefix' => '/learning'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\LearningController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\LearningController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\LearningController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\LearningController::class, 'update'])->name('update');
+        });
+    });
+
+    Route::group(['as' => 'global.', 'prefix' => '/global'], function () {
+
+        // Header
+        Route::group(['as' => 'header.', 'prefix' => '/header'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\HeaderController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\HeaderController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\HeaderController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\HeaderController::class, 'update'])->name('update');
+        });
+
+        // learning
+        Route::group(['as' => 'footer.', 'prefix' => '/footer'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\FooterController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\FooterController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\FooterController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\FooterController::class, 'update'])->name('update');
+        });
+
+        // Social Media Page
+        Route::group(['as' => 'social_media.', 'prefix' => '/social_media'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\SocialMediaController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\SocialMediaController::class, 'create'])->name('create');
+            Route::post('/store', [App\Http\Controllers\Admin\SocialMediaController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [App\Http\Controllers\Admin\SocialMediaController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}', [App\Http\Controllers\Admin\SocialMediaController::class, 'update'])->name('update');
+            Route::get('/delete/{id}', [App\Http\Controllers\Admin\SocialMediaController::class, 'delete'])->name('delete');
+        });
+
+        // Brand Logo
+        Route::group(['as' => 'brand_logo.', 'prefix' => '/brand_logo'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\BrandLogoController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\BrandLogoController::class, 'create'])->name('create');
+            Route::post('/store', [App\Http\Controllers\Admin\BrandLogoController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'update'])->name('update');
+            Route::get('/delete/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'delete'])->name('delete');
+        });
+    });
 });

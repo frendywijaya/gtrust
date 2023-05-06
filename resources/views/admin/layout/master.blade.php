@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Invoice App | @yield('title')</title>
+    <title>Gtrust Admin Panel | @yield('title')</title>
 
     <!-- Global stylesheets -->
     <link href="{{ asset('admin/fonts/inter/inter.css') }}" rel="stylesheet" type="text/css">
@@ -53,6 +53,8 @@
 
             <!-- Inner content -->
             <div class="content-inner">
+
+                @include('admin.layout.page_header')
 
                 @yield('content')
 
