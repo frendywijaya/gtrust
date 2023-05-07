@@ -61,14 +61,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item nav-item-submenu">
+                <li class="nav-item nav-item-submenu {{ request()->routeIs('admin.global.*') ? 'nav-item-expanded' : '' }} {{ request()->routeIs('admin.global.*') ? 'nav-item-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->routeIs('admin.global.*') ? 'active' : '' }}">
                         <i class="ph-planet"></i>
                         <span>
                             Global Section
                         </span>
                     </a>
-                    <ul class="nav-group-sub collapse">
+                    <ul class="nav-group-sub collapse {{ request()->routeIs('admin.global.*') ? 'show' : '' }}">
                         <li class="nav-item">
                             <a href="{{ route("admin.global.header.index") }}" class="nav-link {{ request()->routeIs('admin.global.header.*') ? 'active' : '' }}">Header</a>
                         </li>

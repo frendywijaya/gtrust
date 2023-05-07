@@ -121,28 +121,6 @@
                                                 </div>
                                             </td>
                                         </tr>
-
-                                        {{-- @foreach ($payments as $k => $item)
-                                            <tr>
-                                                <td>{{ $k + 1 }}</td>
-                                                <td>{{ $item->name }}</td>
-                                                <td>
-                                                    <div class="d-inline-flex">
-                                                        <a href="#" class="text-body btn-edit" data-bs-toggle="modal"
-                                                            data-bs-target="#modal_metode"
-                                                            data-url=""
-                                                            data-item="">
-                                                            <i class="ph-pen"></i>
-                                                        </a>
-                                                        <a class="text-body mx-2 btn-delete" data-bs-toggle="modal"
-                                                            data-bs-target="#modal_hapus" href="#"
-                                                            data-url="">
-                                                            <i class="ph-trash"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach --}}
                                     </tbody>
                                 </table>
                             </div>
