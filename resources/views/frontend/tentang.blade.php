@@ -76,7 +76,7 @@
     </section>
     <!-- about-area-end -->
 
-    <!-- work-area -->
+    <!-- approaches-area -->
     <section class="work-area">
         <div class="container">
             <div class="row justify-content-center">

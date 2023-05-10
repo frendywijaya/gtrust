@@ -22,207 +22,175 @@
     </section>
     <!-- breadcrumb-area-end -->
 
-    <!-- services-details-area -->
-    <section class="services-details-area pt-90 pb-90">
+    <!-- about-area -->
+    <section class="about-area inner-about-area pt-90 pb-90">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    <div class="services-details-wrap">
-                        <div class="services-details-thumb">
-                            <img src="{{ asset('frontend/img/services/services_details01.jpg') }}" alt="">
-                        </div>
-                        <div class="services-details-content">
-                            <h2 class="title">Tailored Facilitation Services for Every Needs</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in somes form, by injected humour, or randomised words which don't look
-                                even slightlcy believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                sure there isn't anything embarrassing hidden in the middle of textss. All the Lorem Ipsum
-                                generators on the Internet tend to repeat</p>
-                            <div class="services-process-wrap">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-6 col-md-8">
-                                        <div class="services-process-img">
-                                            <img src="{{ asset('frontend/img/services/sp_img01.jpg') }}" alt="">
-                                            <img src="{{ asset('frontend/img/services/sp_img02.jpg') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="services-process-content">
-                                            <h2 class="title">Our Service Process</h2>
-                                            <ul class="list-wrap">
-                                                <li>
-                                                    <div class="services-process-item">
-                                                        <div class="icon">
-                                                            <img src="{{ asset('frontend/img/icon/sp_icon01.svg') }}" alt="">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h4 class="title">Creative Analysis</h4>
-                                                            <p>Creative analysis is important. It is common for marketers
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="services-process-item">
-                                                        <div class="icon">
-                                                            <img src="{{ asset('frontend/img/icon/sp_icon02.svg') }}" alt="">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h4 class="title">Design & Scratches</h4>
-                                                            <p>Creative analysis is important. It is common for marketers
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="services-process-item">
-                                                        <div class="icon">
-                                                            <img src="{{ asset('frontend/img/icon/sp_icon01.svg') }}" alt="">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h4 class="title">Development & Delivery</h4>
-                                                            <p>Creative analysis is important. It is common for marketers
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-lg-6 order-0 order-lg-2">
+                    <div class="about-img-wrap">
+                        <img src="{{ asset('frontend/img/images/testimonial_img.jpg') }}" alt=""
+                            class="wow fadeInRight" data-wow-delay=".4s">
+                        <div class="about-experiences-wrap">
+                            <div class="experiences-item">
+                                <div class="icon">
+                                    <img src="{{ asset('frontend/img/icon/about_icon01.svg') }}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">We have more than 10 years of experiences</h6>
                                 </div>
                             </div>
-                            <h2 class="title-two">We Hope You Find What You are Looking for</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majorty have suffered
-                                alteration in as some form by injected humour, or randomised words which don't look even
-                                slightly believable. If you are going a to use as passage of Lorem Ipsum, you need to be
-                                sure there isn't anything embarrassing hidden in the middle of textss. All the Lorem Ipsum
-                                generators on the Internet tend to repeat</p>
-                            <div class="service-benefits-wrap">
-                                <div class="row">
-                                    <div class="col-lg-7 order-0 order-lg-2">
-                                        <div class="benefits-img">
-                                            <img src="{{ asset('frontend/img/services/sb_img01.jpg') }}" alt="">
-                                            <img src="{{ asset('frontend/img/services/sb_img02.jpg') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="benefits-content">
-                                            <h2 class="title">Our Service Benefits</h2>
-                                            <p>There are many variations of passages of Lorem by injected humour, or
-                                                randomised words whic Lorem Ipsum, you need to.</p>
-                                            <ul class="list-wrap">
-                                                <li><i class="fas fa-check-circle"></i>In id diam nec nisi congue tincidunt
-                                                </li>
-                                                <li><i class="fas fa-check-circle"></i>Vestibulum tincidunt arcu vel nisl
-                                                </li>
-                                                <li><i class="fas fa-check-circle"></i>Provide the best Analytic services</li>
-                                                <li><i class="fas fa-check-circle"></i>Sed tristique lorem non tesque</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                            <div class="experiences-item">
+                                <div class="icon">
+                                    <img src="{{ asset('frontend/img/icon/about_icon02.svg') }}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">We use professional and experienced person</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6">
-                    <aside class="services-sidebar">
-                        <div class="services-widget">
-                            <h4 class="widget-title">Our All Service</h4>
-                            <div class="faq-wrap">
-                                <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingOne">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Strategic Plan
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Problem Solving
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingThree">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Workplace Conflict
-                                            </button>
-                                        </h2>
-                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFour">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Behavioural Intervention
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFive">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                Service Details
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title mb-25">
+                            <span class="sub-title">Team Learning</span>
+                            <h2 class="title">Elevate Your Team To Higher Level</h2>
                         </div>
-                        <div class="services-widget">
-                            <h4 class="widget-title">Our Brochures Download</h4>
-                            <div class="download-wrap">
-                                <a href="#" download target="_blank"><i
-                                        class="fas fa-cloud-download-alt"></i>Service Details.pdf<br>65 KB</a>
-                                <a href="#" download target="_blank"><i
-                                        class="fas fa-file-pdf"></i>Company Profile.pdf<br>48 KB</a>
-                            </div>
-                        </div>
-
-                        @include('frontend.component.contact-widget')
-
-                    </aside>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majori have suffered
+                            alteration in some form, by injected humour, or randomised word which don't look even slightly
+                            believable.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- services-details-area-end -->
+    <!-- about-area-end -->
 
-    <!-- support-area -->
+    <!-- approaches-area -->
+    <section class="work-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center mb-50">
+                        <span class="sub-title">Development Process</span>
+                        <h2 class="title">Our Process of Excellence</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="work-item">
+                        <div class="work-thumb">
+                            <img src="{{ asset('frontend/img/images/work_img01.png') }}" alt="">
+                            <h4 class="number">01</h4>
+                        </div>
+                        <div class="work-content">
+                            <h2 class="title">Plan for Session</h2>
+                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="work-item">
+                        <div class="work-thumb">
+                            <img src="{{ asset('frontend/img/images/work_img02.png') }}" alt="">
+                            <h4 class="number">02</h4>
+                        </div>
+                        <div class="work-content">
+                            <h2 class="title">Schedule Estimate</h2>
+                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="work-item">
+                        <div class="work-thumb">
+                            <img src="{{ asset('frontend/img/images/work_img03.png') }}" alt="">
+                            <h4 class="number">03</h4>
+                        </div>
+                        <div class="work-content">
+                            <h2 class="title">Install New Consulting</h2>
+                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="work-item">
+                        <div class="work-thumb">
+                            <img src="{{ asset('frontend/img/images/work_img04.png') }}" alt="">
+                            <h4 class="number">04</h4>
+                        </div>
+                        <div class="work-content">
+                            <h2 class="title">Event Delivery</h2>
+                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- approaches-area-end -->
+
+    <!-- subservices-area left -->
+    <section class="testimonial-area pt-115 pb-90 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="testimonial-img">
+                        <img src="{{ asset('frontend/img/images/testimonial_img.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-content">
+                        <div class="section-title mb-30 tg-heading-subheading animation-style3">
+                            <span class="sub-title tg-element-title text-center text-xl-start">Strategic Plan</span>
+                            <h2 class="title tg-element-title text-center text-xl-start">Some of Our Respected Happy Clients
+                                Says</h2>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-item text-center text-xl-start">
+                                <p>There are many varation of paissages of Lorem as the Ipum available but our majority have
+                                    sufferied alterations in some form, by our by injected hsumour randomised worids which
+                                    don't looks even slightly there as believable. If you going to use a passage of Lorem
+                                    Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mt-60">
+                <div class="col-lg-6 wow fadeInLeft d-visible d-lg-none d-xl-none" data-wow-delay=".2s">
+                    <div class="testimonial-img">
+                        <img src="{{ asset('frontend/img/images/testimonial_img.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-xl-5">
+                    <div class="testimonial-content">
+                        <div class="section-title mb-30 tg-heading-subheading animation-style3">
+                            <span class="sub-title tg-element-title text-center text-xl-end">Problem Solving</span>
+                            <h2 class="title tg-element-title text-center text-xl-end">Some of Our Respected</h2>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-item text-center text-xl-end">
+                                <p>There are many varation of paissages of Lorem as the Ipum available but our majority have
+                                    sufferied alterations in some form, by our by injected hsumour randomised worids which
+                                    don't looks even slightly there as believable. If you going to use a passage of Lorem
+                                    Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInLeft d-none d-lg-block d-xl-block" data-wow-delay=".2s">
+                    <div class="testimonial-img">
+                        <img src="{{ asset('frontend/img/images/testimonial_img.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subservices-area-end -->
+
+    <!-- method-area -->
     <section class="support-area pt-60 pb-60 bg-grey">
         <div class="container">
             <div class="row justify-content-center">
@@ -272,6 +240,38 @@
     </section>
     <!-- support-area-end -->
 
+    <!-- widget-area -->
+    <section class="services-details-area pt-90 pb-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 col-lg-6">
+                    <aside class="services-sidebar">
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <div class="services-widget">
+                                    <h4 class="widget-title">Our Brochures Download</h4>
+                                    <div class="download-wrap">
+                                        <a href="#" download target="_blank"><i
+                                                class="fas fa-cloud-download-alt"></i>Service Details.pdf<br>65 KB</a>
+                                        <a href="#" download target="_blank"><i class="fas fa-file-pdf"></i>Company
+                                            Profile.pdf<br>48 KB</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                @include('frontend.component.contact-widget')
+                            </div>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services-details-area-end -->
+
+
+
     <div class="area-bg-four" data-background="{{ asset('frontend/img/bg/area_bg04.jpg') }}">
 
         <!-- project-area -->
@@ -289,7 +289,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}"
+                                        alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
@@ -308,7 +309,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
+                                        alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
@@ -327,7 +329,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}"
+                                        alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
@@ -346,7 +349,8 @@
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}" alt=""></a>
+                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
+                                        alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">

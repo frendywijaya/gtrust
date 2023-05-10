@@ -97,6 +97,10 @@
     margin-bottom: 0px;
 }
 
+.services-process-content {
+    margin-left: 0px;
+}
+
 @media (max-width: 1800px) {
     .slider-area {
         padding: 0px 0 0 440px;
