@@ -65,8 +65,12 @@
     font-size: 20px;
 }
 
-.footer-contact {
+/* .footer-contact {
     background: var(--tg-blue-lite);
+} */
+
+.footer-contact {
+    background: none;
 }
 
 .footer-contact .icon {
@@ -76,6 +80,10 @@
 
 .footer-contact .content a {
     color: var(--tg-white);
+}
+
+.footer-contact .content a:hover {
+    color: var(--tg-primary-color);
 }
 
 .footer-contact .content span {
