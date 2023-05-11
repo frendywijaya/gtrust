@@ -31,10 +31,12 @@
                         <td>Keuangan</td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit" data-bs-original-title="Edit">
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit"
+                                    data-bs-original-title="Edit">
                                     <i class="ph-pen"></i>
                                 </a>
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
+                                    href="#" data-url="">
                                     <i class="ph-trash"></i>
                                 </a>
                                 {{-- <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Options">
@@ -49,26 +51,14 @@
                         <td><a href="#">Airline Transport Pilot</a></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-pdf me-2"></i>
-                                            Export to .pdf
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-csv me-2"></i>
-                                            Export to .csv
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            Export to .doc
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit"
+                                    data-bs-original-title="Edit">
+                                    <i class="ph-pen"></i>
+                                </a>
+                                <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
+                                    href="#" data-url="">
+                                    <i class="ph-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -78,26 +68,14 @@
                         <td>Business Services Sales Representative</td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-pdf me-2"></i>
-                                            Export to .pdf
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-csv me-2"></i>
-                                            Export to .csv
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            Export to .doc
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit"
+                                    data-bs-original-title="Edit">
+                                    <i class="ph-pen"></i>
+                                </a>
+                                <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
+                                    href="#" data-url="">
+                                    <i class="ph-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -108,8 +86,11 @@
 
     </div>
     <!-- /content area -->
+
+    @include('admin.layout.modal_delete')
 @endsection
 
 @section('js')
     <script src="{{ asset('admin/demo/pages/datatables_extension_key_table.js') }}"></script>
+    <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
 @endsection

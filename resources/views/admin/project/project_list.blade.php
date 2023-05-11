@@ -35,26 +35,12 @@
                         <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-pen me-2"></i>
-                                            Edit
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-gear me-2"></i>
-                                            Change Status
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-trash me-2"></i>
-                                            Delete
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
+                                    <i class="ph-pen"></i>
+                                </a>
+                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
+                                    <i class="ph-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -66,26 +52,12 @@
                         <td><span class="badge bg-secondary bg-opacity-10 text-secondary">Disabled</span></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-pen me-2"></i>
-                                            Edit
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-gear me-2"></i>
-                                            Change Status
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-trash me-2"></i>
-                                            Delete
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
+                                    <i class="ph-pen"></i>
+                                </a>
+                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
+                                    <i class="ph-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -97,26 +69,12 @@
                         <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-pen me-2"></i>
-                                            Edit
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-gear me-2"></i>
-                                            Change Status
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-trash me-2"></i>
-                                            Delete
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
+                                    <i class="ph-pen"></i>
+                                </a>
+                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
+                                    <i class="ph-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -127,8 +85,10 @@
 
     </div>
     <!-- /content area -->
+    @include('admin.layout.modal_delete')
 @endsection
 
 @section('js')
     <script src="{{ asset('admin/demo/pages/datatables_extension_key_table.js') }}"></script>
+    <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
 @endsection

@@ -35,88 +35,15 @@
                         <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-pdf me-2"></i>
-                                            Export to .pdf
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-csv me-2"></i>
-                                            Export to .csv
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            Export to .doc
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Weible</td>
-                        <td><a href="#">Airline Transport Pilot</a></td>
-                        <td>3 Oct 1981</td>
-                        <td><span class="badge bg-secondary bg-opacity-10 text-secondary">Draft</span></td>
-                        <td class="text-center">
-                            <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-pdf me-2"></i>
-                                            Export to .pdf
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-csv me-2"></i>
-                                            Export to .csv
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            Export to .doc
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Hard</td>
-                        <td>Business Services Sales Representative</td>
-                        <td>19 Apr 1969</td>
-                        <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
-                        <td class="text-center">
-                            <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-pdf me-2"></i>
-                                            Export to .pdf
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-csv me-2"></i>
-                                            Export to .csv
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            Export to .doc
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit" data-bs-original-title="Edit">
+                                    <i class="ph-pen"></i>
+                                </a>
+                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                    <i class="ph-trash"></i>
+                                </a>
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Options">
+                                    <i class="ph-eye"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -131,4 +58,5 @@
 
 @section('js')
     <script src="{{ asset('admin/demo/pages/datatables_extension_key_table.js') }}"></script>
+    <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
 @endsection

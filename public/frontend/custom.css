@@ -109,6 +109,10 @@
     margin-left: 0px;
 }
 
+.blog-post-content .tag {
+    background: #e7f6ff;
+}
+
 @media (max-width: 1800px) {
     .slider-area {
         padding: 0px 0 0 440px;

@@ -21,34 +21,14 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-form-label col-lg-3">Jabatan</label>
+                                <label class="col-form-label col-lg-3">Button Text</label>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" name="jabatan"
                                         >
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <label class="col-form-label col-lg-3">Alamat Pengirim</label>
-                                <div class="col-lg-9">
-                                    <textarea rows="3" cols="3" class="form-control" placeholder="Default textarea" name="sender_address"></textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-form-label col-lg-3">Email</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="email"
-                                        >
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-form-label col-lg-3">No Telpon</label>
-                                <div class="col-lg-9">
-                                    <input type="number" class="form-control" name="phone"
-                                        >
-                                </div>
-                            </div>
                             <div class="row mb-3 pb-4 border-bottom">
-                                <label class="col-form-label col-lg-3">Rekening</label>
+                                <label class="col-form-label col-lg-3">Button Link</label>
                                 <div class="col-lg-9">
                                     <input type="number" class="form-control" name="bank_account"
                                         >
@@ -56,14 +36,9 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-lg-6">
-                                    <p class="fw-semibold">Logo Company</p>
+                                    <p class="fw-semibold">Logo</p>
                                     <input type="file" data-show-caption="true" data-show-upload="false" accept="image/*"
                                         data-show-remove="false" id="file-input-company-logo" name="company_logo">
-                                </div>
-                                <div class="col-lg-6">
-                                    <p class="fw-semibold">Tanda Tangan</p>
-                                    <input type="file" data-show-caption="true" data-show-upload="false" accept="image/*"
-                                        data-show-remove="false" id="file-input-signature" name="signature">
                                 </div>
 
                             </div>
@@ -114,7 +89,7 @@
                                                         <i class="ph-pen"></i>
                                                     </a>
                                                     <a class="text-body mx-2 btn-delete" data-bs-toggle="modal"
-                                                        data-bs-target="#modal_hapus" href="#"
+                                                        data-bs-target="#modal_delete" href="#"
                                                         data-url="">
                                                         <i class="ph-trash"></i>
                                                     </a>
@@ -158,8 +133,35 @@
         </div>
     </div>
     <!-- /content area -->
+
+    <!-- modal edit link -->
+	<div id="modal_edit" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Detail Pesan</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+
+				<div class="modal-body">
+					<h6 class="fw-semibold">Judul Pesan</h6>
+					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+				</div>
+
+				<div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Delete</button>
+					<button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /modal edit link -->
+
+    @include('admin.layout.modal_delete')
+
 @endsection
 
 @section('js')
     <script src="{{ asset('admin/demo/pages/datatables_extension_key_table.js') }}"></script>
+    <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
 @endsection
