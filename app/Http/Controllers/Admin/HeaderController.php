@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\StaticPageController;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class HeaderController extends Controller
@@ -14,7 +16,12 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('admin.global.header');
+        // get data from static_page table
+        $staticHeaderData = StaticPage::getData('header');
+
+        return view('admin.global.header', [
+            'staticPage' => $staticHeaderData,
+        ]);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class FooterController extends Controller
@@ -14,7 +15,12 @@ class FooterController extends Controller
      */
     public function index()
     {
-        return view('admin.global.footer');
+        // get data from static_page table
+        $staticFooterData = StaticPage::getData('footer');
+
+        return view('admin.global.footer', [
+            'staticPage' => $staticFooterData,
+        ]);
     }
 
     /**

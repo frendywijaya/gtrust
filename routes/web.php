@@ -104,6 +104,11 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         });
     });
 
+    // static page
+    Route::group(['as' => 'staticpage.','prefix' => 'staticpage'], function () {
+        Route::post('/{section}/store', [App\Http\Controllers\StaticPageController::class, 'save'])->name('save');
+    });
+
     Route::group(['as' => 'global.', 'prefix' => '/global'], function () {
 
         // Header

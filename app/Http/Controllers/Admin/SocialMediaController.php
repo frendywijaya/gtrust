@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class SocialMediaController extends Controller
@@ -14,7 +15,12 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
-        return view('admin.socialmedia.social');
+        // get data from static_page table
+        $staticSocialMediaData = StaticPage::getData('socialmedia');
+
+        return view('admin.socialmedia.social', [
+            'staticPage' => $staticSocialMediaData,
+        ]);
     }
 
     /**

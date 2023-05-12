@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class ContactWidgetController extends Controller
@@ -14,7 +15,12 @@ class ContactWidgetController extends Controller
      */
     public function index()
     {
-        return view('admin.global.contactwidget');
+        // get data from static_page table
+        $staticContactWidgetData = StaticPage::getData('contactwidget');
+
+        return view('admin.global.contactwidget', [
+            'staticPage' => $staticContactWidgetData,
+        ]);
     }
 
     /**

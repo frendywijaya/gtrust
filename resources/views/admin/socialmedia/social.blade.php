@@ -15,57 +15,52 @@
                         tambah blog</button>
                 </div> --}}
             </div>
-            <div class="card-body">
-                <div class="row mb-3">
-                    <label class="col-form-label col-lg-3">Facebook</label>
-                    <div class="col-lg-9">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="ph-facebook-logo"></i></span>
-                            <input type="text" class="form-control" placeholder="">
+
+            <!-- create form -->
+            <form action="{{ route('admin.staticpage.save', 'socialmedia') }}" method="POST">
+                @csrf
+                <div class="card-body">
+                    <div class="mb-1">
+                        <!-- Default input -->
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Facebook</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="facebook" value="{{@$staticPage->facebook}}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Instagram</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="instagram" value="{{@$staticPage->instagram}}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">LinkedIn</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="linkedin" value="{{@$staticPage->linkedin}}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Youtube</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="youtube" value="{{@$staticPage->youtube}}">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <label class="col-form-label col-lg-3">Tiktok</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="tiktok" value="{{@$staticPage->tiktok}}">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-form-label col-lg-3">instagram</label>
-                    <div class="col-lg-9">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="ph-instagram-logo"></i></span>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                    </div>
+
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary btn-save">Simpan <i
+                            class="ph-check-square-offset ms-2"></i></button>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-form-label col-lg-3">LinkedIn</label>
-                    <div class="col-lg-9">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="ph-linkedin-logo"></i></span>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-form-label col-lg-3">Youtube</label>
-                    <div class="col-lg-9">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="ph-youtube-logo"></i></span>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-2">
-                    <label class="col-form-label col-lg-3">Tiktok</label>
-                    <div class="col-lg-9">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="ph-tiktok-logo"></i></span>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer text-end">
-                <button type="submit" class="btn btn-primary btn-save">Simpan <i
-                        class="ph-check-square-offset ms-2"></i></button>
-            </div>
+            </form>
+
         </div>
         <!-- /basic initialization -->
 

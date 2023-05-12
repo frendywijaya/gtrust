@@ -57,6 +57,25 @@
 
                 @include('admin.layout.page_header')
 
+                <!-- success message -->
+                @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                <!-- error message -->
+                @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                
                 @yield('content')
 
                 @include('admin.layout.footer')
@@ -70,6 +89,25 @@
     </div>
 
     @yield('js')
+    <script>
+        // get all elements with class "file-upload"
+        const fileUpload = document.getElementsByClassName('file-upload');
+        
+        // for each element
+        for (let i = 0; i < fileUpload.length; i++) {
+            var filename = fileUpload[i].getAttribute('data-default');
+            // Create a new File object
+            const myFile = new File([filename], filename, {
+                type: 'text/plain',
+                lastModified: new Date(),
+            });
+        
+            // // Now let's create a DataTransfer to get a FileList
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(myFile);
+            fileUpload[i].files = dataTransfer.files;
+        }
+    </script>
 
 </body>
 

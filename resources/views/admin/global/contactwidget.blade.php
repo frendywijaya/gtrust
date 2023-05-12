@@ -11,46 +11,52 @@
                         <h5 class="mb-0">Pengaturan Contact Widget</h5>
                     </div>
 
-                    <div class="card-body">
-                        <div class="mb-1">
-                            <!-- Default input -->
-                            <div class="row mb-3">
-                                <label class="col-form-label col-lg-3">Section Title</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="sender_name">
+                    <!-- create form -->
+                    <form action="{{ route('admin.staticpage.save', 'contactwidget') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="mb-1">
+                                <!-- Default input -->
+                                <div class="row mb-3">
+                                    <label class="col-form-label col-lg-3">Section Title</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" name="section_title" value="{{@$staticPage->section_title}}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-form-label col-lg-3">Section Text</label>
-                                <div class="col-lg-9">
-                                    <textarea rows="3" cols="3" class="form-control" placeholder="Default textarea" name="sender_address"></textarea>
+                                <div class="row mb-3">
+                                    <label class="col-form-label col-lg-3">Section Text</label>
+                                    <div class="col-lg-9">
+                                        <textarea rows="3" cols="3" class="form-control" placeholder="Default textarea" name="section_text">{{@$staticPage->section_text}}</textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3 pb-3">
-                                <label class="col-form-label col-lg-3">Button Text</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="sender_name">
+                                <div class="row mb-3 pb-3">
+                                    <label class="col-form-label col-lg-3">Button Text</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" name="button_text" value="{{@$staticPage->button_text}}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3 pb-3 border-bottom">
-                                <label class="col-form-label col-lg-3">Button Link</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="sender_name">
+                                <div class="row mb-3 pb-3 border-bottom">
+                                    <label class="col-form-label col-lg-3">Button Link</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" name="button_link" value="{{@$staticPage->button_link}}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-lg-6">
-                                    <p class="fw-semibold">Background Image (464 x 555)</p>
-                                    <input type="file" data-show-caption="true" data-show-upload="false" accept="image/*"
-                                        data-show-remove="false" id="file-input-company-logo" name="company_logo">
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <p class="fw-semibold">Background Image (464 x 555)</p>
+                                        <div class="parent-file">
+                                            <input type="file" class="file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                                data-show-remove="false" name="backround_image" data-default="{{@$staticPage->backround_image}}">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-end">
-                                <button type="submit" class="btn btn-primary btn-save">Simpan <i
-                                        class="ph-check-square-offset ms-2"></i></button>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary btn-save">Simpan <i
+                                            class="ph-check-square-offset ms-2"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <!-- /input fields -->
