@@ -11,8 +11,8 @@
                 <div class="my-auto ms-auto">
                 </div>
                 <div class="my-auto ms-auto">
-                    <button type="button" class="btn btn-primary btn-create"><i class="ph-plus-circle me-1"></i>
-                        tambah blog</button>
+                    <a href="{{ route('admin.blog.create') }}" class="btn btn-primary btn-create"><i class="ph-plus-circle me-1"></i>
+                        tambah blog</a>
                 </div>
             </div>
             <table class="table datatable-key-basic">
