@@ -43,15 +43,18 @@
                 </li>
 
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link {{ request()->routeIs('customer.*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('admin.cms.*') ? 'active' : '' }}">
                         <i class="ph-article-medium"></i>
                         <span>
-                            Pages
+                            Pages CMS
                         </span>
                     </a>
-                    <ul class="nav-group-sub collapse">
+                    <ul class="nav-group-sub collapse {{ request()->routeIs('admin.cms.*') ? 'show' : '' }}">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Home</a>
+                            <a href="{{ route('admin.cms.slider.index') }}" class="nav-link {{ request()->routeIs('admin.cms.slider.*') ? 'active' : '' }}">Home Slider</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.cms.home.index') }}" class="nav-link {{ request()->routeIs('admin.cms.home.*') ? 'active' : '' }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">About Us</a>
@@ -76,7 +79,7 @@
                             <a href="{{ route("admin.global.footer.index") }}" class="nav-link {{ request()->routeIs('admin.global.footer.*') ? 'active' : '' }}">Footer</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contact Widget</a>
+                            <a href="{{ route("admin.global.contact_widget.index") }}" class="nav-link {{ request()->routeIs('admin.global.contact_widget.*') ? 'active' : '' }}">Contact Widget</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route("admin.global.brand_logo.index") }}" class="nav-link {{ request()->routeIs('admin.global.brand_logo.*') ? 'active' : '' }}">Brand Logo</a>

@@ -65,6 +65,25 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\InboxController::class, 'delete'])->name('delete');
     });
 
+    Route::group(['as' => 'cms.', 'prefix' => '/cms'], function () {
+
+         // home slider
+         Route::group(['as' => 'slider.', 'prefix' => '/slider'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\SliderController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\SliderController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\SliderController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\SliderController::class, 'update'])->name('update');
+        });
+
+        // home page
+        Route::group(['as' => 'home.', 'prefix' => '/home'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\HomeController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\HomeController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\HomeController::class, 'update'])->name('update');
+        });
+    });
+
 
     Route::group(['as' => 'services.', 'prefix' => '/services'], function () {
 
@@ -95,12 +114,20 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
             Route::post('/update', [App\Http\Controllers\Admin\HeaderController::class, 'update'])->name('update');
         });
 
-        // learning
+        // Footer
         Route::group(['as' => 'footer.', 'prefix' => '/footer'], function () {
             Route::get('/', [App\Http\Controllers\Admin\FooterController::class, 'index'])->name('index');
             Route::post('/store', [App\Http\Controllers\Admin\FooterController::class, 'store'])->name('store');
             Route::get('/edit', [App\Http\Controllers\Admin\FooterController::class, 'edit'])->name('edit');
             Route::post('/update', [App\Http\Controllers\Admin\FooterController::class, 'update'])->name('update');
+        });
+
+        // Footer
+        Route::group(['as' => 'contact_widget.', 'prefix' => '/contact_widget'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\ContactWidgetController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\ContactWidgetController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\ContactWidgetController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\ContactWidgetController::class, 'update'])->name('update');
         });
 
         // Social Media Page

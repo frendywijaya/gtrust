@@ -28,11 +28,11 @@
                     <tr>
                         <td>1</td>
                         <td><a href="#">Tips Mencari Ilmu di Kuliah</a></td>
-                        <td>Keuangan</td>
+                        <td><img class="w-30" src="{{ asset('frontend/img/brand/brand_img01.png') }}" class="img-fluid card-img" alt=""></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
                                 <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit"
-                                    data-bs-original-title="Edit">
+                                    data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
                                     <i class="ph-pen"></i>
                                 </a>
                                 <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
@@ -48,11 +48,11 @@
                     <tr>
                         <td>2</td>
                         <td>Weible</td>
-                        <td><a href="#">Airline Transport Pilot</a></td>
+                        <td><img class="w-30" src="{{ asset('frontend/img/brand/brand_img02.png') }}" class="img-fluid card-img" alt=""></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
                                 <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit"
-                                    data-bs-original-title="Edit">
+                                    data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
                                     <i class="ph-pen"></i>
                                 </a>
                                 <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
@@ -65,11 +65,11 @@
                     <tr>
                         <td>3</td>
                         <td>Hard</td>
-                        <td>Business Services Sales Representative</td>
+                        <td><img class="w-30" src="{{ asset('frontend/img/brand/brand_img03.png') }}" class="img-fluid card-img" alt=""></td>
                         <td class="text-center">
                             <div class="d-inline-flex">
                                 <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit"
-                                    data-bs-original-title="Edit">
+                                    data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
                                     <i class="ph-pen"></i>
                                 </a>
                                 <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
@@ -86,6 +86,41 @@
 
     </div>
     <!-- /content area -->
+
+    <!-- modal edit link -->
+    <div id="modal_edit" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Link</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row mb-3 pb-3 border-bottom">
+                        <label class="col-form-label col-lg-3">Brand Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" name="sender_name">
+                        </div>
+                    </div>
+                    <div class="row mb-3 mt-2">
+                        <div class="col-lg-6">
+                            <p class="fw-semibold">Footer Logo</p>
+                            <input type="file" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                data-show-remove="false" id="file-input-company-logo" name="company_logo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary">Simpan <i
+                        class="ph-check-square-offset ms-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal edit link -->
 
     @include('admin.layout.modal_delete')
 @endsection

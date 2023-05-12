@@ -30,7 +30,7 @@
                     <tr>
                         <td>1</td>
                         <td><a href="#">Tips Mencari Ilmu di Kuliah</a></td>
-                        <td>Keuangan</td>
+                    <td>Keuangan</td>
                         <td>22 Jun 1972</td>
                         <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
                         <td class="text-center">
