@@ -25,12 +25,15 @@
     <script src="{{ asset('admin/js/vendor/visualization/d3/d3.min.js') }}"></script>
     <script src="{{ asset('admin/js/vendor/visualization/d3/d3_tooltip.js') }}"></script>
 
-
+    <script src="{{ asset('admin/js/vendor/editors/ckeditor/ckeditor_classic.js') }}"></script>
     <script src="{{ asset('admin/js/vendor/forms/inputs/imask.min.js') }}"></script>
     <script src="{{ asset('admin/js/vendor/forms/selects/select2.min.js') }}"></script>
     <script src="{{ asset('admin/js/vendor/uploaders/fileinput/fileinput.min.js') }}"></script>
 	<script src="{{ asset('admin/js/vendor/uploaders/fileinput/plugins/sortable.min.js') }}"></script>
 	<script src="{{ asset('admin/js/vendor/tables/datatables/datatables.min.js') }}"></script>
+	<script src="{{ asset('admin/js/vendor/ui/moment/moment.min.js') }}"></script>
+	<script src="{{ asset('admin/js/vendor/pickers/datepicker.min.js') }}"></script>
+	<script src="{{ asset('admin/js/vendor/pickers/daterangepicker.js') }}"></script>
 	<script src="{{ asset('admin/js/datatable_basic.js') }}"></script>
     <script src="{{ asset('admin/js/form_select2.js') }}"></script>
     <script src="{{ asset('admin/js/uploader_bootstrap.js') }}"></script>

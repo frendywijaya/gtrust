@@ -8,12 +8,6 @@
         <div class="card col-xl-12 col-md-12">
             <div class="card-header d-flex align-items-center py-0">
                 <h5 class="mb-0 py-3">Daftar Inbox</h5>
-                <div class="my-auto ms-auto">
-                </div>
-                {{-- <div class="my-auto ms-auto">
-                    <button type="button" class="btn btn-primary btn-create"><i class="ph-plus-circle me-1"></i>
-                        tambah blog</button>
-                </div> --}}
             </div>
             <table class="table datatable-key-basic">
                 <thead>
@@ -63,25 +57,6 @@
                                 </a>
                             </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Hard</td>
-                        <td>Kompas</td>
-                        <td>08199233232</td>
-                        <td>bambang@gmail.com</td>
-                        <td>20 April 2023</td>
-                        <td class="text-center">
-                            <div class="d-inline-flex">
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
-                                    <i class="ph-trash"></i>
-                                </a>
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="view" data-bs-toggle="modal" data-bs-target="#modal_view">
-                                    <i class="ph-eye"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -113,9 +88,12 @@
 		</div>
 	</div>
 	<!-- /inbox detail modal -->
+
+    @include('admin.layout.modal_delete')
+
 @endsection
 
-@include('admin.layout.modal_delete')
+
 
 @section('js')
     <script src="{{ asset('admin/demo/pages/datatables_extension_key_table.js') }}"></script>
