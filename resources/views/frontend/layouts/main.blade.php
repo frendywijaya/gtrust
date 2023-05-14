@@ -57,7 +57,7 @@
                     <div class="col-xl-8 col-lg-9">
                         <div class="header-top-left">
                             <ul class="list-wrap">
-                                <li>Welcome to Gtrust</li>
+                                <li>{{@$staticHeaderData->welcome_text}}</li>
                                 <li><i class="fas fa-phone-alt"></i><a href="tel:0123456789">(+62) 82336548</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:info@gtrust.id">info@gtrust.id</a>
                                 </li>

@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\StaticPage;
+use Illuminate\Http\Request;
+
+class BaseController extends Controller
+{
+    // make constructor
+    public function __construct()
+    {
+        // get data from static table header
+        $staticHeaderData = StaticPage::getData('header');
+        // get data from static table footer
+        $staticFooterData = StaticPage::getData('footer');
+
+        // share data to all views
+        view()->share([
+            'staticHeaderData' => $staticHeaderData,
+            'staticFooterData' => $staticFooterData,
+        ]);
+    }
+}

@@ -108,6 +108,73 @@
             fileUpload[i].files = dataTransfer.files;
         }
     </script>
+    
+    <!-- script for dymanic form -->
+    <script>
+        $(document).ready(function() {
+            // click funtion .btn-delete
+            $('.btn-delete').click(function() {
+                // get action url
+                var url = $(this).data('url');
+                // set action url
+                $('#modal_delete form').attr('action', url);
+            });
+            // click funtion .btn-create
+            $('.btn-create').click(function() {
+                // clear form input
+                $('#modal_form form')[0].reset();
+                // set title modal
+                $('#modal_form .modal-title').text('Tambah ' + $('#title-page').text());
+                // set url form
+                $('#modal_form form').attr('action', $(this).data('url'));
+                // set button submit
+                $('#modal_form form button[type=submit]').text('Buat ' + $('#title-page').text());
+                // set _method to POST
+                $('#modal_form form input[name=_method]').val('POST');
+            });
+            // click funtion .btn-edit
+            $('.btn-edit').click(function() {
+                // get data item
+                var item = $(this).data('item');
+                // get form input
+                var formitem = $('#modal_form form .form-dynamic');
+                // foreach
+                $.each(formitem, function(i, v) {
+                    // cek if input type file
+                    if ($(v).attr('type') == 'file') {
+                        const fileUpload = document.getElementsByClassName('file-upload');
+
+                        // get data default
+                        var filename = item[v.name]
+                        // Create a new File object
+                        const myFile = new File([filename], filename, {
+                            type: 'text/plain',
+                            lastModified: new Date(),
+                        });
+
+                        // // Now let's create a DataTransfer to get a FileList
+                        const dataTransfer = new DataTransfer();
+                        dataTransfer.items.add(myFile);
+                        fileUpload[0].files = dataTransfer.files;
+                    } else {
+                        // set value form input
+                        $(v).val(item[v.name]);
+                    }
+                });
+
+                // set url form
+                $('#modal_form form').attr('action', $(this).data('url'));
+                // set _method to PUT
+                $('#modal_form form input[name=_method]').val('PATCH');
+                // set title modal
+                $('#modal_form .modal-title').text('Edit ' + $('#title-page').text());
+                // set button submit
+                $('#modal_form form button[type=submit]').text('Simpan Perubahan');
+                // show modal
+                $('#modal_form').modal('show');
+            });
+        });
+    </script>
 
 </body>
 

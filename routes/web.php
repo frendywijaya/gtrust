@@ -109,8 +109,14 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::post('/{section}/store', [App\Http\Controllers\StaticPageController::class, 'save'])->name('save');
     });
 
-    Route::group(['as' => 'global.', 'prefix' => '/global'], function () {
+    // other services
+    Route::group(['as' => 'otherservice.', 'prefix' => '/otherservice'], function () {
+        Route::post('/store', [App\Http\Controllers\Admin\OtherServiceController::class, 'store'])->name('store');
+        Route::patch('/update/{id}', [App\Http\Controllers\Admin\OtherServiceController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [App\Http\Controllers\Admin\OtherServiceController::class, 'destroy'])->name('destroy');
+    });
 
+    Route::group(['as' => 'global.', 'prefix' => '/global'], function () {
         // Header
         Route::group(['as' => 'header.', 'prefix' => '/header'], function () {
             Route::get('/', [App\Http\Controllers\Admin\HeaderController::class, 'index'])->name('index');
@@ -151,8 +157,8 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
             Route::get('/create', [App\Http\Controllers\Admin\BrandLogoController::class, 'create'])->name('create');
             Route::post('/store', [App\Http\Controllers\Admin\BrandLogoController::class, 'store'])->name('store');
             Route::get('/edit/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'edit'])->name('edit');
-            Route::post('/update/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'update'])->name('update');
-            Route::get('/delete/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'delete'])->name('delete');
+            Route::patch('/update/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [App\Http\Controllers\Admin\BrandLogoController::class, 'destroy'])->name('destroy');
         });
     });
 });

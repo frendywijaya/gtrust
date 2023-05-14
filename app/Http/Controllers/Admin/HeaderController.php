@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\StaticPageController;
+use App\Models\OtherService;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,12 @@ class HeaderController extends Controller
         // get data from static_page table
         $staticHeaderData = StaticPage::getData('header');
 
+        // get other services data
+        $otherServices = OtherService::all();
+
         return view('admin.global.header', [
             'staticPage' => $staticHeaderData,
+            'otherServices' => $otherServices,
         ]);
     }
 

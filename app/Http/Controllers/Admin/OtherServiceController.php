@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\BrandLogo;
+use App\Models\OtherService;
 use Illuminate\Http\Request;
 
-class BrandLogoController extends Controller
+class OtherServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,7 @@ class BrandLogoController extends Controller
      */
     public function index()
     {
-        // get data from table brand_logos
-        $brandLogos = BrandLogo::all();
-
-        return view('admin.brand.brand' , [
-            'brandLogos' => $brandLogos,
-        ]);
+        //
     }
 
     /**
@@ -43,23 +38,10 @@ class BrandLogoController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
+            'link' => 'required',
         ]);
 
-        // insert image
-        $image = $request->file('image');
-
-        // create filename unique untuk image
-        $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-        
-        $image->move('uploads/brand-logo/', $image_name);
-
-        $brandLogo_data = [
-            'title' => $request->title,
-            'image' => $image_name,
-        ];
-
-        BrandLogo::create($brandLogo_data);
+        OtherService::create($request->all());
 
         return redirect()->back()->with('success', 'Data created successfully.');
     }
@@ -95,38 +77,14 @@ class BrandLogoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-
-        // update data
+        $otherService = OtherService::find($id);
+        //opsional untuk validasi input
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
+            'link' => 'required',
         ]);
 
-        // cek jika memilih gambar baru maka gambar lama akan dihapus
-        if ($request->image) {
-            $brandLogo = BrandLogo::find($id);
-            unlink(public_path('uploads/brand-logo/' . $brandLogo->image));
-        }
-
-        // insert new image jika ada
-        if ($request->image) {
-            $image = $request->file('image');
-
-            // create filename unique untuk image
-            $image_name = rand(3) . '-' . $image->getClientOriginalName();
-            $image->move('uploads/brand-logo/', $image_name);
-            $brandLogo_data = [
-                'title' => $request->title,
-                'image' => $image_name,
-            ];
-        } else {
-            $brandLogo_data = [
-                'title' => $request->title,
-            ];
-        }
-
-        BrandLogo::whereId($id)->update($brandLogo_data);
+        $otherService->update($request->all());
 
         return redirect()->back()->with('success', 'Data updated successfully.');
     }
@@ -139,12 +97,7 @@ class BrandLogoController extends Controller
      */
     public function destroy($id)
     {
-        // delete image jika ada
-        $brandLogo = BrandLogo::find($id);
-        unlink(public_path('uploads/brand-logo/' . $brandLogo->image));
-
-        BrandLogo::whereId($id)->delete();
-
+        OtherService::find($id)->delete();
         return redirect()->back()->with('success', 'Data deleted successfully.');
     }
 }
