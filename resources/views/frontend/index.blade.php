@@ -43,31 +43,13 @@
                     <div class="col-lg-7">
                         <h6 class="brand-title">Trusted by established brands</h6>
                         <div class="row brand-active-two">
+                            @foreach ($brandLogos as $item)
                             <div class="col-12">
                                 <div class="brand-item">
-                                    <img src="{{ asset('frontend/img/brand/h2_brand_img01.png') }}" alt="">
+                                    <img src="{{ asset('uploads/brand-logo/'.$item->image) }}" alt="{{$item->image}}">
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="brand-item">
-                                    <img src="{{ asset('frontend/img/brand/h2_brand_img02.png') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="brand-item">
-                                    <img src="{{ asset('frontend/img/brand/h2_brand_img03.png') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="brand-item">
-                                    <img src="{{ asset('frontend/img/brand/h2_brand_img02.png') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="brand-item">
-                                    <img src="{{ asset('frontend/img/brand/h2_brand_img03.png') }}" alt="">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

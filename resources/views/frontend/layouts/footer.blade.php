@@ -6,10 +6,10 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-7">
                         <div class="footer-widget">
-                            <h2 class="fw-title">About Us</h2>
+                            <h2 class="fw-title">{{@$staticFooterData->footer_title}}</h2>
                             <div class="footer-content">
-                                <p>There are many variations of passages of Lore Ipsum available, but the majori have alteration in some form, by injected humour, ondomised word which don't look</p><br>
-                                <p><b>Selalu ada Peluang untuk Berkembang</b></p>
+                                <p>{{@$staticFooterData->footer_text}}</p><br>
+                                <p><b>{{@$staticFooterData->footer_tagline}}</b></p>
                                 {{-- <div class="footer-newsletter">
                                     <h4 class="title">Subscribe to Our Newsletter</h4>
                                     <form action="#">
@@ -97,10 +97,21 @@
                             <div class="footer-social">
                                 <h2 class="title">Follow Us:</h2>
                                 <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    @if($staticSocialMediaData->facebook)
+                                    <li><a href="{{$staticSocialMediaData->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->instagram)
+                                    <li><a href="{{$staticSocialMediaData->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->linkedin)
+                                    <li><a href="{{$staticSocialMediaData->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->youtube)
+                                    <li><a href="{{$staticSocialMediaData->youtube}}"><i class="fab fa-youtube"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->tiktok)
+                                    <li><a href="{{$staticSocialMediaData->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

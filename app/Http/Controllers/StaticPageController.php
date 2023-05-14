@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
-class StaticPageController extends Controller
+class StaticPageController extends BaseController
 {
     /**
      * Save data to static_page table
