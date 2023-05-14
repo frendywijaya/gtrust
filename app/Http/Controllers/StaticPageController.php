@@ -35,14 +35,14 @@ class StaticPageController extends BaseController
                     // create name file with section name
                     $file_name = $section . '-' . $static_page[$key];
                     // cek if file is exist
-                    if (file_exists('uploads/images/staticpage/' . $file_name)) {
+                    if (file_exists('uploads/staticpage/' . $file_name)) {
                         // delete file
-                        unlink('uploads/images/staticpage/' . $file_name);
+                        unlink('uploads/staticpage/' . $file_name);
                     }
                 }
                 // upload file
                 $file = $request->file($key);
-                $file->move('uploads/images/staticpage', $section . '-' . $file->getClientOriginalName());
+                $file->move('uploads/staticpage', $section . '-' . $file->getClientOriginalName());
                 $data[$key] = $file->getClientOriginalName();
             }
         }

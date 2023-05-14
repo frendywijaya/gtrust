@@ -79,7 +79,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3 col-md-12">
                             <div class="logo">
-                                <a href="index.html"><img src="{{ asset('frontend/img/logo/w_logo.png') }}" alt=""></a>
+                                <a href="index.html"><img src="{{ asset('uploads/staticpage/footer-'.@$staticFooterData->footer_logo) }}" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">

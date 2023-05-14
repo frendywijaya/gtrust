@@ -99,7 +99,7 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="/"><img src="{{ asset('frontend/img/logo/logo_02.png') }}"
+                                    <a href="/"><img src="{{ asset('uploads/staticpage/header-'.@$staticHeaderData->company_logo) }}"
                                             alt="Logo"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="header-action d-none d-md-block">
                                     <ul class="list-wrap">
-                                        <li class="header-btn"><a href="/kontak" class="btn">Get a Quoute</a>
+                                        <li class="header-btn"><a href="{{@$staticHeaderData->button_link}}" class="btn">{{@$staticHeaderData->button_text}}</a>
                                         </li>
                                     </ul>
                                 </div>

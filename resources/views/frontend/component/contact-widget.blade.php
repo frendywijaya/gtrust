@@ -1,8 +1,8 @@
-<div class="services-widget widget-bg" data-background="{{ asset('frontend/img/services/sw_bg.jpg') }}">
+<div class="services-widget widget-bg" data-background="{{ asset('uploads/staticpage/contactwidget-'.@$staticContactData->backround_image) }}">
     <h4 class="widget-title">Need Help?</h4>
     <div class="sidebar-content">
-        <h4 class="title">Tell Us Your Problem To Us</h4>
-        <p>Sit amet consectetur adipiscing elseds do eius mod tempor incididunt</p>
-        <a href="contact.html" class="btn btn-two">Contact Us</a>
+        <h4 class="title">{{@$staticContactData->section_tilte}}</h4>
+        <p>{{@$staticContactData->section_text}}</p>
+        <a href="{{@$staticContactData->button_link}}" class="btn btn-two">{{@$staticContactData->button_text}}</a>
     </div>
 </div>

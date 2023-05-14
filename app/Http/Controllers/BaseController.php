@@ -16,12 +16,15 @@ class BaseController extends Controller
         $staticFooterData = StaticPage::getData('footer');
         // get data from static table social media
         $staticSocialMediaData = StaticPage::getData('socialmedia');
+        // get data from static table contact
+        $staticContactData = StaticPage::getData('contactwidget');
 
         // share data to all views
         view()->share([
             'staticHeaderData' => $staticHeaderData,
             'staticFooterData' => $staticFooterData,
             'staticSocialMediaData' => $staticSocialMediaData,
+            'staticContactData' => $staticContactData,
         ]);
     }
 }
