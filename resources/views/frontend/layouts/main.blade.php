@@ -80,10 +80,21 @@
                             </div> --}}
                             <div class="header-social">
                                 <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    @if($staticSocialMediaData->facebook)
+                                    <li><a href="{{$staticSocialMediaData->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->instagram)
+                                    <li><a href="{{$staticSocialMediaData->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->linkedin)
+                                    <li><a href="{{$staticSocialMediaData->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->youtube)
+                                    <li><a href="{{$staticSocialMediaData->youtube}}"><i class="fab fa-youtube"></i></a></li>
+                                    @endif
+                                    @if($staticSocialMediaData->tiktok)
+                                    <li><a href="{{$staticSocialMediaData->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
