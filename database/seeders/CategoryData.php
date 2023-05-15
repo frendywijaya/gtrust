@@ -4,16 +4,16 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CategoryData extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        // add category seed
-        $this->call(CategoryData::class);
+        // create 5 categories
+        \App\Models\Category::factory(5)->create();
     }
 }

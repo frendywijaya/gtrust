@@ -5,14 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BrandLogo extends Model
+class Blog extends Model
 {
     use HasFactory;
 
-    protected $table = 'brand_logos';
+    const PATH = 'uploads/blogs/';
 
+    protected $table = 'blogs';
     protected $fillable = [
         'title',
+        'slug',
+        'description',
         'image',
+        'writer',
+        'category_id',
+        'status',
+        'date'
     ];
 }
