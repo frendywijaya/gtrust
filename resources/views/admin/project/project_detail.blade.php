@@ -35,14 +35,17 @@
                                     <div class="row">
                                         <label class="col-form-label col-lg-3">Category:</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control" placeholder="">
+                                            <select class="form-select" placeholder="">
+                                                <option value="Learning">Learning</option>
+                                                <option value="Facilitation">Facilitation</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3 pb-3 border-bottom">
-                            <label class="form-label">Blog Cover Image:</label>
+                            <label class="form-label">Slideshow Images:</label>
                             <input type="file" class="form-control">
                             <div class="form-text text-muted">Accepted formats: png, jpg. Max file size 2Mb</div>
                         </div>
