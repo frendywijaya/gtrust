@@ -5,7 +5,7 @@
     <div class="content">
         <div class="row">
             <!-- Input fields -->
-            <div class="col-lg-12">````````````````````````````````````````````````````````````````````````````````````````
+            <div class="col-lg-12">
                 <div class="card accordion" id="accordion-collapse">
                     <div class="accordion-item">
                         <div class="card-header accordion-header">

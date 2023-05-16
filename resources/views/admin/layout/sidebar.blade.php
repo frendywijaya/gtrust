@@ -112,7 +112,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route("admin.project.index") }}" class="nav-link {{ request()->routeIs('admin.learning.*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.project.index") }}" class="nav-link {{ request()->routeIs('admin.project.*') ? 'active' : '' }}">
                         <i class="ph-flag-banner"></i>
                         <span>
                             Projects
