@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -16,7 +17,12 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin.blog.blog_list');
+        // get blog list
+        $blogs = Blog::all();
+
+        return view('admin.blog.blog_list', [
+            'blogs' => $blogs
+        ]);
     }
 
     /**
@@ -26,7 +32,16 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.blog_detail');
+        // get category list
+        $categories = Category::all();
+        // create action
+        $action = route('admin.blog.store');
+
+        return view('admin.blog.blog_detail', [
+            'categories' => $categories,
+            'action' => $action,
+            'isedit' => false
+        ]);
     }
 
     /**
@@ -37,16 +52,13 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         $request->validate([
             'title' => 'required',
-            'slug' => 'required',
             'description' => 'required',
             'image' => 'required',
             'writer' => 'required',
             'category_id' => 'required',
-            'status' => 'required',
+            // required date format
             'date' => 'required',
         ]);
 
@@ -68,8 +80,13 @@ class BlogController extends Controller
 
         $blog->writer = $request->writer;
         $blog->category_id = $request->category_id;
-        $blog->status = $request->status;
-        $blog->date = $request->date;
+        // jika status tidak di check maka status = 0
+        if (!$request->status) {
+            $blog->status = 0;
+        } else {
+            $blog->status = 1;
+        }
+        $blog->date = date('Y-m-d', strtotime($request->date));
         $blog->save();
 
         // redirect to blog list
@@ -97,8 +114,18 @@ class BlogController extends Controller
     {
         // get blog by id
         $blog = Blog::find($id);
+        // get category list
+        $categories = Category::all();
+        // update action
+        $action = route('admin.blog.update', $id);
 
-        return view('admin.blog.blog_detail', compact('blog'));
+        return view('admin.blog.blog_detail', [
+            'blog' => $blog,
+            'categories' => $categories,
+            'action' => $action,
+            'isedit' => true,
+            'path' => Blog::PATH
+        ]);
     }
 
     /**
@@ -112,40 +139,42 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => 'required',
             'description' => 'required',
-            'image' => 'required',
             'writer' => 'required',
             'category_id' => 'required',
-            'status' => 'required',
             'date' => 'required',
         ]);
 
         // update blog
-
         $blog = Blog::find($id);
         $blog->title = $request->title;
         // create slug from title
         $blog->slug = Str::slug($request->title);
         $blog->description = $request->description;
-
         // cek memilik image
         if($request->hasFile('image')){
-            // cek apakah image lama ada
-            if($blog->image){
-                unlink(public_path(Blog::PATH.$blog->image));
+            if ($request->image == $blog->image) {
+                // cek apakah image lama ada
+                if($blog->image){
+                    unlink(public_path(Blog::PATH.$blog->image));
+                }
+                $image = $request->file('image');
+                $image_name = time().".".$image->getClientOriginalExtension();
+                $destination = Blog::PATH;
+                $image->move($destination, $image_name);
+                $blog->image = $image_name;
             }
-            $image = $request->file('image');
-            $image_name = time().".".$image->getClientOriginalExtension();
-            $destination = Blog::PATH;
-            $image->move($destination, $image_name);
-            $blog->image = $image_name;
         }
 
         $blog->writer = $request->writer;
         $blog->category_id = $request->category_id;
-        $blog->status = $request->status;
-        $blog->date = $request->date;
+        // jika status tidak di check maka status = 0
+        if (!$request->status) {
+            $blog->status = 0;
+        } else {
+            $blog->status = 1;
+        }
+        $blog->date = date('Y-m-d', strtotime($request->date));
         $blog->save();
 
         // redirect to blog list
@@ -164,7 +193,8 @@ class BlogController extends Controller
         $blog = Blog::find($id);
 
         // delete image jika ada
-        unlink(public_path(Blog::PATH . $blog->image));
+        if (file_exists(public_path(Blog::PATH . $blog->image)))
+            unlink(public_path(Blog::PATH . $blog->image));
 
         $blog->delete();
 
@@ -172,10 +202,5 @@ class BlogController extends Controller
 
         return redirect()->route('admin.blog.index')->with('success', 'Blog deleted successfully.');
 
-    }
-
-    public function category()
-    {
-        return view('admin.blog.blog_category');
     }
 }

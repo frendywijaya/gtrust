@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends BaseController
@@ -9,7 +11,16 @@ class BlogController extends BaseController
     //
     public function index()
     {
-        return view('frontend.blog');
+        // get blog list
+        $blogs = Blog::all();
+        // get category list
+        $categories = Category::all();
+
+        return view('frontend.blog' , [
+            'blogs' => $blogs,
+            'path' => Blog::PATH,
+            'categories' => $categories
+        ]);
     }
 
     public function detail()

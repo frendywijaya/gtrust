@@ -22,4 +22,10 @@ class Blog extends Model
         'status',
         'date'
     ];
+
+    // relation with category
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

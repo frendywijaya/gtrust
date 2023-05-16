@@ -35,6 +35,15 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
     // dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+
+    // category
+    Route::group(['as' => 'category.', 'prefix' => '/category'], function(){
+        Route::get('/', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('index');
+        Route::post('/store', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('store');
+        Route::patch('/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('destroy');
+    });
+
     // blog
     Route::group(['as' => 'blog.', 'prefix' => '/blog'], function () {
         Route::get('/', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('index');
@@ -42,9 +51,7 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::post('/store', [App\Http\Controllers\Admin\BlogController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [App\Http\Controllers\Admin\BlogController::class, 'update'])->name('update');
-        Route::get('/delete/{id}', [App\Http\Controllers\Admin\BlogController::class, 'delete'])->name('delete');
-
-        Route::get('/category', [App\Http\Controllers\Admin\BlogController::class, 'category'])->name('category');
+        Route::delete('/delete/{id}', [App\Http\Controllers\Admin\BlogController::class, 'destroy'])->name('destroy');
     });
 
     // project

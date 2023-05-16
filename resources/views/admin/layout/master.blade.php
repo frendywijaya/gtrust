@@ -141,6 +141,7 @@
                 var item = $(this).data('item');
                 // get form input
                 var formitem = $('#modal_form form .form-dynamic');
+
                 // foreach
                 $.each(formitem, function(i, v) {
                     // cek if input type file

@@ -27,18 +27,27 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($blogs as $blog)
                     <tr>
-                        <td>1</td>
-                        <td><a href="#">Tips Mencari Ilmu di Kuliah</a></td>
-                    <td>Keuangan</td>
-                        <td>22 Jun 1972</td>
-                        <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
+                        <td>{{$no++}}</td>
+                        <td><a href="#">{{$blog->title}}</a></td>
+                        <td>{{$blog->category->title}}</td>
+                        <td>{{date('d M Y', strtotime($blog->date))}}</td>
+                        @if ($blog->status == 1)
+                            <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
+                        @else 
+                            <td><span class="badge bg-danger bg-opacity-10 text-danger">Inactive</span></td>
+                        @endif
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit" data-bs-original-title="Edit">
+                                <a href="{{route('admin.blog.edit', $blog->id)}}" class="text-body" data-bs-popup="tooltip" aria-label="Edit" data-bs-original-title="Edit">
                                     <i class="ph-pen"></i>
                                 </a>
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                <a href="#" class="text-body mx-2 btn-delete" btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete" 
+                                    data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-url="{{route('admin.blog.destroy' , $blog->id)}}">
                                     <i class="ph-trash"></i>
                                 </a>
                                 <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Options">
@@ -47,6 +56,7 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -54,6 +64,8 @@
 
     </div>
     <!-- /content area -->
+
+    @include('admin.layout.modal_delete')
 @endsection
 
 @section('js')

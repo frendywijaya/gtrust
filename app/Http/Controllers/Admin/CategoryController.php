@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        // get data from table categories
+        $categories = Category::all();
+
+        return view('admin.blog.blog_category', [
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -36,6 +42,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        // create category
+        $category = new Category();
+        $category->title = $request->title;
+        $category->save();
+
+        return redirect()->back()->with('success', 'Category has been added successfully!');
     }
 
     /**
@@ -69,7 +85,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // update category
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        // update category
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->save();
+
+        return redirect()->back()->with('success', 'Category has been updated successfully!');
     }
 
     /**
@@ -80,6 +106,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // hapus category
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect()->back()->with('success', 'Category has been deleted successfully!');
     }
 }
