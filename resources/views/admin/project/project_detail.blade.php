@@ -46,7 +46,7 @@
                         </div>
                         <div class="mb-3 pb-3 border-bottom">
                             <label class="form-label">Slideshow Images:</label>
-                            <input type="file" class="form-control">
+							<form action="#" class="dropzone" id="dropzone_multiple"></form>
                             <div class="form-text text-muted">Accepted formats: png, jpg. Max file size 2Mb</div>
                         </div>
                         <div class="mb-3">
@@ -124,4 +124,6 @@
     <script src="{{ asset('admin/demo/pages/editor_ckeditor_classic.js') }}"></script>
     <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
     <script src="{{ asset('admin/demo/pages/picker_date.js') }}"></script>
+    <script src="{{ asset('admin/js/vendor/uploaders/dropzone.min.js') }}"></script>
+	<script src="{{ asset('admin/demo/pages/uploader_dropzone.js') }}"></script>
 @endsection
