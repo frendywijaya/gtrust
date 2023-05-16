@@ -126,13 +126,23 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route("admin.blog.index") }}" class="nav-link {{ request()->routeIs('admin.blog.*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.blog.category") }}" class="nav-link {{ request()->routeIs('admin.blog.category') ? 'active' : '' }}">
+                        <i class="ph-newspaper-clipping"></i>
+                        <span>
+                            Blog Category
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route("admin.blog.index") }}" class="nav-link {{ request()->routeIs('admin.blog.index') ? 'active' : '' }}">
                         <i class="ph-newspaper-clipping"></i>
                         <span>
                             Blog Data
                         </span>
                     </a>
                 </li>
+
 
 
                 <li class="nav-item-header">

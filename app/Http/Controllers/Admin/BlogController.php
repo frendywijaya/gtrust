@@ -37,7 +37,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        //
 
         $request->validate([
             'title' => 'required',
@@ -49,8 +49,8 @@ class BlogController extends Controller
             'status' => 'required',
             'date' => 'required',
         ]);
-        
-        // create blog 
+
+        // create blog
         $blog = new Blog();
         $blog->title = $request->title;
         // create slug from title
@@ -129,7 +129,7 @@ class BlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->description = $request->description;
 
-        // cek memilik image 
+        // cek memilik image
         if($request->hasFile('image')){
             // cek apakah image lama ada
             if($blog->image){
@@ -171,6 +171,11 @@ class BlogController extends Controller
         // redirect to blog list
 
         return redirect()->route('admin.blog.index')->with('success', 'Blog deleted successfully.');
-        
+
+    }
+
+    public function category()
+    {
+        return view('admin.blog.blog_category');
     }
 }

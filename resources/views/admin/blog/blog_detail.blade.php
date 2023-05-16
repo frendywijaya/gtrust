@@ -53,7 +53,7 @@
 
                 <form action="#">
                     <div class="mb-3">
-                        <textarea class="form-control" id="ckeditor_classic_empty" placeholder="Enter your text..." rows="50"></textarea>
+                        <textarea class="form-control" id="ckeditor_classic_empty" placeholder="Enter your text..."></textarea>
                     </div>
 
                     <div class="text-end">

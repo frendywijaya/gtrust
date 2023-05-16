@@ -44,7 +44,7 @@
                                 <li class="list-inline-item"><a href="#" data-bs-toggle="modal"
                                     data-bs-target="#modal_edit">Edit</a></li>
                                 <li class="list-inline-item"><a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#modal_delete">Delete</a></li>
+                                        data-bs-target="#modal_delete">Hapus</a></li>
                             </ul>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                 <div class="modal-body">
                     <div class="row mb-3 mt-2 pb-3 border-bottom">
                         <div class="col-lg-6">
-                            <p class="fw-semibold">Footer Logo</p>
+                            <p class="fw-semibold">Slider Image</p>
                             <input type="file" data-show-caption="true" data-show-upload="false" accept="image/*"
                                 data-show-remove="false" id="file-input-company-logo" name="company_logo">
                         </div>
@@ -85,10 +85,22 @@
                             <input type="text" class="form-control" name="sender_name">
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row mb-3 pb-3 border-bottom">
                         <label class="col-form-label col-lg-3">Content</label>
                         <div class="col-lg-9">
                             <textarea class="form-control" name="sender_name"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-form-label col-lg-3">Button Text</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" name="sender_name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-form-label col-lg-3">Button Link</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" name="sender_name">
                         </div>
                     </div>
 
@@ -103,9 +115,12 @@
         </div>
     </div>
     <!-- /modal edit link -->
+
+    @include('admin.layout.modal_delete')
+
 @endsection
 
-@include('admin.layout.modal_delete')
+
 
 
 @section('js')
