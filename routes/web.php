@@ -84,6 +84,30 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
             Route::get('/edit', [App\Http\Controllers\Admin\HomeController::class, 'edit'])->name('edit');
             Route::post('/update', [App\Http\Controllers\Admin\HomeController::class, 'update'])->name('update');
         });
+
+        // about page
+        Route::group(['as' => 'about.', 'prefix' => '/about'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\AboutController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\AboutController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\AboutController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('update');
+        });
+
+        // about page
+        Route::group(['as' => 'team.', 'prefix' => '/team'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\TeamController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\TeamController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\TeamController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\TeamController::class, 'update'])->name('update');
+        });
+
+        // about page
+        Route::group(['as' => 'testimoni.', 'prefix' => '/testimoni'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\TestimoniController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\TestimoniController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\TestimoniController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\TestimoniController::class, 'update'])->name('update');
+        });
     });
 
 

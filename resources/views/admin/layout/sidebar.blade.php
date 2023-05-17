@@ -57,7 +57,13 @@
                             <a href="{{ route('admin.cms.home.index') }}" class="nav-link {{ request()->routeIs('admin.cms.home.*') ? 'active' : '' }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">About Us</a>
+                            <a href="{{ route('admin.cms.about.index') }}" class="nav-link {{ request()->routeIs('admin.cms.about.*') ? 'active' : '' }}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.cms.team.index') }}" class="nav-link {{ request()->routeIs('admin.cms.team.*') ? 'active' : '' }}">Our Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.cms.testimoni.index') }}" class="nav-link {{ request()->routeIs('admin.cms.testimoni.*') ? 'active' : '' }}">Testimoni</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Contact Us</a>
