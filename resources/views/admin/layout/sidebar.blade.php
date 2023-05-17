@@ -127,7 +127,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route("admin.blog.category") }}" class="nav-link {{ request()->routeIs('admin.blog.category') ? 'active' : '' }}">
-                        <i class="ph-newspaper-clipping"></i>
+                        <i class="ph-list-bullets"></i>
                         <span>
                             Blog Category
                         </span>
