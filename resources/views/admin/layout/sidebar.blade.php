@@ -100,14 +100,14 @@
                     <i class="ph-dots-three sidebar-resize-show"></i>
                 </li>
 
-                <li class="nav-item nav-item-submenu">
+                <li class="nav-item nav-item-submenu {{ request()->routeIs('admin.services.*') ? 'nav-item-expanded' : '' }} {{ request()->routeIs('admin.services.*') ? 'nav-item-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
                         <i class="ph-handshake"></i>
                         <span>
                             Main Services
                         </span>
                     </a>
-                    <ul class="nav-group-sub collapse">
+                    <ul class="nav-group-sub collapse {{ request()->routeIs('admin.services.*') ? 'show' : '' }}">
                         <li class="nav-item">
                             <a href="{{ route("admin.services.facilitation.index") }}" class="nav-link {{ request()->routeIs('admin.services.facilitation.*') ? 'active' : '' }}">Facilitation</a>
                         </li>
