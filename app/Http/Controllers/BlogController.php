@@ -23,8 +23,21 @@ class BlogController extends BaseController
         ]);
     }
 
-    public function detail()
+    public function detail($slug)
     {
-        return view('frontend.blog-detail');
+        // get blog by slug
+        $blog = Blog::where('slug', $slug)->first();
+        // get category list
+        $categories = Category::all();
+
+        // get recent blog by category
+        $recentBlogs = Blog::where('category_id', $blog->category_id)->where('id', '!=', $blog->id)->get();
+
+        return view('frontend.blog-detail', [
+            'blog' => $blog,
+            'path' => Blog::PATH,
+            'categories' => $categories,
+            'recentBlogs' => $recentBlogs
+        ]);
     }
 }

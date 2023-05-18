@@ -11,7 +11,7 @@
                         <h2 class="title">Blog Details</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('blog')}}">Blog</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
                             </ol>
                         </nav>
@@ -29,49 +29,19 @@
                 <div class="col-xl-8">
                     <div class="blog-details-wrap">
                         <div class="blog-details-thumb">
-                            <img src="{{ asset('frontend/img/blog/blog_details01.jpg') }}" alt="">
+                            <img src="{{ asset($path.$blog->image) }}" alt="image" width="891" height="480">
                         </div>
                         <div class="blog-details-content">
                             <div class="blog-meta">
                                 <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By Admin</li>
-                                    <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
-                                    <li><i class="far fa-comments"></i>05</li>
-                                    <li><i class="far fa-eye"></i>1,526 VIEWS</li>
+                                    <li><i class="far fa-user"></i> By {{$blog->writer}}</li>
+                                    <li><i class="fas fa-calendar-alt"></i>{{date('d M Y', strtotime($blog->date))}}</li>
                                 </ul>
                             </div>
-                            <h2 class="title">Building worker help each other with at construction site</h2>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a
-                                page when looking at it as layout. The point of using Lorem Ipsum is that it has a more
-                                normal distribution.Collaboratively pontificat bleed aedge resources with inexpensive
-                                methodologies globally initiate multidisciplinary compatible architectures as our
-                                aspiteously repurpose leading edge growth strategies</p>
+                            <h2 class="title">{{$blog->title}}</h2>
 
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a
-                                page when looking at it as layout. The point of using Lorem Ipsum is that it has a more
-                                normal distribution.</p>
+                            {!! $blog->description !!}
 
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in a our some form, by injected humour, or randomised words which don't
-                                look even slightly believable. If you are going our as to use a passage of Lorem Ipsum, you
-                                need to be sure there isn't anything embarrassing hidden in the middle the of text. All the
-                                Lorem Ipsum generators on the Internet tend.</p>
-
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in a our some form, by injected humour, or randomised words which don't
-                                look even slightly believable. If you are going our as to use a passage of Lorem Ipsum, you
-                                need to be sure there isn't anything embarrassing hidden in the middle the of text. All the
-                                Lorem Ipsum generators on the Internet tend.</p>
-
-                            <div class="blog-details-thumb">
-                                <img src="{{ asset('frontend/img/blog/blog_details01.jpg') }}" alt="">
-                            </div>
-
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in a our some form, by injected humour, or randomised words which don't
-                                look even slightly believable. If you are going our as to use a passage of Lorem Ipsum, you
-                                need to be sure there isn't anything embarrassing hidden in the middle the of text. All the
-                                Lorem Ipsum generators on the Internet tend.</p>
                             <div class="blog-details-bottom">
                                 <div class="row align-items-center">
                                     <div class="col-lg-4">
@@ -104,42 +74,19 @@
                         <div class="blog-widget">
                             <h4 class="widget-title">Recent Articles</h4>
                             <div class="rc-post-wrap">
+                                @foreach ($recentBlogs as $recentBlog)
                                 <div class="rc-post-item">
                                     <div class="rc-post-thumb">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('frontend/img/blog/rc_post01.jpg') }}" alt=""></a>
+                                        <a href="{{route('blog.detail', $recentBlog->slug)}}"><img
+                                                src="{{ asset($path.$recentBlog->image) }}" alt="image" width="92" height="92"></a>
                                     </div>
                                     <div class="rc-post-content">
-                                        <h5 class="title"><a href="blog-details.html">Aerial view of a private house with
-                                                on roof</a>
+                                        <h5 class="title"><a href="blog-details.html">{{$recentBlog->title}}</a>
                                         </h5>
-                                        <span><i class="fas fa-calendar-alt"></i>22 Jan 2023</span>
+                                        <span><i class="fas fa-calendar-alt"></i>{{date('d M Y', strtotime($recentBlog->date))}}</span>
                                     </div>
                                 </div>
-                                <div class="rc-post-item">
-                                    <div class="rc-post-thumb">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('frontend/img/blog/rc_post02.jpg') }}" alt=""></a>
-                                    </div>
-                                    <div class="rc-post-content">
-                                        <h5 class="title"><a href="blog-details.html">Medium shot men working on roof
-                                                presentation</a>
-                                        </h5>
-                                        <span><i class="fas fa-calendar-alt"></i>22 Jan 2023</span>
-                                    </div>
-                                </div>
-                                <div class="rc-post-item">
-                                    <div class="rc-post-thumb">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('frontend/img/blog/rc_post03.jpg') }}" alt=""></a>
-                                    </div>
-                                    <div class="rc-post-content">
-                                        <h5 class="title"><a href="blog-details.html">Free photo cute family a roof above
-                                                their head</a>
-                                        </h5>
-                                        <span><i class="fas fa-calendar-alt"></i>22 Jan 2023</span>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="blog-widget">

@@ -32,19 +32,19 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="blog-post-item">
                                 <div class="blog-post-thumb">
-                                    <a href="/blog-detail"><img src="{{ asset($path.$blog->image) }}" style="center" width="464" height="435" alt="image"></a>
+                                    <a href="{{route('blog.detail',$blog->slug)}}"><img src="{{ asset($path.$blog->image) }}" style="center" width="464" height="435" alt="image"></a>
                                 </div>
                                 <div class="blog-post-content">
                                     <a href="#" class="tag">{{$blog->category->title}}</a>
                                     <div class="blog-meta">
                                         <ul class="list-wrap">
-                                            <li><i class="far fa-user"></i> By <a href="/blog-detail">{{$blog->writer}}</a></li>
+                                            <li><i class="far fa-user"></i> By <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->writer}}</a></li>
                                             <li><i class="fas fa-calendar-alt"></i>{{date('d M Y', strtotime($blog->date))}}</li>
                                         </ul>
                                     </div>
-                                    <h2 class="title"><a href="/blog-detail">{{$blog->title}}</a>
+                                    <h2 class="title"><a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a>
                                     </h2>
-                                    <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="{{route('blog.detail',$blog->slug)}}" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
