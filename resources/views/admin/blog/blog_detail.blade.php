@@ -87,19 +87,4 @@
     <script src="{{ asset('admin/demo/pages/editor_ckeditor_classic.js') }}"></script>
     <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
     <script src="{{ asset('admin/demo/pages/picker_date.js') }}"></script>
-    <script>
-        const fileUpload = document.getElementsByClassName('file-upload');
-        // get data default
-        var filename = fileUpload[0].getAttribute('data-default');
-        // Create a new File object
-        const myFile = new File([filename], filename, {
-            type: 'image/*',
-            lastModified: new Date(),
-        });
-
-        // // Now let's create a DataTransfer to get a FileList
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(myFile);
-        fileUpload[0].files = dataTransfer.files;
-    </script>
 @endsection

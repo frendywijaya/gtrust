@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.cms.home');
+        // get data from static_page table
+        $staticHomeStatic = StaticPage::getData('homestatic');
+
+        return view('admin.cms.home', [
+            'staticPage' => $staticHomeStatic,
+        ]);
     }
 
     /**

@@ -32,8 +32,12 @@ class StaticPageController extends BaseController
             if ($request->hasFile($key)) {
                 // cek if file is exist on database
                 if (array_key_exists($key, $static_page)) {
+                     // cek if file same with file on database
+                    if (!empty($static_page[$key]))
+                        if ($request->file($key)->getClientOriginalName() == $static_page[$key]) {
+                        }
                     // create name file with section name
-                    $file_name = $section . '-' . $static_page[$key];
+                    $file_name = $static_page[$key];
                     // cek if file is exist
                     if (file_exists('uploads/staticpage/' . $file_name)) {
                         // delete file
@@ -42,10 +46,13 @@ class StaticPageController extends BaseController
                 }
                 // upload file
                 $file = $request->file($key);
-                $file->move('uploads/staticpage', $section . '-' . $file->getClientOriginalName());
-                $data[$key] = $file->getClientOriginalName();
+                $file->move('uploads/staticpage', time().'-'.$file->getClientOriginalName());
+                $data[$key] = time().'-'.$file->getClientOriginalName();
             }
         }
+
+        // merge data
+        $data = array_merge($static_page, $data);
 
         // parse data to json
         $data = json_encode($data);

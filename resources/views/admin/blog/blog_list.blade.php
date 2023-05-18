@@ -50,7 +50,7 @@
                                     data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-url="{{route('admin.blog.destroy' , $blog->id)}}">
                                     <i class="ph-trash"></i>
                                 </a>
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Options">
+                                <a href="{{route('blog.detail', $blog->slug)}}" target="__blank" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Options">
                                     <i class="ph-eye"></i>
                                 </a>
                             </div>

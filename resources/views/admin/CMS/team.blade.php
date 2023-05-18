@@ -7,15 +7,16 @@
         <!-- Basic initialization -->
         <div class="card col-xl-10 col-md-12">
             <div class="card-header d-flex align-items-center py-0">
-                <h5 class="mb-0 py-3">Team List</h5>
+                <h5 class="mb-0 py-3" id="title-page">Team List</h5>
                 <div class="my-auto ms-auto">
                 </div>
                 <div class="my-auto ms-auto">
-                    <a href="#" class="btn btn-primary btn-create" data-bs-toggle="modal" data-bs-target="#modal_form"><i class="ph-plus-circle me-1"></i>
+                    <a href="#" class="btn btn-primary btn-create" data-url="{{route('admin.cms.team.store') }}"  
+                    data-bs-toggle="modal" data-bs-target="#modal_form"><i class="ph-plus-circle me-1"></i>
                         tambah tim</a>
                 </div>
             </div>
-            <table class="table datatable-key-basic">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -26,22 +27,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach($teams as $team)
                     <tr>
-                        <td>1</td>
-                        <td>Star Hasugian</td>
-                    <td>Founder</td>
-                        <td>Lorem Ipsum Dolor Sit Amet</td>
+                        <td>{{$no++}}</td>
+                        <td>{{$team->name}}</td>
+                        <td>{{$team->position}}</td>
+                        <td>{{$team->description}}</td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Edit" data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_form">
+                                <a href="#" class="text-body btn-edit" data-bs-popup="tooltip" aria-label="Edit"
+                                    data-bs-original-title="Edit" data-url="{{route('admin.cms.team.update' , $team->id)}}" data-bs-toggle="modal" data-bs-target="#modal_form" data-item="{{json_encode($team)}}">
                                     <i class="ph-pen"></i>
                                 </a>
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
+                                <a class="text-body mx-2 btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete"
+                                    href="#" data-url="{{route('admin.cms.team.destroy' , $team->id)}}">
                                     <i class="ph-trash"></i>
                                 </a>
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -66,25 +74,26 @@
                         <div class="row mb-3 mt-2 justify-content-center pb-3 border-bottom">
                             <div class="col-lg-6 justify-content-center">
                                 <p class="fw-semibold">Team Photo</p>
-                                <input type="file" class="file-input">
+                                <input type="file" class="file-input file-upload form-dynamic" data-path="{{asset($path)}}" name="image" 
+                                accept="image/*" data-default="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-form-label col-lg-3">Nama Lengkap</label>
                             <div class="col-lg-9">
-                                <input type="text" class="form-control form-dynamic" name="title">
+                                <input type="text" class="form-control form-dynamic" name="name">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-form-label col-lg-3">Jabatan</label>
                             <div class="col-lg-9">
-                                <input type="text" class="form-control form-dynamic" name="title">
+                                <input type="text" class="form-control form-dynamic" name="position">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-form-label col-lg-3">Deskripsi</label>
                             <div class="col-lg-9">
-                                <textarea class="form-control form-dynamic" id="ckeditor_classic_empty" name="title"></textarea>
+                                <textarea class="form-control form-dynamic" id="ckeditor_classic_empty" name="description"></textarea>
                             </div>
                         </div>
 

@@ -11,7 +11,8 @@
                 <div class="my-auto ms-auto">
                 </div>
                 <div class="my-auto ms-auto">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal_form" data-url="{{route('admin.global.brand_logo.store') }}" class="btn btn-primary btn-create"><i class="ph-plus-circle me-1"></i>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal_form" data-url="{{route('admin.global.brand_logo.store') }}" 
+                    class="btn btn-primary btn-create"><i class="ph-plus-circle me-1"></i>
                         tambah logo</button>
                 </div>
             </div>

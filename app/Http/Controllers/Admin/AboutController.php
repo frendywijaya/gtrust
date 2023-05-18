@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -14,7 +15,12 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('admin.cms.about');
+        // get data from static_page table
+        $staticAbout = StaticPage::getData('aboutstatic');
+
+        return view('admin.cms.about', [
+            'staticPage' => $staticAbout,
+        ]);
     }
 
     /**

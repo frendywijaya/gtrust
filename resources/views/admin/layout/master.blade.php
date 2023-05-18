@@ -95,26 +95,72 @@
     <script>
         // get all elements with class "file-upload"
         const fileUpload = document.getElementsByClassName('file-upload');
-        
         // for each element
         for (let i = 0; i < fileUpload.length; i++) {
             var filename = fileUpload[i].getAttribute('data-default');
-            // Create a new File object
-            const myFile = new File([filename], filename, {
-                type: 'text/plain',
-                lastModified: new Date(),
-            });
-        
-            // // Now let's create a DataTransfer to get a FileList
-            const dataTransfer = new DataTransfer();
-            dataTransfer.items.add(myFile);
-            fileUpload[i].files = dataTransfer.files;
+            if (filename) { 
+                if ($(fileUpload[i]).hasClass('file-input')) {
+                     // file input update on fileinput bootstrap
+                    var initialPreviewConfig =  [
+                        {caption: filename , showDrag: false, showZoom: true, showRemove: false},
+                    ];
+                    var url = "{{ asset('uploads/staticpage') }}/" + filename;
+                    fileUpload[i].setAttribute('data-initial-preview', url);
+                    fileUpload[i].setAttribute('data-initial-caption', filename);
+                    fileUpload[i].setAttribute('data-initial-preview-as-data', true);
+                    fileUpload[i].setAttribute('data-initial-preview-file-type', 'image');
+                    fileUpload[i].setAttribute('data-initial-preview-config', JSON.stringify(initialPreviewConfig));
+                } else {
+                    // Create a new File object
+                    const myFile = new File([filename], filename, {
+                        type: 'text/plain',
+                        lastModified: new Date(),
+                    });
+                
+                    // // Now let's create a DataTransfer to get a FileList
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(myFile);
+                    fileUpload[i].files = dataTransfer.files;
+                }
+            }
         }
-    </script>
     
-    <!-- script for dymanic form -->
-    <script>
+    // <!-- script for dymanic form -->
         $(document).ready(function() {
+            // Buttons inside zoom modal
+            const previewZoomButtonClasses = {
+                rotate: 'btn btn-light btn-icon btn-sm',
+                toggleheader: 'btn btn-light btn-icon btn-header-toggle btn-sm',
+                fullscreen: 'btn btn-light btn-icon btn-sm',
+                borderless: 'btn btn-light btn-icon btn-sm',
+                close: 'btn btn-light btn-icon btn-sm'
+            };
+
+            // Icons inside zoom modal classes
+            const previewZoomButtonIcons = {
+                prev: document.dir == 'rtl' ? '<i class="ph-arrow-right"></i>' : '<i class="ph-arrow-left"></i>',
+                next: document.dir == 'rtl' ? '<i class="ph-arrow-left"></i>' : '<i class="ph-arrow-right"></i>',
+                rotate: '<i class="ph-arrow-clockwise"></i>',
+                toggleheader: '<i class="ph-arrows-down-up"></i>',
+                fullscreen: '<i class="ph-corners-out"></i>',
+                borderless: '<i class="ph-frame-corners"></i>',
+                close: '<i class="ph-x"></i>'
+            };
+
+            // File actions
+            const fileActionSettings = {
+                zoomClass: '',
+                zoomIcon: '<i class="ph-magnifying-glass-plus"></i>',
+                dragClass: 'p-2',
+                dragIcon: '<i class="ph-dots-six"></i>',
+                removeClass: '',
+                removeErrorClass: 'text-danger',
+                removeIcon: '<i class="ph-trash"></i>',
+                indicatorNew: '<i class="ph-file-plus text-success"></i>',
+                indicatorSuccess: '<i class="ph-check file-icon-large text-success"></i>',
+                indicatorError: '<i class="ph-x text-danger"></i>',
+                indicatorLoading: '<i class="ph-spinner spinner text-muted"></i>'
+            };
             // click funtion .btn-delete
             $('.btn-delete').click(function() {
                 // get action url
@@ -146,20 +192,69 @@
                 $.each(formitem, function(i, v) {
                     // cek if input type file
                     if ($(v).attr('type') == 'file') {
-                        const fileUpload = document.getElementsByClassName('file-upload');
+                        const fileUploads = document.getElementsByClassName('file-upload');
+                        // each fileUploads
+                        var filename = item[v.name];
+                        if (filename) { 
+                            if ($(fileUploads[0]).hasClass('file-input')) {
 
-                        // get data default
-                        var filename = item[v.name]
-                        // Create a new File object
-                        const myFile = new File([filename], filename, {
-                            type: 'text/plain',
-                            lastModified: new Date(),
-                        });
+                                // file input update on fileinput bootstrap
+                                var initialPreviewConfig =  [
+                                    {caption: filename , showDrag: false, showZoom: true, showRemove: false},
+                                ];
+                                var url =  $(fileUploads[0]).data('path') + '/' + filename;
+                                fileUploads[0].setAttribute('data-initial-preview', url);
+                                fileUploads[0].setAttribute('data-initial-caption', filename);
+                                fileUploads[0].setAttribute('data-initial-preview-as-data', true);
+                                fileUploads[0].setAttribute('data-initial-preview-file-type', 'image');
+                                fileUploads[0].setAttribute('data-initial-preview-config', JSON.stringify(initialPreviewConfig));
+                                // file input update on fileinput bootstrap
+                                
+                                $(fileUploads[0]).fileinput('destroy').fileinput({
+                                    previewFileType: 'image',
+                                    browseLabel: 'Select',
+                                    browseClass: 'btn btn-light',
+                                    browseIcon: '<i class="ph-image me-2"></i>',
+                                    removeLabel: 'Remove',
+                                    removeClass: 'btn btn-danger',
+                                    removeIcon: '<i class="ph-x-square me-2"></i>',
+                                    uploadClass: 'btn btn-teal',
+                                    uploadIcon: '<i class="ph-upload-simple me-2"></i>',
+                                    layoutTemplates: {
+                                        icon: '<i class="ph-check"></i>'
+                                    },
+                                    initialCaption: "Please select image",
+                                    mainClass: 'input-group',
+                                    showUpload: false,
+                                    showRemove: false,
+                                    initialPreview : [
+                                        url
+                                    ],
+                                    initialPreviewConfig: initialPreviewConfig,
+                                    initialPreviewAsData: true,
+                                    initialPreviewFileType: 'image',
+                                    overwriteInitial: true,
+                                    initialCaption: filename,
+                                    previewZoomButtonClasses: previewZoomButtonClasses,
+                                    previewZoomButtonIcons: previewZoomButtonIcons,
+                                    fileActionSettings: fileActionSettings
+                                });
 
-                        // // Now let's create a DataTransfer to get a FileList
-                        const dataTransfer = new DataTransfer();
-                        dataTransfer.items.add(myFile);
-                        fileUpload[0].files = dataTransfer.files;
+                            } else {
+                                // get data default
+                                var filename = item[v.name]
+                                // Create a new File object
+                                const myFile = new File([filename], filename, {
+                                    type: 'image/*',
+                                    lastModified: new Date(),
+                                });
+
+                                // // Now let's create a DataTransfer to get a FileList
+                                const dataTransfer = new DataTransfer();
+                                dataTransfer.items.add(myFile);
+                                fileUploads[0].files = dataTransfer.files;
+                            }
+                        }
                     } else {
                         // set value form input
                         $(v).val(item[v.name]);

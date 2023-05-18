@@ -104,8 +104,8 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::group(['as' => 'team.', 'prefix' => '/team'], function () {
             Route::get('/', [App\Http\Controllers\Admin\TeamController::class, 'index'])->name('index');
             Route::post('/store', [App\Http\Controllers\Admin\TeamController::class, 'store'])->name('store');
-            Route::get('/edit', [App\Http\Controllers\Admin\TeamController::class, 'edit'])->name('edit');
-            Route::post('/update', [App\Http\Controllers\Admin\TeamController::class, 'update'])->name('update');
+            Route::patch('/update/{id}', [App\Http\Controllers\Admin\TeamController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [App\Http\Controllers\Admin\TeamController::class, 'destroy'])->name('destroy');
         });
 
         // about page
