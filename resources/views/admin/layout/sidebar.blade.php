@@ -66,7 +66,7 @@
                             <a href="{{ route('admin.cms.testimoni.index') }}" class="nav-link {{ request()->routeIs('admin.cms.testimoni.*') ? 'active' : '' }}">Testimoni</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contact Us</a>
+                            <a href="{{ route('admin.cms.contact.index') }}" class="nav-link {{ request()->routeIs('admin.cms.contact.*') ? 'active' : '' }}">Contact Us</a>
                         </li>
                     </ul>
                 </li>

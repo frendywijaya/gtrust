@@ -108,6 +108,14 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
             Route::get('/edit', [App\Http\Controllers\Admin\TestimoniController::class, 'edit'])->name('edit');
             Route::post('/update', [App\Http\Controllers\Admin\TestimoniController::class, 'update'])->name('update');
         });
+
+        // contact page
+        Route::group(['as' => 'contact.', 'prefix' => '/contact'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('index');
+            Route::post('/store', [App\Http\Controllers\Admin\ContactController::class, 'store'])->name('store');
+            Route::get('/edit', [App\Http\Controllers\Admin\ContactController::class, 'edit'])->name('edit');
+            Route::post('/update', [App\Http\Controllers\Admin\ContactController::class, 'update'])->name('update');
+        });
     });
 
 
