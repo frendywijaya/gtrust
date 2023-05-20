@@ -112,8 +112,8 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::group(['as' => 'testimoni.', 'prefix' => '/testimoni'], function () {
             Route::get('/', [App\Http\Controllers\Admin\TestimoniController::class, 'index'])->name('index');
             Route::post('/store', [App\Http\Controllers\Admin\TestimoniController::class, 'store'])->name('store');
-            Route::get('/edit', [App\Http\Controllers\Admin\TestimoniController::class, 'edit'])->name('edit');
-            Route::post('/update', [App\Http\Controllers\Admin\TestimoniController::class, 'update'])->name('update');
+            Route::patch('/update/{id}', [App\Http\Controllers\Admin\TestimoniController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [App\Http\Controllers\Admin\TestimoniController::class, 'destroy'])->name('destroy');
         });
 
         // contact page

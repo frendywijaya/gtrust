@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +15,12 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('admin.cms.contact');
+
+        $staticAbout = StaticPage::getData('contactstatic');
+
+        return view('admin.cms.contact', [
+            'staticPage' => $staticAbout,
+        ]);
     }
 
     /**
