@@ -14,7 +14,7 @@ class LearningController extends Controller
      */
     public function index()
     {
-        return view('admin.services.learning_list');
+        return view('admin.services.learning');
     }
 
     /**

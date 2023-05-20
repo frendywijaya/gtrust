@@ -14,7 +14,7 @@ class FacilitationController extends Controller
      */
     public function index()
     {
-        return view('admin.services.facilitation_list');
+        return view('admin.services.facilitation');
     }
 
     /**
