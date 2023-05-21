@@ -6,32 +6,22 @@
         <div class="slider-shape" data-background="{{ asset('frontend/img/slider/slider_shape.png') }}"></div>
         <div class="slider-img-wrap">
             <div class="sliderNav-active">
-                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider03.jpg') }}"></div>
-                <div class="slider-img-item" data-background="{{ asset('frontend/img/slider/slider02.jpg') }}"></div>
+                @foreach ($sliders as $item)
+                <div class="slider-img-item" data-background="{{ asset($pathSlider.$item->image) }}"></div>
+                @endforeach
             </div>
         </div>
         <div class="slider-content-wrap">
             <div class="sliderContent-active">
-
+                @foreach ($sliders as $item)
                 <div class="slider-content">
-                    {{-- <h1 class="overly-text">Our <br> Services</h1> --}}
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Company Facilitation</span>
-                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Fun Way to Challenge Serious Problems</h2>
-                    <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
-                        building bigger, better,faster, and products than ever Our mbrace.</p>
-                    <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
-                        data-duration-in=".6">Discover More</a>
+                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">{{$item->subtitle}}</span>
+                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">{{$item->title}}</h2>
+                    <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">{{$item->content}}</p>
+                    <a href="{{$item->button_link}}" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
+                        data-duration-in=".6">{{$item->button_text}}</a>
                 </div>
-                <div class="slider-content">
-                    {{-- <h1 class="overly-text">Our <br> Services</h1> --}}
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in=".6">Team Learning</span>
-                    <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in=".6">Unique
-                        Strategic Development</h2>
-                    <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in=".6">Our mbrace change are thriving,
-                        building bigger, better,faster, and products than ever Our mbrace.</p>
-                    <a href="/services" class="btn" data-animation-in="fadeInUp" data-delay-in=".8"
-                        data-duration-in=".6">Discover More</a>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="banner-nav"></div>
@@ -74,13 +64,13 @@
                                     <h2 class="title">18 Years <span>Experience</span></h2>
                                 </div>
                             </li>
-                            <li><img src="{{ asset('frontend/img/images/h2_about_img01.jpg') }}" alt=""
+                            <li><img src="{{ asset('images/staticpage/'.@$staticHome->about_image_1) }}" alt=""
                                     class="wow fadeInLeft" data-wow-delay=".4s"></li>
                         </ul>
                         <ul class="list-wrap">
-                            <li><img src="{{ asset('frontend/img/images/h2_about_img02.jpg') }}" alt=""
+                            <li><img src="{{ asset('images/staticpage/'.@$staticHome->about_image_2) }}" alt=""
                                     class="wow fadeInRight" data-wow-delay=".2s"></li>
-                            <li><img src="{{ asset('frontend/img/images/h2_about_img03.jpg') }}" alt=""
+                            <li><img src="{{ asset('images/staticpage/'.@$staticHome->about_image_3) }}" alt=""
                                     class="wow fadeInUp" data-wow-delay=".4s"></li>
                         </ul>
                     </div>
@@ -88,12 +78,10 @@
                 <div class="col-lg-6">
                     <div class="about-content-two">
                         <div class="section-title mb-30">
-                            <span class="sub-title">About Our Company</span>
-                            <h2 class="title">We’re Committed to Deliver Excellence</h2>
+                            <span class="sub-title">{{@$staticHome->subtitle}}</span>
+                            <h2 class="title">{{@$staticHome->title}}</h2>
                         </div>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majori have suffered
-                            alteration in some form, by injected humour, or randomised word which don't look even slightly
-                            believable.</p>
+                        <p>{{@$staticHome->description}}</p>
                         <div class="about-list-two">
                             <ul class="list-wrap">
                                 <li class="list-item">
@@ -101,7 +89,7 @@
                                         <img src="{{ asset('frontend/img/icon/h2_about_icon01.svg') }}" alt="">
                                     </div>
                                     <div class="content">
-                                        <h5 class="title">Value Proposition Here</h5>
+                                        <h5 class="title">{{@$staticHome->about_image_text_1}}</h5>
                                     </div>
                                 </li>
                                 <li class="list-item">
@@ -109,12 +97,12 @@
                                         <img src="{{ asset('frontend/img/icon/h2_about_icon02.svg') }}" alt="">
                                     </div>
                                     <div class="content">
-                                        <h5 class="title">Our Core Time Values Lenthlyness</h5>
+                                        <h5 class="title">{{@$staticHome->about_image_text_2}}</h5>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <a href="/about" class="btn">Learn More</a>
+                        <a href="{{@$staticHome->about_button_link}}" class="btn">{{@$staticHome->about_button_text}}</a>
                     </div>
                 </div>
             </div>
@@ -130,8 +118,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section-title text-center white-title mb-60">
-                        <span class="sub-title">Discover Our Services</span>
-                        <h2 class="title">See Our Services Details</h2>
+                        <span class="sub-title">{{@$staticHome->service_section_subtitle}}</span>
+                        <h2 class="title">{{@$staticHome->service_section_title}}</h2>
                     </div>
                 </div>
             </div>
@@ -155,16 +143,15 @@
                                 aria-labelledby="building-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
-                                        <img src="{{ asset('frontend/img/services/h4_services_img01.jpg') }}"
+                                        <img src="{{ asset('images/static_page/'.@$staticHome->service_facilitation_image) }}"
                                             alt="">
                                     </div>
                                     <div class="services-content-three">
                                         <div class="section-title mb-30">
-                                            <h2 class="title">Bringing New Business Solutions And Ideas</h2>
+                                            <h2 class="title">{{@$staticHome->service_facilitation_headline}}</h2>
                                         </div>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                            have suffered alteration in some form, by injected humour, or randomised words
-                                            which don't look even slightly believable. If you are going to use a passage of
+                                        <p>
+                                            {{@$staticHome->service_facilitation_text}}
                                         </p>
                                         <div class="services-list">
                                             <ul class="list-wrap">
@@ -174,24 +161,23 @@
                                                 <li><i class="fas fa-check-circle"></i>Network Administration</li>
                                             </ul>
                                         </div>
-                                        <a href="/services" class="btn">Read More</a>
+                                        <a href="{{@$staticHome->service_facilitation_button_link}}" class="btn">{{@$staticHome->service_facilitation_button_text}}</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="maintenance-tab-pane" role="tabpanel"
-                                aria-labelledby="maintenance-tab" tabindex="0">
+                            <div class="tab-pane" id="building-tab-pane" role="tabpanel"
+                                aria-labelledby="building-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
-                                        <img src="{{ asset('frontend/img/services/h4_services_img02.jpg') }}"
+                                        <img src="{{ asset('images/static_page/'.@$staticHome->service_learning_image) }}"
                                             alt="">
                                     </div>
                                     <div class="services-content-three">
                                         <div class="section-title mb-30">
-                                            <h2 class="title">Bringing New Business Solutions And Ideas</h2>
+                                            <h2 class="title">{{@$staticHome->service_learning_headline}}</h2>
                                         </div>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                            have suffered alteration in some form, by injected humour, or randomised words
-                                            which don't look even slightly believable. If you are going to use a passage of
+                                        <p>
+                                            {{@$staticHome->service_learning_text}}
                                         </p>
                                         <div class="services-list">
                                             <ul class="list-wrap">
@@ -201,7 +187,7 @@
                                                 <li><i class="fas fa-check-circle"></i>Network Administration</li>
                                             </ul>
                                         </div>
-                                        <a href="/services" class="btn">Read More</a>
+                                        <a href="{{@$staticHome->service_learning_button_link}}" class="btn">{{@$staticHome->service_learning_button_text}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -217,32 +203,32 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="counter-item-three">
                                 <div class="counter-content">
-                                    <span class="count odometer" data-count="1500"></span>
-                                    <p>Project Complete</p>
+                                    <span class="count odometer" data-count="{{@$staticHome->statistic_number_1}}"></span>
+                                    <p>{{@$staticHome->statistic_text_1}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="counter-item-three">
                                 <div class="counter-content">
-                                    <span class="count odometer" data-count="8562"></span>
-                                    <p>Satisfied Clients</p>
+                                    <span class="count odometer" data-count="{{@$staticHome->statistic_number_2}}"></span>
+                                    <p>{{@$staticHome->statistic_text_2}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="counter-item-three">
                                 <div class="counter-content">
-                                    <span class="count odometer" data-count="450"></span>
-                                    <p>Experienced Staff</p>
+                                    <span class="count odometer" data-count="{{@$staticHome->statistic_number_3}}"></span>
+                                    <p>{{@$staticHome->statistic_text_3}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="counter-item-three">
                                 <div class="counter-content">
-                                    <span class="count odometer" data-count="38"></span>
-                                    <p>Awards Win</p>
+                                    <span class="count odometer" data-count="{{@$staticHome->statistic_number_4}}"></span>
+                                    <p>{{@$staticHome->statistic_text_4}}</p>
                                 </div>
                             </div>
                         </div>
@@ -269,86 +255,27 @@
                     </div>
                 </div>
                 <div class="row project-active-two">
+                    @foreach ($projects as $project)
                     <div class="col-lg-4">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img01.jpg') }}"
+                                <a href="{{route('project.detail',$project->slug)}}"><img src="{{ asset($pathProject.$project->image) }}"
                                         alt=""></a>
                             </div>
                             <div class="project-content-four">
                                 <div class="content-left">
-                                    <h2 class="title"><a href="/project">Replacement of Management</a></h2>
+                                    <h2 class="title"><a href="{{route('project.detail',$project->slug)}}">{{$project->title}}</a></h2>
                                     <ul class="list-wrap">
-                                        <li><a href="/project">Management</a></li>
-                                        <li><a href="/project">Ideas</a></li>
+                                        <li><a href="#">{{$project->category}}</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-right">
-                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                                    <a href="{{route('project.detail',$project->slug)}}" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="project-item-four">
-                            <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="project-content-four">
-                                <div class="content-left">
-                                    <h2 class="title"><a href="/project">Fixing of Management Damage</a></h2>
-                                    <ul class="list-wrap">
-                                        <li><a href="/project">Management</a></li>
-                                        <li><a href="/project">Ideas</a></li>
-                                    </ul>
-                                </div>
-                                <div class="content-right">
-                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="project-item-four">
-                            <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img03.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="project-content-four">
-                                <div class="content-left">
-                                    <h2 class="title"><a href="/project">Modern Management Style</a></h2>
-                                    <ul class="list-wrap">
-                                        <li><a href="/project">Management</a></li>
-                                        <li><a href="/project">Ideas</a></li>
-                                    </ul>
-                                </div>
-                                <div class="content-right">
-                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="project-item-four">
-                            <div class="project-thumb-four">
-                                <a href="/project"><img src="{{ asset('frontend/img/project/h4_project_img02.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="project-content-four">
-                                <div class="content-left">
-                                    <h2 class="title"><a href="/project">Fixing of Management Damage</a></h2>
-                                    <ul class="list-wrap">
-                                        <li><a href="/project">Management</a></li>
-                                        <li><a href="/project">Ideas</a></li>
-                                    </ul>
-                                </div>
-                                <div class="content-right">
-                                    <a href="/project" class="link-btn"><i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -363,22 +290,16 @@
                 <div class="col-xl-6 d-flex justify-content-center">
                     <div class="newsletter-content">
                         <div class="section-title white-title-two">
-                            <span class="sub-title">Hubungi Kami</span>
-                            <h2 class="title">Need More Information?</h2>
+                            <span class="sub-title">{{@$staticHome->contact_subtitle}}</span>
+                            <h2 class="title">{{@$staticHome->contact_title}}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 d-flex justify-content-center">
                     <div class="newsletter-form">
-                        <form action="#">
-                            {{-- <div class="form-grp">
-                                <input type="text" placeholder="Name*">
-                            </div>
-                            <div class="form-grp">
-                                <input type="text" placeholder="Phone*">
-                            </div> --}}
-                            <button type="submit" class="btn btn-two">Contact Us</button>
-                        </form>
+                        <a href="{{@$staticHome->contact_button_link}}">
+                            <button type="button" class="btn btn-two">{{@$staticHome->contact_button_text}}</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -398,66 +319,27 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-xl-4 col-md-6">
+                @foreach ($blogs as $blog)
+                <div class="col-lg-6 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
-                            <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img01.jpg') }}"
-                                    alt=""></a>
+                            <a href="{{route('blog.detail',$blog->slug)}}"><img src="{{ asset($pathBlog.$blog->image) }}" style="center" width="464" height="435" alt="image"></a>
                         </div>
                         <div class="blog-post-content">
-                            <a href="/blog" class="tag">Quality Materials</a>
+                            <a href="#" class="tag">{{$blog->category->title}}</a>
                             <div class="blog-meta">
                                 <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
-                                    <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
+                                    <li><i class="far fa-user"></i> By <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->writer}}</a></li>
+                                    <li><i class="fas fa-calendar-alt"></i>{{date('d M Y', strtotime($blog->date))}}</li>
                                 </ul>
                             </div>
-                            <h2 class="title"><a href="/blog-detail">Co-worker help each other with at business
-                                    site</a></h2>
-                            <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                            <h2 class="title"><a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a>
+                            </h2>
+                            <a href="{{route('blog.detail',$blog->slug)}}" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="blog-post-item">
-                        <div class="blog-post-thumb">
-                            <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img02.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <div class="blog-post-content">
-                            <a href="/blog" class="tag">House Management Work</a>
-                            <div class="blog-meta">
-                                <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
-                                    <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
-                                </ul>
-                            </div>
-                            <h2 class="title"><a href="/blog-detail">Full shot Managementers working together with
-                                    helmets</a></h2>
-                            <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="blog-post-item">
-                        <div class="blog-post-thumb">
-                            <a href="/blog-detail"><img src="{{ asset('frontend/img/blog/blog_img03.jpg') }}"
-                                    alt=""></a>
-                        </div>
-                        <div class="blog-post-content">
-                            <a href="/blog" class="tag">Business Analyst</a>
-                            <div class="blog-meta">
-                                <ul class="list-wrap">
-                                    <li><i class="far fa-user"></i> By <a href="/blog-detail">Admin</a></li>
-                                    <li><i class="fas fa-calendar-alt"></i>23 Dec 2022</li>
-                                </ul>
-                            </div>
-                            <h2 class="title"><a href="/blog-detail">Hard hatswork at the heavy manufacturing
-                                    factory industrial</a></h2>
-                            <a href="/blog-detail" class="link-btn">Read More<i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

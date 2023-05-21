@@ -97,19 +97,19 @@
                             <div class="footer-social">
                                 <h2 class="title">Follow Us:</h2>
                                 <ul class="list-wrap">
-                                    @if($staticSocialMediaData->facebook)
+                                    @if(@$staticSocialMediaData->facebook)
                                     <li><a href="{{$staticSocialMediaData->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
                                     @endif
-                                    @if($staticSocialMediaData->instagram)
+                                    @if(@$staticSocialMediaData->instagram)
                                     <li><a href="{{$staticSocialMediaData->instagram}}"><i class="fab fa-instagram"></i></a></li>
                                     @endif
-                                    @if($staticSocialMediaData->linkedin)
+                                    @if(@$staticSocialMediaData->linkedin)
                                     <li><a href="{{$staticSocialMediaData->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
                                     @endif
-                                    @if($staticSocialMediaData->youtube)
+                                    @if(@$staticSocialMediaData->youtube)
                                     <li><a href="{{$staticSocialMediaData->youtube}}"><i class="fab fa-youtube"></i></a></li>
                                     @endif
-                                    @if($staticSocialMediaData->tiktok)
+                                    @if(@$staticSocialMediaData->tiktok)
                                     <li><a href="{{$staticSocialMediaData->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
                                     @endif
                                 </ul>

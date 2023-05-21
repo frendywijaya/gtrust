@@ -20,13 +20,21 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'detail'])->name('blog.detail');
-// Route::get('/blog-detail', [App\Http\Controllers\BlogController::class, 'detail'])->name('blog.detail');
+
+//  blog
+Route::group(['as' => 'blog.', 'prefix' => '/blog'], function () {
+    Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('index');
+    Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'detail'])->name('detail');
+});
+
+// project
+Route::group(['as' => 'project.', 'prefix' => '/project'], function () {
+    Route::get('/{slug}', [App\Http\Controllers\ProjectController::class, 'detail'])->name('detail');
+});
+
 Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->name('kontak');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
-Route::get('/project', [App\Http\Controllers\ProjectController::class, 'detail'])->name('project');
 
 require __DIR__ . '/auth.php';
 
