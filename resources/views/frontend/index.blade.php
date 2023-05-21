@@ -64,13 +64,13 @@
                                     <h2 class="title">18 Years <span>Experience</span></h2>
                                 </div>
                             </li>
-                            <li><img src="{{ asset('images/staticpage/'.@$staticHome->about_image_1) }}" alt=""
+                            <li><img src="{{ asset('uploads/staticpage/'.@$staticHome->about_image_1)}}" alt=""
                                     class="wow fadeInLeft" data-wow-delay=".4s"></li>
                         </ul>
                         <ul class="list-wrap">
-                            <li><img src="{{ asset('images/staticpage/'.@$staticHome->about_image_2) }}" alt=""
+                            <li><img src="{{ asset('uploads/staticpage/'.@$staticHome->about_image_2)}}" alt=""
                                     class="wow fadeInRight" data-wow-delay=".2s"></li>
-                            <li><img src="{{ asset('images/staticpage/'.@$staticHome->about_image_3) }}" alt=""
+                            <li><img src="{{ asset('uploads/staticpage/'.@$staticHome->about_image_3) }}" alt=""
                                     class="wow fadeInUp" data-wow-delay=".4s"></li>
                         </ul>
                     </div>
@@ -78,8 +78,8 @@
                 <div class="col-lg-6">
                     <div class="about-content-two">
                         <div class="section-title mb-30">
-                            <span class="sub-title">{{@$staticHome->subtitle}}</span>
-                            <h2 class="title">{{@$staticHome->title}}</h2>
+                            <span class="sub-title">{{@$staticHome->about_subtitle}}</span>
+                            <h2 class="title">{{@$staticHome->about_title}}</h2>
                         </div>
                         <p>{{@$staticHome->description}}</p>
                         <div class="about-list-two">
@@ -143,7 +143,7 @@
                                 aria-labelledby="building-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
-                                        <img src="{{ asset('images/static_page/'.@$staticHome->service_facilitation_image) }}"
+                                        <img src="{{ asset('uploads/staticpage/'.@$staticHome->service_facilitation_image) }}"
                                             alt="">
                                     </div>
                                     <div class="services-content-three">
@@ -169,7 +169,7 @@
                                 aria-labelledby="building-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
-                                        <img src="{{ asset('images/static_page/'.@$staticHome->service_learning_image) }}"
+                                        <img src="{{ asset('uploads/staticpage/'.@$staticHome->service_learning_image) }}"
                                             alt="">
                                     </div>
                                     <div class="services-content-three">
@@ -320,7 +320,7 @@
             </div>
             <div class="row justify-content-center">
                 @foreach ($blogs as $blog)
-                <div class="col-lg-6 col-md-6">
+                <div class="col-xl-4 col-md-6">
                     <div class="blog-post-item">
                         <div class="blog-post-thumb">
                             <a href="{{route('blog.detail',$blog->slug)}}"><img src="{{ asset($pathBlog.$blog->image) }}" style="center" width="464" height="435" alt="image"></a>

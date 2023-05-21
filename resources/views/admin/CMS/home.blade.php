@@ -150,13 +150,13 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_facilitation_button_text" {{@$staticPage->service_facilitation_button_text}}>
+                                                    <input type="text" class="form-control" name="service_facilitation_button_text" value="{{@$staticPage->service_facilitation_button_text}}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Link</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_facilitation_button_link" {{@$staticPage->service_facilitation_button_link}}>
+                                                    <input type="text" class="form-control" name="service_facilitation_button_link" value="{{@$staticPage->service_facilitation_button_link}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -175,7 +175,9 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <textarea class="form-control" id="ckeditor_classic_empty" name="service_learning_text" value="{{@$staticPage->service_learning_text}}"></textarea>
+                                                    <textarea class="form-control" id="ckeditor_classic_empty" name="service_learning_text">
+                                                        {{@$staticPage->service_learning_text}}
+                                                    </textarea>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">

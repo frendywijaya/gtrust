@@ -19,7 +19,7 @@ class HomeController extends BaseController
         // get all slider
         $sliders = Slider::all();
         // get static page aboutstatic
-        $staticAbout = StaticPage::getData('aboutstatic');
+        $staticAbout = StaticPage::getData('homestatic');
         // get project limit 5
         $projects = Project::limit(5)->get();
         // get blog limit 5

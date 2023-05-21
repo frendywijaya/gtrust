@@ -36,8 +36,9 @@ class StaticPageController extends BaseController
                     if (!empty($static_page[$key]))
                         if ($request->file($key)->getClientOriginalName() == $static_page[$key]) {
                         }
-                    // create name file with section name
-                    $file_name = $static_page[$key];
+                    // create file name unique
+                    $file_name = time().'-'.$request->file($key)->getClientOriginalName();
+                    // $file_name = $static_page[$key];
                     // cek if file is exist
                     if (file_exists('uploads/staticpage/' . $file_name)) {
                         // delete file
