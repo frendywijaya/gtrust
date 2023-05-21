@@ -4,14 +4,14 @@
     <!-- Simple thumbnail with image -->
 
     <div class="content">
-
         <div class="card">
             <div class="card-header d-flex align-items-center py-0">
                 <h5 class="mb-0 py-3">Social Media Link</h5>
                 <div class="my-auto ms-auto">
                 </div>
                 <div class="my-auto ms-auto">
-                    <button type="button" class="btn btn-primary btn-create"><i class="ph-plus-circle me-1"></i>
+                    <button type="button" class="btn btn-primary btn-create" data-url="{{route('admin.cms.slider.store')}}" data-bs-toggle="modal" data-bs-target="#modal_form">
+                        <i class="ph-plus-circle me-1"></i>
                         tambah banner</button>
                 </div>
             </div>
@@ -19,35 +19,36 @@
             <!-- Widgets list -->
             <div class="row">
                 <div class="col-lg-6 col-xl-4">
+                    @foreach ($sliders as $slider)
                     <div class="card m-3">
                         <div class="card-img-actions mx-1 mt-1">
                             <a href="#course_preview" class="d-inline-block position-relative" data-bs-toggle="modal">
-                                <img src="{{ asset('admin/images/demo/flat/10.png') }}" class="img-fluid card-img"
+                                <img src="{{ asset($path.$slider->image) }}" class="img-fluid card-img"
                                     alt="">
                             </a>
                         </div>
 
                         <div class="card-body">
                             <h6 class="mb-1">Title</h6>
-                            <p class="mb-3">Company Facilitation</p>
+                            <p class="mb-3">{{$slider->title}}</p>
                             <h6 class="mb-1">Subtitle</h6>
-                            <p class="mb-3">Unique Strategic Development</p>
+                            <p class="mb-3">{{$slider->subtitle}}</p>
                             <h6 class="mb-1">Content</h6>
-                            <p class="mb-3">Seed project includes the most basic components that can help you in
-                                development process.</p>
+                            <p class="mb-3">{{$slider->content}}</p>
 
                         </div>
 
                         <div class="card-footer d-flex justify-content-between">
                             <span class="text-muted"></span>
                             <ul class="list-inline mb-0">
-                                <li class="list-inline-item"><a href="#" data-bs-toggle="modal"
-                                    data-bs-target="#modal_edit">Edit</a></li>
-                                <li class="list-inline-item"><a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#modal_delete">Hapus</a></li>
+                                <li class="list-inline-item"><a href="#" class="btn-edit" data-bs-toggle="modal"
+                                    data-bs-target="#modal_form" data-url="{{route('admin.cms.slider.update' , $slider->id)}}" data-item="{{json_encode($slider)}}">Edit</a></li>
+                                <li class="list-inline-item"><a href="#" data-bs-toggle="modal" class="btn-delete"
+                                        data-bs-target="#modal_delete" data-url="{{route('admin.cms.slider.destroy' , $slider->id)}}">Hapus</a></li>
                             </ul>
                         </div>
                     </div>
+                    @endforeach
                     <!-- /simple thumbnail with image -->
                 </div>
             </div>
@@ -57,7 +58,7 @@
     </div>
 
     <!-- modal detail -->
-    <div id="modal_edit" class="modal fade" tabindex="-1">
+    <div id="modal_form" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -65,52 +66,56 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
-                <div class="modal-body">
-                    <div class="row mb-3 mt-2 pb-3 border-bottom">
-                        <div class="col-lg-6">
-                            <p class="fw-semibold">Slider Image</p>
-                            <input type="file" data-show-caption="true" data-show-upload="false" accept="image/*"
-                                data-show-remove="false" id="file-input-company-logo" name="company_logo">
+                <form action="" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="_method" value="POST">
+                    <div class="modal-body">
+                        <div class="row mb-3 mt-2 pb-3 border-bottom">
+                            <div class="col-lg-6">
+                                <p class="fw-semibold">Slider Image</p>
+                                <input type="file" class="form-dynamic file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                    data-show-remove="false" id="file-input-company-logo" name="image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-form-label col-lg-3">Title</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" name="sender_name">
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Title</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control form-dynamic" name="title">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-form-label col-lg-3">Subtitle</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" name="sender_name">
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Subtitle</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control form-dynamic" name="subtitle">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3 pb-3 border-bottom">
-                        <label class="col-form-label col-lg-3">Content</label>
-                        <div class="col-lg-9">
-                            <textarea class="form-control" name="sender_name"></textarea>
+                        <div class="row mb-3 pb-3 border-bottom">
+                            <label class="col-form-label col-lg-3">Content</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control form-dynamic" name="content"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-form-label col-lg-3">Button Text</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" name="sender_name">
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Button Text</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control form-dynamic" name="button_text">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-form-label col-lg-3">Button Link</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" name="sender_name">
+                        <div class="row mb-3">
+                            <label class="col-form-label col-lg-3">Button Link</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control form-dynamic" name="button_link">
+                            </div>
                         </div>
+
                     </div>
 
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link" data-bs-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-primary">Simpan <i
-                            class="ph-check-square-offset ms-2"></i></button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Simpan <i
+                                class="ph-check-square-offset ms-2"></i></button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

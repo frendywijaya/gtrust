@@ -61,7 +61,7 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::post('/store', [App\Http\Controllers\Admin\ProjectController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'update'])->name('update');
-        Route::get('/delete/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'delete'])->name('delete');
+        Route::delete('/delete/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'destroy'])->name('destroy');
     });
 
     // Contact Inbox
@@ -76,12 +76,14 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
 
     Route::group(['as' => 'cms.', 'prefix' => '/cms'], function () {
 
-         // home slider
-         Route::group(['as' => 'slider.', 'prefix' => '/slider'], function () {
+        // home slider
+        Route::group(['as' => 'slider.', 'prefix' => '/slider'], function () {
             Route::get('/', [App\Http\Controllers\Admin\SliderController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\SliderController::class, 'create'])->name('create');
             Route::post('/store', [App\Http\Controllers\Admin\SliderController::class, 'store'])->name('store');
-            Route::get('/edit', [App\Http\Controllers\Admin\SliderController::class, 'edit'])->name('edit');
-            Route::post('/update', [App\Http\Controllers\Admin\SliderController::class, 'update'])->name('update');
+            Route::get('/edit/{id}', [App\Http\Controllers\Admin\SliderController::class, 'edit'])->name('edit');
+            Route::patch('/update/{id}', [App\Http\Controllers\Admin\SliderController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [App\Http\Controllers\Admin\SliderController::class, 'destroy'])->name('destroy');
         });
 
         // home page
@@ -127,6 +129,16 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
 
 
     Route::group(['as' => 'services.', 'prefix' => '/services'], function () {
+
+        // Sub Service
+        Route::group(['as' => 'subservice.', 'prefix' => '/subservice'], function () {
+            Route::get('/', [App\Http\Controllers\Admin\SubServiceController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\SubServiceController::class, 'create'])->name('create');
+            Route::post('/store', [App\Http\Controllers\Admin\SubServiceController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [App\Http\Controllers\Admin\SubServiceController::class, 'edit'])->name('edit');
+            Route::patch('/update/{id}', [App\Http\Controllers\Admin\SubServiceController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [App\Http\Controllers\Admin\SubServiceController::class, 'destroy'])->name('destroy');
+        });
 
         // facilitation
         Route::group(['as' => 'facilitation.', 'prefix' => '/facilitation'], function () {

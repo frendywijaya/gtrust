@@ -27,57 +27,33 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($projects as $project)
                     <tr>
-                        <td>1</td>
-                        <td><a href="#">Tips Mencari Ilmu di Kuliah</a></td>
-                        <td>Kompas Media</td>
-                        <td>Learning</td>
-                        <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
+                        <td>{{$no++}}</td>
+                        <td><a href="#">{{$project->title}}</a></td>
+                        <td>{{$project->client}}</td>
+                        <td>{{$project->category}}</td>
+                        @if ($project->status == 1)
+                            <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
+                        @else 
+                            <td><span class="badge bg-danger bg-opacity-10 text-danger">Inactive</span></td>
+                        @endif
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <a href="{{ route('admin.project.create') }}" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Edit">
+                                <a href="{{route('admin.project.edit', $project->id)}}" class="text-body" data-bs-popup="tooltip" aria-label="Edit" data-bs-original-title="Edit">
                                     <i class="ph-pen"></i>
                                 </a>
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
+                                <a href="#" class="text-body mx-2 btn-delete" btn-delete" data-bs-toggle="modal" data-bs-target="#modal_delete" 
+                                    data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-url="{{route('admin.project.destroy' , $project->id)}}">
                                     <i class="ph-trash"></i>
                                 </a>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Weible</td>
-                        <td><a href="#">Airline Transport Pilot</a></td>
-                        <td>Learning</td>
-                        <td><span class="badge bg-secondary bg-opacity-10 text-secondary">Disabled</span></td>
-                        <td class="text-center">
-                            <div class="d-inline-flex">
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
-                                    <i class="ph-pen"></i>
-                                </a>
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
-                                    <i class="ph-trash"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Hard</td>
-                        <td>Business Services Sales Representative</td>
-                        <td>Learning</td>
-                        <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
-                        <td class="text-center">
-                            <div class="d-inline-flex">
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="Edit" data-bs-toggle="modal" data-bs-target="#modal_edit">
-                                    <i class="ph-pen"></i>
-                                </a>
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
-                                    <i class="ph-trash"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

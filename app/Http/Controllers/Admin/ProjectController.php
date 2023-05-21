@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -14,7 +16,12 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('admin.project.project_list');
+        // get all projects
+        $projects = Project::all();
+
+        return view('admin.project.project_list', [
+            'projects' => $projects
+        ]);
     }
 
     /**
@@ -24,7 +31,16 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.project_detail');
+        // get category list
+        $categories = Project::CATEGORY;
+        // create action
+        $action = route('admin.project.store');
+
+        return view('admin.project.project_detail', [
+            'categories' => $categories,
+            'action' => $action,
+            'isedit' => false
+        ]);
     }
 
     /**
@@ -35,7 +51,48 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'category' => 'required',
+            'project_date' => 'required',
+            'client' => 'required',
+            'participants' => 'required',
+            'goal' => 'required',
+            'activity' => 'required',
+        ]);
+
+        // create project
+        $project = new Project();
+        $project->title = $request->title;
+        $project->slug = Str::slug($request->title);
+        $project->description = $request->description;
+        $project->category = $request->category;
+        $project->project_date = date('Y-m-d', strtotime($request->project_date));
+
+        $project->client = $request->client;
+        $project->participants = $request->participants;
+        $project->goal = $request->goal;
+        $project->activity = $request->activity;
+        // jika status tidak di check maka status = 0
+        if (!$request->status) {
+            $project->status = 0;
+        } else {
+            $project->status = 1;
+        }
+        
+        // upload image jika ada
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(Project::PATH, $image_name);
+            $project->image = $image_name;
+        }
+
+        $project->save();
+
+        return redirect()->route('admin.project.index')->with('success', 'Project has been created successfully!');
     }
 
     /**
@@ -57,7 +114,19 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        // get project by id
+        $project = Project::findOrFail($id);
+        // get category list
+        $categories = Project::CATEGORY;
+        // create action
+        $action = route('admin.project.update', $id);
+
+        return view('admin.project.project_detail', [
+            'project' => $project,
+            'categories' => $categories,
+            'action' => $action,
+            'isedit' => true
+        ]);
     }
 
     /**
@@ -69,7 +138,51 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'project_date' => 'required',
+            'client' => 'required',
+            'participants' => 'required',
+            'goal' => 'required',
+            'activity' => 'required',
+        ]);
+
+        // update project
+        $project = Project::findOrFail($id);
+        $project->title = $request->title;
+        $project->slug = Str::slug($request->title);
+        $project->description = $request->description;
+        $project->category = $request->category;
+        $project->project_date = date('Y-m-d', strtotime($request->project_date));
+        
+        // cek apakah ada image yang di upload
+        if ($request->hasFile('image')) {
+            // jika ada maka hapus image yang lama
+            if ($project->image && file_exists(Project::PATH . $project->image)) {
+                unlink(Project::PATH . $project->image);
+            }
+            // upload image yang baru
+            $image = $request->file('image');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(Project::PATH, $image_name);
+            $project->image = $image_name;
+        }
+
+        $project->client = $request->client;
+        $project->participants = $request->participants;
+        $project->goal = $request->goal;
+        $project->activity = $request->activity;
+        // jika status tidak di check maka status = 0
+        if (!$request->status) {
+            $project->status = 0;
+        } else {
+            $project->status = 1;
+        }
+        $project->save();
+
+        return redirect()->route('admin.project.index')->with('success', 'Project has been updated successfully!');
     }
 
     /**
@@ -80,6 +193,14 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete project
+        $project = Project::findOrFail($id);
+        // cek apakah ada image yang di upload
+        if ($project->image && file_exists(Project::PATH . $project->image)) {
+            unlink(Project::PATH . $project->image);
+        }
+        $project->delete();
+
+        return redirect()->route('admin.project.index')->with('success', 'Project has been deleted successfully!');
     }
 }

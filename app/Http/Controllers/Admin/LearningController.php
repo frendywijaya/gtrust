@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StaticPage;
+use App\Models\SubService;
 use Illuminate\Http\Request;
 
 class LearningController extends Controller
@@ -14,7 +16,17 @@ class LearningController extends Controller
      */
     public function index()
     {
-        return view('admin.services.learning');
+        // get data from static_page table
+        $staticLearning = StaticPage::getData('servicelearning');
+
+        // get subServiceLists where 
+        $subServiceLists = SubService::where('category', 'learning')->get();
+
+        return view('admin.services.learning', [
+            'staticPage' => $staticLearning,
+            'subServiceLists' => $subServiceLists,
+            'path' => SubService::PATH,
+        ]);
     }
 
     /**

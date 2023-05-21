@@ -287,7 +287,7 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="contact_tilte" value="{{@$staticPage->contact_tilte}}">
+                                                    <input type="text" class="form-control" name="contact_title" value="{{@$staticPage->contact_title}}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">

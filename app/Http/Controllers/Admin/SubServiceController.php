@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\BrandLogo;
+use App\Models\SubService;
 use Illuminate\Http\Request;
 
-class BrandLogoController extends Controller
+class SubServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,7 @@ class BrandLogoController extends Controller
      */
     public function index()
     {
-        // get data from table brand_logos
-        $brandLogos = BrandLogo::all();
-
-        return view('admin.brand.brand' , [
-            'brandLogos' => $brandLogos,
-        ]);
+        //
     }
 
     /**
@@ -43,25 +38,29 @@ class BrandLogoController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'subtitle' => 'required',
             'image' => 'required',
+            'description' => 'required',
+            'category' => 'required',
         ]);
 
         // insert image
         $image = $request->file('image');
-
         // create filename unique untuk image
         $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-        
-        $image->move('uploads/brand-logo/', $image_name);
+        $image->move(SubService::PATH, $image_name);
 
-        $brandLogo_data = [
+        $subService_data = [
             'title' => $request->title,
+            'subtitle' => $request->subtitle,
             'image' => $image_name,
+            'description' => $request->description,
+            'category' => $request->category,
         ];
 
-        BrandLogo::create($brandLogo_data);
+        SubService::create($subService_data);
 
-        return redirect()->back()->with('success', 'Data created successfully.');
+        return redirect()->back()->with('success', 'Sub Service has been added successfully!');
     }
 
     /**
@@ -95,35 +94,51 @@ class BrandLogoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // update data
+        // validate
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
+            'subtitle' => 'required',
+            'description' => 'required',
+            'category' => 'required',
         ]);
 
-        $brandLogo = BrandLogo::find($id); 
+        // get data by id
+        $subService = SubService::find($id);
+
         // cek jika image sama dengan di database
-        if ($request->file('image')->getClientOriginalName() == $brandLogo->image) {
-            $image_name = $brandLogo->image;
+        if($request->file('image')->getClientOriginalName() == $subService->image) {
+            // jika sama, maka update data tanpa image
+            $subService_data = [
+                'title' => $request->title,
+                'subtitle' => $request->subtitle,
+                'description' => $request->description,
+                'category' => $request->category,
+            ];
         } else {
-            if (file_exists(public_path('uploads/brand-logo/' . $brandLogo->image))) {
-                unlink(public_path('uploads/brand-logo/' . $brandLogo->image));
+            // jika tidak sama, maka update data dengan image
+            if (file_exists(public_path(SubService::PATH . $subService->image))) {
+                unlink(public_path(SubService::PATH . $subService->image));
             }
+
             // insert image
             $image = $request->file('image');
             // create filename unique untuk image
             $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-            $image->move('uploads/brand-logo/', $image_name);
+            $image->move(SubService::PATH, $image_name);
+
+            $subService_data = [
+                'title' => $request->title,
+                'subtitle' => $request->subtitle,
+                'image' => $image_name,
+                'description' => $request->description,
+                'category' => $request->category,
+            ];
         }
 
-        $brandLogo_data = [
-            'title' => $request->title,
-            'image' => $image_name,
-        ];
+        // update data
+        $subService->update($subService_data);
 
-        BrandLogo::whereId($id)->update($brandLogo_data);
-
-        return redirect()->back()->with('success', 'Data updated successfully.');
+        return redirect()->back()->with('success', 'Sub Service has been updated successfully!');
     }
 
     /**
@@ -135,12 +150,13 @@ class BrandLogoController extends Controller
     public function destroy($id)
     {
         // delete image jika ada
-        $brandLogo = BrandLogo::find($id);
-        if (file_exists(public_path('uploads/brand-logo/' . $brandLogo->image)))
-            unlink(public_path('uploads/brand-logo/' . $brandLogo->image));
+        $subService = SubService::find($id);
+        if(file_exists(public_path(SubService::PATH . $subService->image)))
+            unlink(public_path(SubService::PATH . $subService->image));
 
-        BrandLogo::whereId($id)->delete();
+        // delete data
+        $subService->delete();
 
-        return redirect()->back()->with('success', 'Data deleted successfully.');
+        return redirect()->back()->with('success', 'Sub Service has been deleted successfully!');
     }
 }

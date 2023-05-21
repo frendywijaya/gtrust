@@ -29,7 +29,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-lg-12 mb-3">
                                                     <p class="fw-semibold">Cover Image</p>
-                                                    <input type="file" class="file-input" name="breadcrumb_cover_image" 
+                                                    <input type="file" class="file-input file-upload" name="breadcrumb_cover_image" 
                                                     accept="image/*" data-default="{{@$staticPage->breadcrumb_cover_image}}">
                                                 </div>
                                             </div>
@@ -60,7 +60,7 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Section Title</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control"name="left_section_tilte" value="{{@$staticPage->left_section_tilte}}">
+                                                    <input type="text" class="form-control"name="left_section_title" value="{{@$staticPage->left_section_title}}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">

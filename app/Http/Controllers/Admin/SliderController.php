@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -14,7 +15,13 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('admin.cms.slider');
+        // get all sliders
+        $sliders = Slider::all();
+
+        return view('admin.cms.slider', [
+            'sliders' => $sliders,
+            'path' => Slider::PATH,
+        ]);
     }
 
     /**
@@ -35,7 +42,35 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validation
+        $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'content' => 'required',
+            'image' => 'required',
+            'button_text' => 'required',
+            'button_link' => 'required',
+        ]);
+
+        // insert image
+        $image = $request->file('image');
+        // create filename unique untuk image
+        $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
+        $image->move(Slider::PATH, $image_name);
+
+        $slider_data = [
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'content' => $request->content,
+            'image' => $image_name,
+            'button_text' => $request->button_text,
+            'button_link' => $request->button_link,
+        ];
+
+        // insert data to table slider
+        Slider::create($slider_data);
+
+        return redirect()->back()->with('success', 'Slider berhasil ditambahkan!');
     }
 
     /**
@@ -69,7 +104,53 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validation
+        $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'content' => 'required',
+            'button_text' => 'required',
+            'button_link' => 'required',
+        ]);
+
+        // get data slider by id
+        $slider = Slider::find($id);
+
+        // cek jika image sama dengan di database
+        if ($request->file('image')->getClientOriginalName() == $slider->image){
+            // jika sama, maka update data tanpa image
+            $slider_data = [
+                'title' => $request->title,
+                'subtitle' => $request->subtitle,
+                'content' => $request->content,
+                'button_text' => $request->button_text,
+                'button_link' => $request->button_link,
+            ];
+        } else {
+            if (file_exists(Slider::PATH . $slider->image)){
+                unlink(Slider::PATH . $slider->image);
+            }
+            // jika tidak sama, maka update data dengan image
+            // insert image
+            $image = $request->file('image');
+            // create filename unique untuk image
+            $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
+            $image->move(Slider::PATH, $image_name);
+
+            $slider_data = [
+                'title' => $request->title,
+                'subtitle' => $request->subtitle,
+                'content' => $request->content,
+                'image' => $image_name,
+                'button_text' => $request->button_text,
+                'button_link' => $request->button_link,
+            ];
+        }
+
+        // update data
+        $slider->update($slider_data);
+
+        return redirect()->back()->with('success', 'Slider berhasil diupdate!');
     }
 
     /**
@@ -80,6 +161,15 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete image jika ada
+        $slider = Slider::find($id);
+        if (file_exists(Slider::PATH . $slider->image)){
+            unlink(Slider::PATH . $slider->image);
+        }
+
+        // delete data
+        $slider->delete();
+
+        return redirect()->back()->with('success', 'Slider berhasil dihapus!');
     }
 }

@@ -196,21 +196,21 @@
                         // each fileUploads
                         var filename = item[v.name];
                         if (filename) { 
-                            if ($(fileUploads[0]).hasClass('file-input')) {
+                            if ($(v).hasClass('file-input')) {
 
                                 // file input update on fileinput bootstrap
                                 var initialPreviewConfig =  [
                                     {caption: filename , showDrag: false, showZoom: true, showRemove: false},
                                 ];
-                                var url =  $(fileUploads[0]).data('path') + '/' + filename;
-                                fileUploads[0].setAttribute('data-initial-preview', url);
-                                fileUploads[0].setAttribute('data-initial-caption', filename);
-                                fileUploads[0].setAttribute('data-initial-preview-as-data', true);
-                                fileUploads[0].setAttribute('data-initial-preview-file-type', 'image');
-                                fileUploads[0].setAttribute('data-initial-preview-config', JSON.stringify(initialPreviewConfig));
+                                var url =  $(v).data('path') + '/' + filename;
+                                v.setAttribute('data-initial-preview', url);
+                                v.setAttribute('data-initial-caption', filename);
+                                v.setAttribute('data-initial-preview-as-data', true);
+                                v.setAttribute('data-initial-preview-file-type', 'image');
+                                v.setAttribute('data-initial-preview-config', JSON.stringify(initialPreviewConfig));
                                 // file input update on fileinput bootstrap
                                 
-                                $(fileUploads[0]).fileinput('destroy').fileinput({
+                                $(v).fileinput('destroy').fileinput({
                                     previewFileType: 'image',
                                     browseLabel: 'Select',
                                     browseClass: 'btn btn-light',
