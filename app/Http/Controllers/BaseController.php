@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OtherService;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,8 @@ class BaseController extends Controller
         $staticSocialMediaData = StaticPage::getData('socialmedia');
         // get data from static table contact
         $staticContactData = StaticPage::getData('contactwidget');
+        // get otherServices
+        $otherServices = OtherService::all();
 
         // share data to all views
         view()->share([
@@ -25,6 +28,7 @@ class BaseController extends Controller
             'staticFooterData' => $staticFooterData,
             'staticSocialMediaData' => $staticSocialMediaData,
             'staticContactData' => $staticContactData,
+            'otherServices' => $otherServices,
         ]);
     }
 }

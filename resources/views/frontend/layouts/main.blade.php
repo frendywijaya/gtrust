@@ -119,14 +119,15 @@
                                         </li>
                                         <li class="menu-item-has-children"><a href="#">Services</a>
                                             <ul class="sub-menu">
-                                                <li><a href="/services">Facilitation</a></li>
-                                                <li><a href="/services">Learning</a></li>
+                                                <li><a href="{{route('servicesFacilitation')}}">Facilitation</a></li>
+                                                <li><a href="{{route('servicesLearning')}}">Learning</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children"><a href="#">Other Services</a>
                                             <ul class="sub-menu">
-                                                <li><a href="https://kelasgemilang.id">Kelas Gemilang</a></li>
-                                                <li><a href="https://talenesia.com">Talenesia</a></li>
+                                                @foreach ($otherServices as $item)
+                                                <li><a href="{{$item->link}}">{{$item->title}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="/about">About us</a>
@@ -203,6 +204,7 @@
     <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 
+    @yield('script')
 </body>
 
 </html>

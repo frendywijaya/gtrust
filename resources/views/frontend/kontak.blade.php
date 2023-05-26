@@ -3,17 +3,17 @@
 @section('content')
 
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('frontend/img/bg/breadcrumb_bg.jpg') }}">
+    <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('uploads/staticpage/'.@$staticKontak->breadcrumb_cover_image)}}">
         <div class="breadcrumb-shape" data-background="{{ asset('frontend/img/images/breadcrumb_shape.png') }}"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-content">
-                        <h2 class="title">Contact Us</h2>
+                        <h2 class="title">{{@$staticKontak->breadcrumb_title}}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{@$staticKontak->breadcrumb_title}}</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,8 +29,10 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-10">
                     <div class="contact-form-wrap" data-background="{{ asset('frontend/img/images/contact_form_bg.jpg') }}">
-                        <h2 class="title">Reach Us</h2>
-                        <p>Send us a message and we' ll respond as soon as possible</p>
+                        <h2 class="title">{{@$staticKontak->left_section_title}}</h2>
+                        <p>
+                            {{@$staticKontak->left_section_text}}
+                        </p>
                         <form action="#" class="contact-form">
                             <div class="row">
                                 <div class="col-md-6">
@@ -66,8 +68,10 @@
                 </div>
                 <div class="col-xl-6 col-lg-10">
                     <div class="contact-info-wrap">
-                        <h2 class="title">Need Any Help?</h2>
-                        <p>Call us or message and we' ll respond as soon as possible</p>
+                        <h2 class="title">{{@$staticKontak->right_section_title}}</h2>
+                        <p>
+                            {{@$staticKontak->right_section_text}}
+                        </p>
                         <ul class="list-wrap">
                             <li>
                                 <div class="contact-info-item">
@@ -106,7 +110,7 @@
 
                     <!-- contact-map -->
                     <div id="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15860.430528228668!2d106.9531491!3d-6.380106!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69950b11849ac1%3A0xd23d71163a5944ff!2sG-Trust%20Learning!5e0!3m2!1sen!2sid!4v1681966708924!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{@$staticKontak->right_section_link}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <!-- contact-map-end -->
 

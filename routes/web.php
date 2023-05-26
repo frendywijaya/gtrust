@@ -33,7 +33,8 @@ Route::group(['as' => 'project.', 'prefix' => '/project'], function () {
 });
 
 Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->name('kontak');
-Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services');
+Route::get('/services/facilitation', [App\Http\Controllers\ServicesController::class, 'servicesFacilitation'])->name('servicesFacilitation');
+Route::get('/services/learning', [App\Http\Controllers\ServicesController::class, 'servicesLearning'])->name('servicesLearning');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 
 require __DIR__ . '/auth.php';

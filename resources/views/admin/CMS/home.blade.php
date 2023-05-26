@@ -42,7 +42,9 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <textarea class="form-control" id="ckeditor_classic_empty" name="about_text" value="{{@$staticPage->about_text}}"></textarea>
+                                                    <textarea class="form-control" id="ckeditor_classic_empty" name="about_text">
+                                                        {{@$staticPage->about_text}}
+                                                    </textarea>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">

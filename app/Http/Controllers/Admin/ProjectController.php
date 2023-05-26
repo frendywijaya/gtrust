@@ -157,17 +157,23 @@ class ProjectController extends Controller
         $project->category = $request->category;
         $project->project_date = date('Y-m-d', strtotime($request->project_date));
         
+
         // cek apakah ada image yang di upload
         if ($request->hasFile('image')) {
-            // jika ada maka hapus image yang lama
-            if ($project->image && file_exists(Project::PATH . $project->image)) {
-                unlink(Project::PATH . $project->image);
+            // cek jika image sama dengan di database
+            if($request->file('image')->getClientOriginalName() == $project->image) {
+                $project->image = $request->file('image')->getClientOriginalName();
+            } else {
+                // jika ada maka hapus image yang lama
+                if ($project->image && file_exists(Project::PATH . $project->image)) {
+                    unlink(Project::PATH . $project->image);
+                }
+                // upload image yang baru
+                $image = $request->file('image');
+                $image_name = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(Project::PATH, $image_name);
+                $project->image = $image_name;
             }
-            // upload image yang baru
-            $image = $request->file('image');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(Project::PATH, $image_name);
-            $project->image = $image_name;
         }
 
         $project->client = $request->client;

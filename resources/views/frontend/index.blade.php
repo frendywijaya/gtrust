@@ -36,7 +36,7 @@
                             @foreach ($brandLogos as $item)
                             <div class="col-12">
                                 <div class="brand-item">
-                                    <img src="{{ asset('uploads/brand-logo/'.$item->image) }}" alt="{{$item->image}}">
+                                    <img src="{{ asset($brandLogoPath.$item->image) }}">
                                 </div>
                             </div>
                             @endforeach
@@ -256,7 +256,7 @@
                 </div>
                 <div class="row project-active-two">
                     @foreach ($projects as $project)
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <div class="project-item-four">
                             <div class="project-thumb-four">
                                 <a href="{{route('project.detail',$project->slug)}}"><img src="{{ asset($pathProject.$project->image) }}"

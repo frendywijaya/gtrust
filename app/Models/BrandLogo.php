@@ -15,4 +15,6 @@ class BrandLogo extends Model
         'title',
         'image',
     ];
+
+    const PATH = 'uploads/brand-logo/';
 }

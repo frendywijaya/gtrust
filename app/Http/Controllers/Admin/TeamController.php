@@ -110,31 +110,31 @@ class TeamController extends Controller
             'description' => 'required',
         ]);
 
-        // cek jika memilih gambar baru maka gambar lama akan dihapus
-        if ($request->image) {
-            $brandLogo = Team::find($id);
-            unlink(public_path(Team::PATH . $brandLogo->image));
-        }
+        // update team
+        $team = Team::find($id);
+        $team->name = $request->name;
+        $team->position = $request->position;
+        $team->description = $request->description;
 
-        // insert image jika ada
+        // cek apakah ada image yang di upload
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
+            // cek jika image sama dengan di database
+            if($request->file('image')->getClientOriginalName() == $team->image) {
+                $team->image = $request->file('image')->getClientOriginalName();
+            } else {
+                // jika ada maka hapus image yang lama
+                if ($team->image && file_exists(Team::PATH . $team->image)) {
+                    unlink(Team::PATH . $team->image);
+                }
+                // upload image yang baru
+                $image = $request->file('image');
+                $image_name = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(Team::PATH, $image_name);
+                $team->image = $image_name;
+            }
+        }   
 
-            // create filename unique untuk image
-            $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-            
-            $image->move(Team::PATH, $image_name);
-        }
-
-        $team_data = [
-            'name' => $request->name,
-            'position' => $request->position,
-            'image' => $image_name,
-            'description' => $request->description,
-        ];
-
-        // update data to table teams
-        Team::where('id', $id)->update($team_data);
+        $team->save();
 
         return redirect()->route('admin.cms.team.index')->with('success', 'Team data has been updated successfully!');
     }

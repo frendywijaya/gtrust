@@ -34,7 +34,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$testimony->name}}</td>
                         <td>{{$testimony->position}}</td>
-                        <td>{{$testimony->description}}</td>
+                        <td>{{$testimony->testimoni}}</td>
                         <td class="text-center">
                             <div class="d-inline-flex">
                                 <a href="#" class="text-body btn-edit" data-bs-popup="tooltip" aria-label="Edit"

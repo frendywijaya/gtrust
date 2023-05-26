@@ -27,6 +27,7 @@ class HomeController extends BaseController
 
         return view('frontend.index' , [
             'brandLogos' => $brandLogos,
+            'brandLogoPath' => BrandLogo::PATH,
             'sliders' => $sliders,
             'pathSlider' => Slider::PATH,
             'staticHome' => $staticAbout,

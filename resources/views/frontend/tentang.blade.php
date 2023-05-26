@@ -2,17 +2,17 @@
 
 @section('content')
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('frontend/img/bg/breadcrumb_bg.jpg') }}">
+    <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('uploads/staticpage/'.@$staticAbout->breadcrumb_cover_image)}}">
         <div class="breadcrumb-shape" data-background="{{ asset('frontend/img/images/breadcrumb_shape.png') }}"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-content">
-                        <h2 class="title">About Us</h2>
+                        <h2 class="title">{{@$staticAbout->breadcrumb_title}}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                                <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{@$staticAbout->breadcrumb_title}}</li>
                             </ol>
                         </nav>
                     </div>
@@ -28,9 +28,9 @@
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-6 order-0 order-lg-2">
                     <div class="about-img-wrap">
-                        <img src="{{ asset('frontend/img/images/about_img01.jpg') }}" alt="" class="wow fadeInRight"
+                        <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_1)}}" alt="" class="wow fadeInRight"
                             data-wow-delay=".4s">
-                        <img src="{{ asset('frontend/img/images/about_img02.jpg') }}" alt="" class="wow fadeInRight"
+                        <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_2)}}" alt="" class="wow fadeInRight"
                             data-wow-delay=".2s">
                         <div class="about-experiences-wrap">
                             <div class="experiences-item">
@@ -55,12 +55,12 @@
                 <div class="col-xl-5 col-lg-6">
                     <div class="about-content">
                         <div class="section-title mb-25">
-                            <span class="sub-title">About Company</span>
-                            <h2 class="title">We’re Committed to Deliver Perfection</h2>
+                            <span class="sub-title">{{@$staticAbout->about_company_subtitle}}</span>
+                            <h2 class="title">{{@$staticAbout->about_company_title}}</h2>
                         </div>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majori have suffered
-                            alteration in some form, by injected humour, or randomised word which don't look even slightly
-                            believable.</p>
+                        <p>
+                            {{@$staticAbout->about_company_section_text}}
+                        </p>
                         <div class="about-list">
                             <ul class="list-wrap">
                                 <li><i class="fas fa-check"></i>32k Partners have worked us.</li>
@@ -91,48 +91,56 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="work-item">
                         <div class="work-thumb">
-                            <img src="{{ asset('frontend/img/images/work_img01.png') }}" alt="">
+                            <img src="{{ asset('uploads/staticpage/'.@$staticAbout->approaches_slot_1)}}" alt="">
                             <h4 class="number">01</h4>
                         </div>
                         <div class="work-content">
-                            <h2 class="title">Plan for Session</h2>
-                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                            <h2 class="title">{{@$staticAbout->approaches_title_1}}</h2>
+                            <p>
+                                {{@$staticAbout->approaches_text_1}}
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="work-item">
                         <div class="work-thumb">
-                            <img src="{{ asset('frontend/img/images/work_img02.png') }}" alt="">
+                            <img src="{{ asset('uploads/staticpage/'.@$staticAbout->approaches_slot_2)}}" alt="">
                             <h4 class="number">02</h4>
                         </div>
                         <div class="work-content">
-                            <h2 class="title">Schedule Estimate</h2>
-                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                            <h2 class="title">{{@$staticAbout->approaches_title_2}}</h2>
+                            <p>
+                                {{@$staticAbout->approaches_text_2}}
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="work-item">
                         <div class="work-thumb">
-                            <img src="{{ asset('frontend/img/images/work_img03.png') }}" alt="">
+                            <img src="{{ asset('uploads/staticpage/'.@$staticAbout->approaches_slot_3)}}" alt="">
                             <h4 class="number">03</h4>
                         </div>
                         <div class="work-content">
-                            <h2 class="title">Install New Consulting</h2>
-                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                            <h2 class="title">{{@$staticAbout->approaches_title_3}}</h2>
+                            <p>
+                                {{@$staticAbout->approaches_text_3}}
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="work-item">
                         <div class="work-thumb">
-                            <img src="{{ asset('frontend/img/images/work_img04.png') }}" alt="">
+                            <img src="{{ asset('uploads/staticpage/'.@$staticAbout->approaches_slot_4)}}" alt="">
                             <h4 class="number">04</h4>
                         </div>
                         <div class="work-content">
-                            <h2 class="title">Event Delivery</h2>
-                            <p>Suffered alteration in some a form, by injected humour, or randomised word</p>
+                            <h2 class="title">{{@$staticAbout->approaches_title_4}}</h2>
+                            <p>
+                                {{@$staticAbout->approaches_text_4}}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -149,14 +157,14 @@
                     <div class="history-img-wrap">
                         <ul class="list-wrap">
                             <li>
-                                <img src="{{ asset('frontend/img/images/history_img01.jpg') }}" alt="">
+                                <img src="{{ asset('uploads/staticpage/'.@$staticAbout->history_image_large)}}" alt="">
                             </li>
                             <li>
-                                <img src="{{ asset('frontend/img/images/history_img02.jpg') }}" alt="">
-                                <a href="#" class="play-btn popup-video pulse"><i class="fas fa-play"></i></a>
+                                <img src="{{ asset('uploads/staticpage/'.@$staticAbout->history_video_cover_image)}}" alt="">
+                                <a href="{{@$staticAbout->history_video_link}}" class="play-btn popup-video pulse"><i class="fas fa-play"></i></a>
                             </li>
                             <li>
-                                <img src="{{ asset('frontend/img/images/history_img03.jpg') }}" alt="">
+                                <img src="{{ asset('uploads/staticpage/'.@$staticAbout->history_image_small)}}" alt="">
                             </li>
                         </ul>
                     </div>
@@ -164,12 +172,12 @@
                 <div class="col-lg-6">
                     <div class="history-content">
                         <div class="section-title mb-20">
-                            <span class="sub-title">Our Consulting History</span>
-                            <h2 class="title">Consulting when an unknown printer took to make type book</h2>
+                            <span class="sub-title">{{@$staticAbout->history_section_subtitle}}</span>
+                            <h2 class="title">{{@$staticAbout->history_section_title}}</h2>
                         </div>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majori our as have
-                            suffered alteration in some form, by injected humour, or randomised word which don't look even
-                            slightly believable.</p>
+                        <p>
+                            {{@$staticAbout->history_section_subtitle}}
+                        </p>
                         <div class="history-list">
                             <ul class="list-wrap">
                                 <li><i class="fas fa-check-circle"></i>Technology management</li>
@@ -194,26 +202,27 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title text-center mb-60">
-                            <span class="sub-title">Professional Team</span>
-                            <h2 class="title">Professional Team Member</h2>
+                            <span class="sub-title">{{@$staticAbout->our_team_section_subtitle}}</span>
+                            <h2 class="title">{{@$staticAbout->our_team_section_title}}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    @for($i = 0; $i < 4; $i++)
+                    @foreach ($teams as $team)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
                         <div class="team-item">
                             <div class="team-thumb">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{ asset('frontend/img/team/team_img01.jpg') }}"
+                                <a href="javascript:;" onclick="showTeamDesc(this)" class="team-desc" data-team="{{$team}}" >
+                                    <img src="{{ asset($teamPath.@$team->image) }}"
                                         alt=""></a>
                             </div>
-                            <div class="team-content" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <h2 class="title"><a>Star Hasugian</a></h2>
-                                <span>Founder</span>
+                            <div class="team-content" onclick="showTeamDesc(this)" data-team="{{$team}}">
+                                <h2 class="title"><a>{{$team->name}}</a></h2>
+                                <span>{{$team->position}}</span>
                             </div>
                         </div>
                     </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -225,8 +234,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="section-title text-center mb-50">
-                            <span class="sub-title">Our Testimonial</span>
-                            <h2 class="title">What Our Client Say</h2>
+                            <span class="sub-title">{{@$staticAbout->testimonials_section_subtitle}}</span>
+                            <h2 class="title">{{@$staticAbout->testimonials_section_title}}</h2>
                         </div>
                     </div>
                 </div>
@@ -234,9 +243,10 @@
                     <div class="col-lg-10">
                         <div class="testimonial-inner">
                             <div class="testimonial-active-two">
+                                @foreach ($testimonials as $testimonial)
                                 <div class="testimonial-item-two">
                                     <div class="testimonial-avatar-two">
-                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar01.png') }}"
+                                        <img src="{{ asset($testimoniPath.$testimonial->image) }}"
                                             alt="">
                                     </div>
                                     <div class="testimonial-content-two">
@@ -252,98 +262,18 @@
                                                 <i class="fas fa-star"></i>
                                             </div>
                                         </div>
-                                        <p>There are many varation of paissages of Lorem as the Ipum available but our
-                                            majority have sufferied alterations in some form, by our by injected hsumour
-                                            randomised worids which don't looks even slightly there as believable. If you
-                                            going to use a passage of Lorem Ipsum.</p>
+                                        <p>{{$testimonial->testimoni}}.</p>
                                         <div class="content-bottom">
-                                            <h4 class="title">Darrell Steward</h4>
-                                            <span>Consulting Expert</span>
+                                            <h4 class="title">{{$testimonial->name}}</h4>
+                                            <span>{{$testimonial->position}}</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="testimonial-item-two">
-                                    <div class="testimonial-avatar-two">
-                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar02.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="testimonial-content-two">
-                                        <div class="content-top">
-                                            <div class="icon">
-                                                <i class="fas fa-quote-left"></i>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <p>Lorem Ipsum are many varation of paissages of Lorem as the Ipum available but our
-                                            majority have sufferied alterations in some form, by our by injected hsumour
-                                            randomised worids which don't looks even slightly there as believable. If you
-                                            going to use a passage of Lorem Ipsum.</p>
-                                        <div class="content-bottom">
-                                            <h4 class="title">Robert C. Simmons</h4>
-                                            <span>Consulting Expert</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial-item-two">
-                                    <div class="testimonial-avatar-two">
-                                        <img src="{{ asset('frontend/img/images/h2_testi_avatar03.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="testimonial-content-two">
-                                        <div class="content-top">
-                                            <div class="icon">
-                                                <i class="fas fa-quote-left"></i>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <p>Lorem Ipsum are many varation of paissages of Lorem as the Ipum available but our
-                                            majority have sufferied alterations in some form, by our by injected hsumour
-                                            randomised worids which don't looks even slightly there as believable. If you
-                                            going to use a passage of Lorem Ipsum.</p>
-                                        <div class="content-bottom">
-                                            <h4 class="title">Karikoka Ahli</h4>
-                                            <span>Executive Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="testimonial-avatar-wrap">
-                    <ul class="list-wrap">
-                        <li>
-                            <img src="{{ asset('frontend/img/images/h4_testi_avatar01.png') }}" class="layer" data-depth="0.1" alt="">
-                        </li>
-                        <li>
-                            <img src="{{ asset('frontend/img/images/h4_testi_avatar02.png') }}" class="layer" data-depth="0.2" alt="">
-                        </li>
-                        <li>
-                            <img src="{{ asset('frontend/img/images/h4_testi_avatar03.png') }}" class="layer" data-depth="0.05" alt="">
-                        </li>
-                        <li>
-                            <img src="{{ asset('frontend/img/images/h4_testi_avatar03.png') }}" class="layer" data-depth="0.2" alt="">
-                        </li>
-                        <li>
-                            <img src="{{ asset('frontend/img/images/h4_testi_avatar02.png') }}" class="layer" data-depth="0.05" alt="">
-                        </li>
-                        <li>
-                            <img src="{{ asset('frontend/img/images/h4_testi_avatar01.png') }}" class="layer" data-depth="0.1" alt="">
-                        </li>
-                    </ul>
-                </div> --}}
             </div>
         </section>
         <!-- testimonial-area-end -->
@@ -355,52 +285,24 @@
     <div class="inner-brand-area pt-120 pb-120">
         <div class="container">
             <div class="row brand-active-three">
+                @foreach ($brandLogos as $item)
                 <div class="col-12">
                     <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img01.png') }}" alt="">
+                        <img src="{{ asset('uploads/brand-logo/'.$item->image) }}">
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img02.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img03.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img04.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img05.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img06.png') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="brand-item">
-                        <img src="{{ asset('frontend/img/brand/brand_img03.png') }}" alt="">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- brand-area-end -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="teamDesc" tabindex="-1" aria-labelledby="teamDescLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header px-4">
-                    <h5 class="modal-title" id="exampleModalLabel">Team Profile</h5>
+                    <h5 class="modal-title" id="teamDescLabel">Team Profile</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
@@ -413,4 +315,21 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        // document ready
+        $(document).ready(function() {
+            // init
+        });
+
+        function showTeamDesc(that) {
+            var teamDesc = $(that).data('team');
+            $('#teamDesc .modal-body').find('h4').text(teamDesc.name);
+            $('#teamDesc .modal-body').find('p').text(teamDesc.description);
+            $('#teamDesc').modal('show');
+        }
+    
+    </script>
 @endsection

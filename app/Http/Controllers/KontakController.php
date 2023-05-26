@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inbox;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class KontakController extends BaseController
@@ -10,7 +11,12 @@ class KontakController extends BaseController
     //
     public function index()
     {
-        return view('frontend.kontak');
+        // get static page
+        $staticKontak = StaticPage::getData('contactstatic');
+
+        return view('frontend.kontak', [
+            'staticKontak' => $staticKontak
+        ]);
     }
 
     // craete function send massage
