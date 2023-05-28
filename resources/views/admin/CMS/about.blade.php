@@ -124,7 +124,8 @@
                                         <div class="col-xl-3">
                                             <div class="fw-bold border-bottom pb-2 mb-3">Slot 1</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input" name="approaches_slot_1" value="{{@$staticPage->approaches_slot_1}}">
+                                                <input type="file" class="file-input file-upload" name="approaches_slot_1"
+                                                accept="image/*" data-default="{{@$staticPage->approaches_slot_1}}">
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>
@@ -144,7 +145,8 @@
                                         <div class="col-xl-3">
                                             <div class="fw-bold border-bottom pb-2 mb-3">Slot 2</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input" name="approaches_slot_2" value="{{@$staticPage->approaches_slot_2}}">
+                                                <input type="file" class="file-input file-upload" name="approaches_slot_2"
+                                                accept="image/*" data-default="{{@$staticPage->approaches_slot_2}}">
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>
@@ -164,7 +166,8 @@
                                         <div class="col-xl-3">
                                             <div class="fw-bold border-bottom pb-2 mb-3">Slot 3</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input" name="approaches_slot_3" value="{{@$staticPage->approaches_slot_3}}">
+                                                <input type="file" class="file-input file-upload" name="approaches_slot_3"
+                                                accept="image/*" data-default="{{@$staticPage->approaches_slot_3}}">
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>
@@ -184,7 +187,8 @@
                                         <div class="col-xl-3">
                                             <div class="fw-bold border-bottom pb-2 mb-3">Slot 4</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input" name="approaches_slot_4" value="{{@$staticPage->approaches_slot_4}}">
+                                                <input type="file" class="file-input file-upload" name="approaches_slot_4"
+                                                accept="image/*" data-default="{{@$staticPage->approaches_slot_4}}">
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>

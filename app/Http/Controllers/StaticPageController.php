@@ -26,29 +26,34 @@ class StaticPageController extends BaseController
             $static_page = [];
         }
 
+
         // loop data to array
         foreach ($data as $key => $value) {
             // cek isfile
             if ($request->hasFile($key)) {
+
                 // cek if file is exist on database
                 if (array_key_exists($key, $static_page)) {
-                     // cek if file same with file on database
-                    if (!empty($static_page[$key]))
-                        if ($request->file($key)->getClientOriginalName() == $static_page[$key]) {
+                    if($request->file($key)->getClientOriginalName() == $static_page[$key]) {
+                        $data[$key] = $static_page[$key];
+                    }else {
+                        // cek if file is exist
+                        if (file_exists('uploads/staticpage/' . $static_page[$key])) {
+                            // delete file
+                            unlink('uploads/staticpage/' . $static_page[$key]);
                         }
-                    // create file name unique
-                    $file_name = time().'-'.$request->file($key)->getClientOriginalName();
-                    // $file_name = $static_page[$key];
-                    // cek if file is exist
-                    if (file_exists('uploads/staticpage/' . $file_name)) {
-                        // delete file
-                        unlink('uploads/staticpage/' . $file_name);
+
+                        // upload file
+                        $file = $request->file($key);
+                        $file->move('uploads/staticpage', time().'-'.$file->getClientOriginalName());
+                        $data[$key] = time().'-'.$file->getClientOriginalName();
                     }
+                } else {
+                    // upload file
+                    $file = $request->file($key);
+                    $file->move('uploads/staticpage', time().'-'.$file->getClientOriginalName());
+                    $data[$key] = time().'-'.$file->getClientOriginalName();
                 }
-                // upload file
-                $file = $request->file($key);
-                $file->move('uploads/staticpage', time().'-'.$file->getClientOriginalName());
-                $data[$key] = time().'-'.$file->getClientOriginalName();
             }
         }
 

@@ -1,4 +1,4 @@
-<div class="services-widget widget-bg" data-background="{{ asset('uploads/staticpage/contactwidget-'.@$staticContactData->backround_image) }}">
+<div class="services-widget widget-bg" data-background="{{ asset('uploads/staticpage/'.@$staticContactData->backround_image) }}">
     <h4 class="widget-title">Need Help?</h4>
     <div class="sidebar-content">
         <h4 class="title">{{@$staticContactData->section_title}}</h4>

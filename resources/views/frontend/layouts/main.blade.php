@@ -110,7 +110,7 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="/"><img src="{{ asset('uploads/staticpage/header-'.@$staticHeaderData->company_logo) }}"
+                                    <a href="/"><img src="{{ asset('uploads/staticpage/'.@$staticHeaderData->company_logo) }}"
                                             alt="Logo"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">

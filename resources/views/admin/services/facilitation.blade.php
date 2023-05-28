@@ -243,7 +243,7 @@
                                                     <td>{{$no++}}</td>
                                                     <td>{{$subList->title}}</td>
                                                     <td>{{$subList->subtitle}}</td>
-                                                    <td>{{$subList->description}}</td>
+                                                    <td>{{Str::limit($subList->description, 50, '...')}}</td>
                                                     <td><img src="{{ asset($path).'/'.$subList->image }}" style="height: 50px;"></td>
                                                     <td class="text-center">
                                                         <div class="d-inline-flex">

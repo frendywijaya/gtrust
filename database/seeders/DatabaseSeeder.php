@@ -15,5 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         // add category seed
         $this->call(CategoryData::class);
+        $this->call(SliderSeeder::class);
+        $this->call(StaticPageSeeder::class);
+        $this->call(SubServiceSeeder::class);
+        $this->call(OtherServicesSeeder::class);
+        $this->call(BrandLogoSeeder::class);
     }
 }

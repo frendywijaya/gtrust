@@ -33,7 +33,7 @@
                         <div class="about-experiences-wrap">
                             <div class="experiences-item">
                                 <div class="icon">
-                                    <img src="{{ asset('uploads/staticpage/'.@$staticService->about_facilitation_image_cover) }}" alt="">
+                                    <img src="{{asset('frontend/img/icon/about_icon01.svg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h6 class="title">{{@$staticService->about_section_text_1}}</h6>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="experiences-item">
                                 <div class="icon">
-                                    <img src="{{ asset('uploads/staticpage/'.@$staticService->about_facilitation_image_cover) }}" alt="">
+                                    <img src="{{asset('frontend/img/icon/about_icon02.svg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h6 class="title">{{@$staticService->about_section_text_2}}</h6>
