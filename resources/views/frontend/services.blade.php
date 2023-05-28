@@ -230,8 +230,8 @@
                                     <h4 class="widget-title">Our Brochures Download</h4>
                                     <div class="download-wrap">
                                         <a href="#" download target="_blank"><i
-                                                class="fas fa-cloud-download-alt"></i>Service Details.pdf<br>65 KB</a>
-                                        <a href="#" download target="_blank"><i class="fas fa-file-pdf"></i>Company
+                                                class="{{@$staticService->download_icon_1}}"></i>Service Details.pdf<br>65 KB</a>
+                                        <a href="#" download target="_blank"><i class="{{@$staticService->download_icon_2}}"></i>Company
                                             Profile.pdf<br>48 KB</a>
                                     </div>
                                 </div>

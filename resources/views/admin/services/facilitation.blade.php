@@ -360,19 +360,17 @@
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="row mb-3">
-                                                <label class="col-form-label col-lg-12">File 1</label>
-                                                <div class="col-lg-12">
-                                                    <input type="file" class="file-input file-upload" name="filedownload_image_1" 
-                                                    accept="image/*" data-default="{{@$staticPage->filedownload_image_1}}">
+                                                <label class="col-form-label col-lg-3">Image (Kode FontAwesome) 1</label>
+                                                <div class="col-lg-9">
+                                                    <input type="text" class="form-control" name="download_icon_1" value="{{@$staticPage->download_icon_1}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="row mb-3">
-                                                <label class="col-form-label col-lg-12">File 2</label>
-                                                <div class="col-lg-12">
-                                                    <input type="file" class="file-input file-upload" name="filedownload_image_2" 
-                                                    accept="image/*" data-default="{{@$staticPage->filedownload_image_2}}">
+                                                <label class="col-form-label col-lg-3">Image (Kode FontAwesome) 2</label>
+                                                <div class="col-lg-9">
+                                                    <input type="text" class="form-control" name="download_icon_2" value="{{@$staticPage->download_icon_2}}">
                                                 </div>
                                             </div>
                                         </div>

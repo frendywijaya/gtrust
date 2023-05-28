@@ -150,7 +150,9 @@ class StaticPageSeeder extends Seeder
                     "process_slot_3" => "1685285096-work_img01.png", 
                     "method_slot_1" => "1685286828-about_icon01.svg", 
                     "method_slot_2" => "1685286828-about_icon02.svg", 
-                    "method_slot_3" => "1685286828-about_icon01.svg" 
+                    "method_slot_3" => "1685286828-about_icon01.svg",
+                    "download_icon_1" => "fas fa-cloud-download-alt", 
+                    "download_icon_2" => "fas fa-file-pdf" 
                 ]
             ],
             [
@@ -194,7 +196,9 @@ class StaticPageSeeder extends Seeder
                     "process_slot_4" => "1685287651-work_img01.png", 
                     "method_slot_1" => "1685287706-about_icon01.svg", 
                     "method_slot_2" => "1685287706-about_icon02.svg", 
-                    "method_slot_3" => "1685287706-about_icon01.svg" 
+                    "method_slot_3" => "1685287706-about_icon01.svg",
+                    "download_icon_1" => "fas fa-cloud-download-alt", 
+                    "download_icon_2" => "fas fa-file-pdf" 
                 ]
             ],
             [
