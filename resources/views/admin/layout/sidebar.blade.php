@@ -88,6 +88,9 @@
                             <a href="{{ route("admin.global.contact_widget.index") }}" class="nav-link {{ request()->routeIs('admin.global.contact_widget.*') ? 'active' : '' }}">Contact Widget</a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route("admin.global.contact_info.index") }}" class="nav-link {{ request()->routeIs('admin.global.contact_info.*') ? 'active' : '' }}">Contact Information</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route("admin.global.brand_logo.index") }}" class="nav-link {{ request()->routeIs('admin.global.brand_logo.*') ? 'active' : '' }}">Brand Logo</a>
                         </li>
                         <li class="nav-item">
