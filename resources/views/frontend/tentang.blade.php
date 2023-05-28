@@ -30,8 +30,8 @@
                     <div class="about-img-wrap">
                         <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_1)}}" alt="" class="wow fadeInRight"
                             data-wow-delay=".4s">
-                        <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_2)}}" alt="" class="wow fadeInRight"
-                            data-wow-delay=".2s">
+                        {{-- <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_2)}}" alt="" class="wow fadeInRight"
+                            data-wow-delay=".2s"> --}}
                         <div class="about-experiences-wrap">
                             <div class="experiences-item">
                                 <div class="icon">

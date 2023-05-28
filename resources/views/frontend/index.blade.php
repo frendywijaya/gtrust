@@ -51,7 +51,7 @@
     <!-- slider-area-end -->
 
     <!-- about-area -->
-    <section class="about-area-two parallax about-bg" data-background="{{ asset('frontend/img/bg/about_bg.jpg') }}">
+    <section class="about-area-two parallax about-bg" data-background="{{ asset('frontend/img/bg/about_bg.png') }}">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-0 order-lg-2">
