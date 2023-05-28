@@ -40,9 +40,9 @@
                             <h2 class="fw-title">Kontak Kami</h2>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="contact.html"><i class="fas fa-phone"></i>+62 81231313</a></li>
-                                    <li><a href="contact.html"><i class="fas fa-envelope"></i>info@gtrust.id</a></li>
-                                    <li><a href="contact.html"><i class="fas fa-map-marker"></i>Jln. Pahlawan 1 No.30<br>Jakarta</a></li>
+                                    <li><a href="contact.html"><i class="fas fa-phone"></i>{{@$staticContactInfo->company_phone}}</a></li>
+                                    <li><a href="contact.html"><i class="fas fa-envelope"></i>{{@$staticContactInfo->company_email}}</a></li>
+                                    <li><a href="contact.html"><i class="fas fa-map-marker"></i>{!! @$staticContactInfo->company_address !!}</li>
                                 </ul>
                             </div>
                         </div>

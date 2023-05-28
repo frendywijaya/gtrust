@@ -16,7 +16,11 @@ class ContactInfoController extends Controller
     public function index()
     {
         // get data from static_page table
-        return view('admin.global.contactinfo');
+        $staticContactInfo = StaticPage::getData('contactinfo');
+
+        return view('admin.global.contactinfo',[
+            'staticPage' => $staticContactInfo,
+        ]);
     }
 
     /**

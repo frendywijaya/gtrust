@@ -12,7 +12,7 @@
                     </div>
 
                     <!-- create form -->
-                    <form action="{{ route('admin.staticpage.save', 'contactwidget') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.staticpage.save', 'contactinfo') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="mb-1">
@@ -20,19 +20,21 @@
                                 <div class="row mb-3">
                                     <label class="col-form-label col-lg-3">Company Phone</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" name="section_title">
+                                        <input type="text" class="form-control" name="company_phone" value="{{@$staticPage->company_phone}}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-form-label col-lg-3">Company Email</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" name="section_title">
+                                        <input type="text" class="form-control" name="company_email" value="{{@$staticPage->company_email}}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-form-label col-lg-3">Company Address</label>
                                     <div class="col-lg-9">
-                                        <textarea rows="3" cols="3" class="form-control" placeholder="Default textarea"></textarea>
+                                        <textarea rows="3" cols="3" class="form-control" name="company_address" placeholder="Default textarea">
+                                            {{@$staticPage->company_address}}
+                                        </textarea>
                                     </div>
                                 </div>
                                 <div class="text-end">

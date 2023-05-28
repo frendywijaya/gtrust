@@ -58,26 +58,14 @@
                         <div class="header-top-left">
                             <ul class="list-wrap">
                                 <li>{{@$staticHeaderData->welcome_text}}</li>
-                                <li><i class="fas fa-phone-alt"></i><a href="tel:0123456789">(+62) 82336548</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:info@gtrust.id">info@gtrust.id</a>
+                                <li><i class="fas fa-phone-alt"></i><a href="tel:{{@$staticContactInfo->company_phone}}">{{@$staticContactInfo->company_phone}}</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:{{@$staticContactInfo->company_email}}">{{@$staticContactInfo->company_email}}</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-3">
                         <div class="header-top-right">
-                            {{-- <div class="header-lang">
-                                <div class="dropdown">
-                                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="assets/img/icon/united-states.jpg" alt=""> English
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <a class="dropdown-item" href="#"><img src="assets/img/icon/russia.jpg"
-                                                alt="">English</a>
-                                    </div>
-                                </div>
-                            </div> --}}
                             <div class="header-social">
                                 <ul class="list-wrap">
                                     @if(@$staticSocialMediaData->facebook)

@@ -21,6 +21,8 @@ class BaseController extends Controller
         $staticContactData = StaticPage::getData('contactwidget');
         // get otherServices
         $otherServices = OtherService::all();
+        // get contact info
+        $staticContactInfo = StaticPage::getData('contactinfo');
 
         // share data to all views
         view()->share([
@@ -29,6 +31,7 @@ class BaseController extends Controller
             'staticSocialMediaData' => $staticSocialMediaData,
             'staticContactData' => $staticContactData,
             'otherServices' => $otherServices,
+            'staticContactInfo' => $staticContactInfo,
         ]);
     }
 }

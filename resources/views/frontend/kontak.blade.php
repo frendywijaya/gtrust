@@ -79,8 +79,7 @@
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
                                     <div class="content">
-                                        <a href="tel:0123456789">+(323) 9847 3847 383</a>
-                                        {{-- <a href="tel:0123456789">+(434) 5466 5467 443</a> --}}
+                                        <a href="tel:{{@$staticContactInfo->company_phone}}">{{@$staticContactInfo->company_phone}}</a>
                                     </div>
                                 </div>
                             </li>
@@ -90,8 +89,7 @@
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div class="content">
-                                        <a href="mailto:infoyour@gmail.com">infoyour@gmail.com</a>
-                                        {{-- <a href="mailto:infoyour@gmail.com">domaininfo@gmail.com</a> --}}
+                                        <a href="mailto:{{@$staticContactInfo->company_email}}">{{@$staticContactInfo->company_email}}</a>
                                     </div>
                                 </div>
                             </li>
