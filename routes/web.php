@@ -24,7 +24,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //  blog
 Route::group(['as' => 'blog.', 'prefix' => '/blog'], function () {
     Route::get('/', [App\Http\Controllers\BlogController::class, 'index'])->name('index');
-    Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'detail'])->name('detail');
+    Route::get('/{slug}', [App\Http\Controllers\BlogController::class, 'detail'])->name('detail');
 });
 
 // project

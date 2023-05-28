@@ -78,7 +78,7 @@
                             <div class="categories-list">
                                 <ul class="list-wrap">
                                     @foreach ($categories as $category)
-                                        <li><a href="#">{{$category->title}} <span>({{$category->blogs->count()}})</span></a></li>
+                                        <li><a href="{{route('blog.index')}}">{{$category->title}} <span>({{$category->blogs->count()}})</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>

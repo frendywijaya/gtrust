@@ -93,12 +93,9 @@
                             <h4 class="widget-title">Categories</h4>
                             <div class="categories-list">
                                 <ul class="list-wrap">
-                                    <li><a href="#">Business Consulting <span>(05)</span></a></li>
-                                    <li><a href="#">Financial Investment <span>(07)</span></a></li>
-                                    <li><a href="#">IT Consultations <span>(03)</span></a></li>
-                                    <li><a href="#">Digital Analytics <span>(04)</span></a></li>
-                                    <li><a href="#">Payment Processing <span>(02)</span></a></li>
-                                    <li><a href="#">Software Solutions <span>(09)</span></a></li>
+                                    @foreach ($categories as $category)
+                                        <li><a href="{{route('blog.index')}}">{{$category->title}} <span>({{$category->blogs->count()}})</span></a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

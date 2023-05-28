@@ -25,12 +25,12 @@
                             <h2 class="fw-title">Our Services</h2>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="project.html"><i class="fas fa-angle-double-right"></i>Home</a></li>
-                                    <li><a href="project.html"><i class="fas fa-angle-double-right"></i>Tentang Kami</a></li>
-                                    <li><a href="project.html"><i class="fas fa-angle-double-right"></i>Facilitation</a></li>
-                                    <li><a href="project.html"><i class="fas fa-angle-double-right"></i>Learning</a></li>
-                                    <li><a href="project.html"><i class="fas fa-angle-double-right"></i>Blog</a></li>
-                                    <li><a href="project.html"><i class="fas fa-angle-double-right"></i>Kontak Kami</a></li>
+                                    <li><a href="{{route('home')}}"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                                    <li><a href="{{route('about')}}"><i class="fas fa-angle-double-right"></i>Tentang Kami</a></li>
+                                    <li><a href="{{route('servicesFacilitation')}}"><i class="fas fa-angle-double-right"></i>Facilitation</a></li>
+                                    <li><a href="{{route('servicesLearning')}}"><i class="fas fa-angle-double-right"></i>Learning</a></li>
+                                    <li><a href="{{route('blog.index')}}"><i class="fas fa-angle-double-right"></i>Blog</a></li>
+                                    <li><a href="{{route('kontak')}}"><i class="fas fa-angle-double-right"></i>Kontak Kami</a></li>
                                 </ul>
                             </div>
                         </div>
