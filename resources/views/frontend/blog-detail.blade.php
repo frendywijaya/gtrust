@@ -48,10 +48,9 @@
                                         <div class="blog-post-share">
                                             <h5 class="title">Share:</h5>
                                             <ul class="list-wrap">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="{{$link['facebook']}}" target="__blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="{{$link['twitter']}}" target="__blank"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="{{$link['linkedin']}}" target="__blank"><i class="fab fa-linkedin-in"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -65,8 +64,9 @@
                         <div class="blog-widget">
                             <div class="sidebar-search">
                                 <h4 class="widget-title">Search</h4>
-                                <form action="#">
-                                    <input id="search" type="text" placeholder="Search">
+                                <form action="{{route('blog.search')}}" method="GET">
+                                    <input id="search" type="text" name="q" placeholder="Search" value="{{ @$_GET['q'] }}">
+                                    <input type="hidden" name="category" value="{{ @$_GET['category'] }}">
                                     <button type="submit"><i class="fas fa-search"></i></button>
                                 </form>
                             </div>
@@ -94,7 +94,12 @@
                             <div class="categories-list">
                                 <ul class="list-wrap">
                                     @foreach ($categories as $category)
-                                        <li><a href="{{route('blog.index')}}">{{$category->title}} <span>({{$category->blogs->count()}})</span></a></li>
+                                        <li>
+                                            <a href="{{route('blog.search','&category='.$category->id)}}">
+                                                {{$category->title}} 
+                                                <span>({{$category->blogs->count()}})</span>
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>

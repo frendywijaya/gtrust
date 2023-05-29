@@ -22,41 +22,30 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($inboxs as $inbox)
                     <tr>
-                        <td>1</td>
-                        <td>Bambang</a></td>
-                        <td>Sinarmas</td>
-                        <td>08199233232</td>
-                        <td>bambang@gmail.com</td>
-                        <td>20 April 2023</td>
+                        <td>{{$no++}}</td>
+                        <td>{{$inbox->full_name}}</a></td>
+                        <td>{{$inbox->company_name}}</td>
+                        <td>{{$inbox->phone}}</td>
+                        <td>{{$inbox->email}}</td>
+                        <td>{{ date('d M Y', strtotime($inbox->created_at)) }}</td>
                         <td class="text-center">
                             <div class="d-inline-flex">
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
+                                <a href="#" class="btn-delete text-body mx-2" data-bs-popup="tooltip" data-url="{{route('admin.inbox.delete', $inbox->id)}}"  aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
                                     <i class="ph-trash"></i>
                                 </a>
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="view" data-bs-toggle="modal" data-bs-target="#modal_view">
+                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="view" data-inbox='{{json_encode($inbox)}}' onclick="showDetail(this)">
                                     <i class="ph-eye"></i>
                                 </a>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Weible</td>
-                        <td>Gramedia Group</a></td>
-                        <td>08199233232</td>
-                        <td>bambang@gmail.com</td>
-                        <td>20 April 2023</td>
-                        <td class="text-center">
-                            <div class="d-inline-flex">
-                                <a href="#" class="text-body mx-2" data-bs-popup="tooltip" aria-label="Remove" data-bs-original-title="Remove" data-bs-toggle="modal" data-bs-target="#modal_delete">
-                                    <i class="ph-trash"></i>
-                                </a>
-                                <a href="#" class="text-body" data-bs-popup="tooltip" aria-label="Options" data-bs-original-title="view" data-bs-toggle="modal" data-bs-target="#modal_view">
-                                    <i class="ph-eye"></i>
-                                </a>
-                            </div>
-                        </td>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>
@@ -76,12 +65,14 @@
 				</div>
 
 				<div class="modal-body">
-					<h6 class="fw-semibold">Judul Pesan</h6>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+					<h6 class="fw-semibold">-</h6>
+                <p>
+                    -
+                </p>
 				</div>
 
 				<div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" data-url="" onclick="deleteInbox(this)" class="btn-delete-inside btn btn-danger">Delete</button>
 					<button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -93,9 +84,32 @@
 
 @endsection
 
-
-
 @section('js')
     <script src="{{ asset('admin/demo/pages/datatables_extension_key_table.js') }}"></script>
     <script src="{{ asset('admin/demo/pages/components_modals.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+        });
+
+        function showDetail(that) {
+            var inbox = $(that).data('inbox');
+            inbox = JSON.parse(JSON.stringify(inbox));
+            $('#modal_view').modal('show');
+            $('#modal_view .modal-body h6').html(inbox.subject);
+            // /r to /n
+            inbox.message = inbox.message.replace(/(?:\r\n|\r|\n)/g, '<br>');
+            $('#modal_view .modal-body p').html(inbox.message);
+            // set url delete
+            var urldelete = "{{route('admin.inbox.delete', ':id')}}";
+            urldelete = urldelete.replace(':id', inbox.id);
+            $('#modal_view .modal-footer button.btn-delete-inside').attr('data-url', urldelete);
+        }
+
+        function deleteInbox(that) {
+            var url = $(that).data('url');
+            $('#modal_view').modal('hide');
+            $('#modal_delete form').attr('action', url);
+            $('#modal_delete').modal('show');
+        }
+    </script>
 @endsection

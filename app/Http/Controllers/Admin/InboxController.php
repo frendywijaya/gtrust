@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Inbox;
 use Illuminate\Http\Request;
 
 class InboxController extends Controller
@@ -13,8 +14,13 @@ class InboxController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.inbox.inbox');
+    {   
+        //get all iboxs
+        $inboxs = Inbox::all();
+
+        return view('admin.inbox.inbox', [
+            'inboxs' => $inboxs
+        ]);
     }
 
     /**
@@ -80,6 +86,10 @@ class InboxController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete inbox
+        $inbox = Inbox::find($id);
+        $inbox->delete();
+
+        return redirect()->back()->with('success', 'Inbox has been deleted successfully!');
     }
 }

@@ -24,7 +24,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //  blog
 Route::group(['as' => 'blog.', 'prefix' => '/blog'], function () {
     Route::get('/', [App\Http\Controllers\BlogController::class, 'index'])->name('index');
-    Route::get('/{slug}', [App\Http\Controllers\BlogController::class, 'detail'])->name('detail');
+    Route::get('/detail/{slug}', [App\Http\Controllers\BlogController::class, 'detail'])->name('detail');
+    Route::get('/search', [App\Http\Controllers\BlogController::class, 'search'])->name('search');
 });
 
 // project
@@ -33,6 +34,7 @@ Route::group(['as' => 'project.', 'prefix' => '/project'], function () {
 });
 
 Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->name('kontak');
+Route::post('/send-massage', [App\Http\Controllers\KontakController::class, 'storeMassage'])->name('storeMassage');
 Route::get('/services/facilitation', [App\Http\Controllers\ServicesController::class, 'servicesFacilitation'])->name('servicesFacilitation');
 Route::get('/services/learning', [App\Http\Controllers\ServicesController::class, 'servicesLearning'])->name('servicesLearning');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
@@ -80,7 +82,7 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
         Route::post('/store', [App\Http\Controllers\Admin\InboxController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\InboxController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [App\Http\Controllers\Admin\InboxController::class, 'update'])->name('update');
-        Route::get('/delete/{id}', [App\Http\Controllers\Admin\InboxController::class, 'delete'])->name('delete');
+        Route::delete('/delete/{id}', [App\Http\Controllers\Admin\InboxController::class, 'destroy'])->name('delete');
     });
 
     Route::group(['as' => 'cms.', 'prefix' => '/cms'], function () {

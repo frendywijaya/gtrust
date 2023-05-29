@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend/custom.css') }}">
+
+    @yield('css')
 </head>
 
 <body>

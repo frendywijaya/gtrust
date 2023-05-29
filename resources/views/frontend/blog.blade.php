@@ -1,5 +1,19 @@
 @extends('frontend.layouts.main')
 
+@section('css')
+<style>
+    .categories-list li.active a{
+        color: #f8ae18 !important;
+    }
+    .pagination li.disabled.page-item a {
+        pointer-events: none;
+        cursor: default;
+        background-color: #F4F4F4 !important;
+        border-color: #F4F4F4 !important;
+    }
+</style>
+@endsection
+
 @section('content')
     <!-- breadcrumb-area -->
     <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('frontend/img/bg/breadcrumb_bg.jpg') }}">
@@ -50,25 +64,18 @@
                         </div>
                         @endforeach
                     </div>
-                    {{-- <div class="pagination-wrap mt-30">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination list-wrap">
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item next-page"><a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div> --}}
+                    @if (!$isSearch) 
+                    {!! $blogs->links('pagination.default') !!}
+                    @endif
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-10">
                     <aside class="blog-sidebar">
                         <div class="blog-widget">
                             <div class="sidebar-search">
                                 <h4 class="widget-title">Search</h4>
-                                <form action="#">
-                                    <input id="search" type="text" placeholder="Search">
+                                <form action="{{route('blog.search')}}" method="GET">
+                                    <input id="search" type="text" name="q" placeholder="Search" value="{{ @$_GET['q'] }}">
+                                    <input type="hidden" name="category" value="{{ @$_GET['category'] }}">
                                     <button type="submit"><i class="fas fa-search"></i></button>
                                 </form>
                             </div>
@@ -78,7 +85,12 @@
                             <div class="categories-list">
                                 <ul class="list-wrap">
                                     @foreach ($categories as $category)
-                                        <li><a href="{{route('blog.index')}}">{{$category->title}} <span>({{$category->blogs->count()}})</span></a></li>
+                                        <li class="{{ @$_GET['category'] == $category->id ? 'active' : '' }}">
+                                            <a href="{{route('blog.search','q='.@$_GET['q'].'&category='.$category->id)}}">
+                                                {{$category->title}} 
+                                                <span>({{$category->blogs->count()}})</span>
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>

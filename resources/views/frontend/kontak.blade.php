@@ -23,6 +23,24 @@
     </section>
     <!-- breadcrumb-area-end -->
 
+    <!-- create alert -->
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{session('success')}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li><strong>{{ $error }}</strong></li>
+                @endforeach
+            </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <!-- contact-area -->
     <section class="contact-area pt-120 pb-120">
         <div class="container">
@@ -33,34 +51,41 @@
                         <p>
                             {{@$staticKontak->left_section_text}}
                         </p>
-                        <form action="#" class="contact-form">
+
+                        <!-- contact form -->
+
+
+                        <form action="{{route('storeMassage')}}" class="contact-form" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input id="firstName" type="text" placeholder="Full Name*">
+                                        <input id="firstName" type="text" name="full_name" placeholder="Full Name*" value="{{old('full_name')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input id="lastName" type="text" placeholder="Company Name*">
+                                        <input id="lastName" type="text" name="company_name" placeholder="Company Name*" value="{{old('company_name')}}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input id="email" type="email" placeholder="Email Address*">
+                                        <input id="email" type="email" name="email" placeholder="Email Address*" value="{{old('email')}}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input id="phone" type="text" placeholder="Phone Number*">
+                                        <input id="phone" type="text" name="phone" placeholder="Phone Number*" value="{{old('phone')}}">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-grp">
-                                <input id="subject" type="text" placeholder="Subject">
+                                <input id="subject" type="text" placeholder="Subject" name="subject" value="{{old('subject')}}">
                             </div>
                             <div class="form-grp">
-                                <textarea id="message" placeholder="Your Message here"></textarea>
+                                <textarea id="message" placeholder="Your Message here" name="message" >
+                                    {{old('message')}}
+                                </textarea>
                             </div>
                             <button class="btn" type="submit">Send Message</button>
                         </form>

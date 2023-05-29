@@ -23,13 +23,13 @@ class KontakController extends BaseController
     public function storeMassage(Request $request)
     {
         // create validation
-        $request->validate($request, [
+        $request->validate([
             'full_name' => 'required',
             'company_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
             'subject' => 'required',
-            'message' => 'required',
+            'message' => 'required'
         ]);
 
         // store data to table inboxes
@@ -43,7 +43,7 @@ class KontakController extends BaseController
         ]);
 
         // redirect back with success message
-        return redirect()->back()->with('success', 'Static Page berhasil ditambahkan');
+        return redirect()->route('kontak')->with('success', 'Static Page berhasil ditambahkan');
     }
     
 }
