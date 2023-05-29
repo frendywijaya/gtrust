@@ -80,10 +80,10 @@
                                 </div>
                             </div>
                             <div class="form-grp">
-                                <input id="subject" type="text" placeholder="Subject" name="subject" value="{{old('subject')}}">
+                                <input id="subject" type="text" placeholder="Subject*" name="subject" value="{{old('subject')}}">
                             </div>
                             <div class="form-grp">
-                                <textarea id="message" placeholder="Your Message here" name="message" >
+                                <textarea id="message" placeholder="Your Message here*" name="message" >
                                     {{old('message')}}
                                 </textarea>
                             </div>
