@@ -81,7 +81,7 @@
                             <span class="sub-title">{{@$staticHome->about_subtitle}}</span>
                             <h2 class="title">{{@$staticHome->about_title}}</h2>
                         </div>
-                        <p>{{@$staticHome->description}}</p>
+                        <p>{{@$staticHome->about_text}}</p>
                         <div class="about-list-two">
                             <ul class="list-wrap">
                                 <li class="list-item">
