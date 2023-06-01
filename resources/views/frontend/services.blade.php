@@ -140,21 +140,21 @@
     <!-- subservices-area left -->
     <section class="testimonial-area pt-115 pb-90 bg-white">
         <div class="container">
-            @foreach ($subServices as $subService)
-            <div class="row align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+            @foreach ($subServices as $k => $subService)
+            <div class="row align-items-center {{$k >= 1 ? 'mt-60' : ''}}">
+                <div class="col-lg-6 wow fadeInLeft {{$k%2 == 1 ? 'd-visible d-lg-none d-xl-none' : ''}} " data-wow-delay=".2s">
                     <div class="testimonial-img">
                         <img src="{{ asset($subServicePath.$subService->image) }}" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 {{$k%2 == 1 ? 'pe-xl-5' : ''}}">
                     <div class="testimonial-content">
                         <div class="section-title mb-30 tg-heading-subheading animation-style3">
-                            <span class="sub-title tg-element-title text-center text-xl-start">{{$subService->subtitle}}</span>
-                            <h2 class="title tg-element-title text-center text-xl-start">{{$subService->title}}</h2>
+                            <span class="sub-title tg-element-title text-center text-xl-{{$k%2 == 1 ? 'end' : 'start'}}">{{$subService->subtitle}}</span>
+                            <h2 class="title tg-element-title text-center text-xl-{{$k%2 == 1 ? 'end' : 'start'}}">{{$subService->title}}</h2>
                         </div>
                         <div class="testimonial">
-                            <div class="testimonial-item text-center text-xl-start">
+                            <div class="testimonial-item text-center text-xl-{{$k%2 == 1 ? 'end' : 'start'}}">
                                 <p>
                                     {{$subService->description}}
                                 </p>
@@ -162,6 +162,13 @@
                         </div>
                     </div>
                 </div>
+                @if ($k%2 == 1)
+                <div class="col-lg-6 wow fadeInLeft d-none d-lg-block d-xl-block" data-wow-delay=".2s">
+                    <div class="testimonial-img">
+                        <img src="{{ asset($subServicePath.$subService->image) }}" alt="">
+                    </div>
+                </div>
+                @endif
             </div>
             @endforeach
         </div>

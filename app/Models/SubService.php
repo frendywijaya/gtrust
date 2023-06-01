@@ -19,5 +19,5 @@ class SubService extends Model
         'category',
     ];
 
-    const PATH = 'images/sub_services/';
+    const PATH = 'uploads/sub_services/';
 }
