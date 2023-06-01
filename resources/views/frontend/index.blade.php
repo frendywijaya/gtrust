@@ -61,7 +61,7 @@
                                 <div class="year-experience-wrap wow fadeInDown" data-wow-delay=".2s">
                                     <div class="icon"><img src="{{ asset('frontend/img/icon/h2_about_icon03.svg') }}"
                                             alt=""></div>
-                                    <h2 class="title">{{@$staticHome->about_image_text_1}} <span>{{@$staticHome->about_image_text_1}}</span></h2>
+                                    <h2 class="title">{{@$staticHome->about_image_text_1}} <span>{{@$staticHome->about_image_text_2}}</span></h2>
                                 </div>
                             </li>
                             <li><img src="{{ asset('uploads/staticpage/'.@$staticHome->about_image_1)}}" alt=""
