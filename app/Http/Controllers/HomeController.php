@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BrandLogo;
+use App\Models\BulletPoint;
 use App\Models\Project;
 use App\Models\Slider;
 use App\Models\StaticPage;
@@ -24,6 +25,8 @@ class HomeController extends BaseController
         $projects = Project::limit(5)->get();
         // get blog limit 5
         $blogs = Blog::limit(5)->get();
+        // get bullet points
+        $bulletPoints = BulletPoint::all();
 
         return view('frontend.index' , [
             'brandLogos' => $brandLogos,
@@ -34,7 +37,9 @@ class HomeController extends BaseController
             'projects' => $projects,
             'blogs' => $blogs,
             'pathProject' => Project::PATH,
-            'pathBlog' => Blog::PATH
+            'pathBlog' => Blog::PATH,
+            'bullets' => $bulletPoints,
+            'pathBullet' => BulletPoint::PATH,
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\BulletPoint;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,13 @@ class HomeController extends Controller
     {
         // get data from static_page table
         $staticHomeStatic = StaticPage::getData('homestatic');
+        // get data bullet points
+        $bulletPoints = BulletPoint::all();
 
         return view('admin.cms.home', [
             'staticPage' => $staticHomeStatic,
+            'bullets' => $bulletPoints,
+            'path' => BulletPoint::PATH,
         ]);
     }
 

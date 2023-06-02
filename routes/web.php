@@ -121,6 +121,13 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
             Route::delete('/delete/{id}', [App\Http\Controllers\Admin\TeamController::class, 'destroy'])->name('destroy');
         });
 
+        // bullet point page
+        Route::group(['as' => 'bullet.', 'prefix' => '/bullet'], function () {
+            Route::post('/store', [App\Http\Controllers\Admin\BulletPointController::class, 'store'])->name('store');
+            Route::patch('/update/{id}', [App\Http\Controllers\Admin\BulletPointController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [App\Http\Controllers\Admin\BulletPointController::class, 'destroy'])->name('destroy');
+        });
+
         // testimoni page
         Route::group(['as' => 'testimoni.', 'prefix' => '/testimoni'], function () {
             Route::get('/', [App\Http\Controllers\Admin\TestimoniController::class, 'index'])->name('index');

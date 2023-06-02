@@ -84,22 +84,16 @@
                         <p>{{@$staticHome->about_text}}</p>
                         <div class="about-list-two">
                             <ul class="list-wrap">
+                                @foreach($bullets as $bullet)
                                 <li class="list-item">
                                     <div class="icon">
-                                        <img src="{{ asset('frontend/img/icon/h2_about_icon01.svg') }}" alt="">
+                                        <img src="{{ asset($pathBullet.$bullet->image) }}" alt="">
                                     </div>
                                     <div class="content">
-                                        <h5 class="title">{{@$staticHome->about_image_text_1}}</h5>
+                                        <h5 class="title">{{$bullet->title}}</h5>
                                     </div>
                                 </li>
-                                <li class="list-item">
-                                    <div class="icon">
-                                        <img src="{{ asset('frontend/img/icon/h2_about_icon02.svg') }}" alt="">
-                                    </div>
-                                    <div class="content">
-                                        <h5 class="title">{{@$staticHome->about_image_text_2}}</h5>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                         <a href="{{@$staticHome->about_button_link}}" class="btn">{{@$staticHome->about_button_text}}</a>
