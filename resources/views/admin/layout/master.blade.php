@@ -37,6 +37,7 @@
 	<script src="{{ asset('admin/js/datatable_basic.js') }}"></script>
     <script src="{{ asset('admin/js/form_select2.js') }}"></script>
     <script src="{{ asset('admin/js/uploader_bootstrap.js') }}"></script>
+    <script src="{{asset('js/custom_ckeditor.js')}}"></script>
     <!-- /theme JS files -->
 
     @yield('css')
