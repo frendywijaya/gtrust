@@ -116,7 +116,7 @@
                                         <li class="menu-item-has-children"><a href="#">Other Services</a>
                                             <ul class="sub-menu">
                                                 @foreach ($otherServices as $item)
-                                                <li><a href="{{$item->link}}">{{$item->title}}</a></li>
+                                                <li><a href="{{$item->link}}" target="__blank">{{$item->title}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
