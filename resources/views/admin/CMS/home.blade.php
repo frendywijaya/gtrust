@@ -57,11 +57,11 @@
                                                     <div class="my-auto ms-auto">
                                                     </div>
                                                     <div class="my-auto ms-auto">
-                                                        <a href="#" class="btn btn-primary btn-create"
+                                                        {{-- <a href="#" class="btn btn-primary btn-create"
                                                             data-bs-toggle="modal" data-bs-target="#modal_form"
                                                             data-url="{{ route('admin.services.subservice.store') }}"><i
                                                                 class="ph-plus-circle me-1"></i>
-                                                            tambah point</a>
+                                                            tambah point</a> --}}
                                                     </div>
                                                 </div>
                                                 <table class="table">
@@ -73,6 +73,69 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <tr>
+                                                            <td>Text Here</td>
+                                                            <td></td>
+                                                            <td class="text-center">
+                                                                <div class="d-inline-flex">
+                                                                    <a href="#" class="text-body btn-edit"
+                                                                        data-bs-popup="tooltip" aria-label="Edit"
+                                                                        data-bs-original-title="Edit" data-url=""
+                                                                        data-bs-toggle="modal" data-bs-target="#modal_form"
+                                                                        data-item="">
+                                                                        <i class="ph-pen"></i>
+                                                                    </a>
+                                                                    <a class="text-body mx-2 btn-delete"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#modal_delete" href="#"
+                                                                        data-url="">
+                                                                        <i class="ph-trash"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Text Here</td>
+                                                            <td></td>
+                                                            <td class="text-center">
+                                                                <div class="d-inline-flex">
+                                                                    <a href="#" class="text-body btn-edit"
+                                                                        data-bs-popup="tooltip" aria-label="Edit"
+                                                                        data-bs-original-title="Edit" data-url=""
+                                                                        data-bs-toggle="modal" data-bs-target="#modal_form"
+                                                                        data-item="">
+                                                                        <i class="ph-pen"></i>
+                                                                    </a>
+                                                                    <a class="text-body mx-2 btn-delete"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#modal_delete" href="#"
+                                                                        data-url="">
+                                                                        <i class="ph-trash"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Text Here</td>
+                                                            <td></td>
+                                                            <td class="text-center">
+                                                                <div class="d-inline-flex">
+                                                                    <a href="#" class="text-body btn-edit"
+                                                                        data-bs-popup="tooltip" aria-label="Edit"
+                                                                        data-bs-original-title="Edit" data-url=""
+                                                                        data-bs-toggle="modal" data-bs-target="#modal_form"
+                                                                        data-item="">
+                                                                        <i class="ph-pen"></i>
+                                                                    </a>
+                                                                    <a class="text-body mx-2 btn-delete"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#modal_delete" href="#"
+                                                                        data-url="">
+                                                                        <i class="ph-trash"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
                                                         <tr>
                                                             <td>Text Here</td>
                                                             <td></td>
