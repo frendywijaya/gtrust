@@ -17,7 +17,7 @@ class TeamSeeder extends Seeder
             [
                 'name' => 'John Doe',
                 'position' => 'CEO',
-                'image' => 'team-1.jpg',
+                'image' => '93-team_img01.jpg',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum sem eget purus dapibus, eget molestie nisi dignissim. Quisque id cursus magna. Morbi tellus diam, rhoncus eu interdum non, malesuada egestas felis. Nulla vehicula sed ex eget pharetra. Pellentesque viverra risus vitae quam condimentum vehicula',
             ]
         ];
