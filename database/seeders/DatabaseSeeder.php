@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OtherServicesSeeder::class);
         $this->call(BrandLogoSeeder::class);
         $this->call(BulletSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
