@@ -30,69 +30,130 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="about_title" value="{{@$staticPage->about_title}}">
+                                                    <input type="text" class="form-control" name="about_subtitle"
+                                                        value="{{ @$staticPage->about_subtitle }}">
                                                 </div>
+
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Subtitle</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="about_subtitle" value="{{@$staticPage->about_subtitle}}">
+                                                    <input type="text" class="form-control" name="about_title"
+                                                        value="{{ @$staticPage->about_title }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <textarea class="form-control" id="ckeditor_classic_empty" name="about_text">
-                                                        {{@$staticPage->about_text}}
+                                                    <textarea class="form-control" id="ckeditor_classic_empty" name="about_text" rows="6">
+                                                        {{ @$staticPage->about_text }}
                                                     </textarea>
                                                 </div>
                                             </div>
+
+                                            <div class="card col-xl-12 col-md-12">
+                                                <div class="card-header d-flex align-items-center py-0">
+                                                    <h5 class="mb-0 py-3">Bullet Points</h5>
+                                                    <div class="my-auto ms-auto">
+                                                    </div>
+                                                    <div class="my-auto ms-auto">
+                                                        <a href="#" class="btn btn-primary btn-create"
+                                                            data-bs-toggle="modal" data-bs-target="#modal_form"
+                                                            data-url="{{ route('admin.services.subservice.store') }}"><i
+                                                                class="ph-plus-circle me-1"></i>
+                                                            tambah point</a>
+                                                    </div>
+                                                </div>
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Text</th>
+                                                            <th>Image</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Text Here</td>
+                                                            <td></td>
+                                                            <td class="text-center">
+                                                                <div class="d-inline-flex">
+                                                                    <a href="#" class="text-body btn-edit"
+                                                                        data-bs-popup="tooltip" aria-label="Edit"
+                                                                        data-bs-original-title="Edit" data-url=""
+                                                                        data-bs-toggle="modal" data-bs-target="#modal_form"
+                                                                        data-item="">
+                                                                        <i class="ph-pen"></i>
+                                                                    </a>
+                                                                    <a class="text-body mx-2 btn-delete"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#modal_delete" href="#"
+                                                                        data-url="">
+                                                                        <i class="ph-trash"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="about_button_text" value="{{@$staticPage->about_button_text}}">
+                                                    <input type="text" class="form-control" name="about_button_text"
+                                                        value="{{ @$staticPage->about_button_text }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Link</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="about_button_link" value="{{@$staticPage->about_button_link}}">
+                                                    <input type="text" class="form-control" name="about_button_link"
+                                                        value="{{ @$staticPage->about_button_link }}">
                                                 </div>
                                             </div>
+
+
+                                        </div>
+                                        <div class="col-xl-6">
                                             <div class="row mb-3">
                                                 <div class="col-xl-6">
                                                     <label class="col-form-label col-lg-3">Image Text 1</label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" name="about_image_text_1"
-                                                            placeholder="18 Years" value="{{@$staticPage->about_image_text_1}}">
+                                                            placeholder="18 Years"
+                                                            value="{{ @$staticPage->about_image_text_1 }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <label class="col-form-label col-lg-3">Image Text 2</label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" name="about_image_text_2"
-                                                            placeholder="Experience" value="{{@$staticPage->about_image_text_2}}">
+                                                        <input type="text" class="form-control"
+                                                            name="about_image_text_2" placeholder="Experience"
+                                                            value="{{ @$staticPage->about_image_text_2 }}">
                                                     </div>
                                                 </div>
 
                                             </div>
-                                        </div>
-                                        <div class="col-xl-6">
                                             <div class="row mb-3">
                                                 <div class="col-lg-12 mb-3">
                                                     <p class="fw-semibold">Image 1 Portrait</p>
-                                                    <input type="file" class="file-input file-upload" name="about_image_1" 
-                                                    accept="image/*" data-default="{{@$staticPage->about_image_1}}">
+                                                    <input type="file" class="file-input file-upload"
+                                                        name="about_image_1" accept="image/*"
+                                                        data-default="{{ @$staticPage->about_image_1 }}">
                                                 </div>
                                                 <div class="col-lg-12 mb-3">
                                                     <p class="fw-semibold">Image 2 Portrait</p>
-                                                    <input type="file" class="file-input file-upload" name="about_image_2"
-                                                    accept="image/*" data-default="{{@$staticPage->about_image_2}}">
+                                                    <input type="file" class="file-input file-upload"
+                                                        name="about_image_2" accept="image/*"
+                                                        data-default="{{ @$staticPage->about_image_2 }}">
                                                 </div>
                                                 <div class="col-lg-12 mb-3">
                                                     <p class="fw-semibold">Image 3 Landscape</p>
-                                                    <input type="file" class="file-input file-upload" name="about_image_3"
-                                                    accept="image/*" data-default="{{@$staticPage->about_image_3}}">
+                                                    <input type="file" class="file-input file-upload"
+                                                        name="about_image_3" accept="image/*"
+                                                        data-default="{{ @$staticPage->about_image_3 }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -103,12 +164,13 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#expanded_item2">
+                                <button class="accordion-button fw-semibold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#expanded_item2">
                                     Section 2 - Our Services
                                 </button>
                             </h2>
-                            <div id="expanded_item2" class="accordion-collapse collapse" data-bs-parent="#accordion_expanded">
+                            <div id="expanded_item2" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion_expanded">
                                 <div class="accordion-body">
                                     <!-- Default input -->
                                     <div class="row">
@@ -116,13 +178,17 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Section Title</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_section_title" value="{{@$staticPage->service_section_title}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_section_title"
+                                                        value="{{ @$staticPage->service_section_title }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Section Subtitle</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_section_subtitle" value="{{@$staticPage->service_section_subtitle}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_section_subtitle"
+                                                        value="{{ @$staticPage->service_section_subtitle }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -132,66 +198,80 @@
 
                                             <div class="fw-bold border-bottom pb-2 mb-3">Facilitation Detail</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input file-upload" name ="service_facilitation_image" 
-                                                accept="image/*" data-default="{{@$staticPage->service_facilitation_image}}">
+                                                <input type="file" class="file-input file-upload"
+                                                    name="service_facilitation_image" accept="image/*"
+                                                    data-default="{{ @$staticPage->service_facilitation_image }}">
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Headline</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_facilitation_headline" value="{{@$staticPage->service_facilitation_headline}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_facilitation_headline"
+                                                        value="{{ @$staticPage->service_facilitation_headline }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
                                                     <textarea class="form-control" id="ckeditor_classic_empty" name="service_facilitation_text">
-                                                        {{@$staticPage->service_facilitation_text}}
+                                                        {{ @$staticPage->service_facilitation_text }}
                                                     </textarea>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_facilitation_button_text" value="{{@$staticPage->service_facilitation_button_text}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_facilitation_button_text"
+                                                        value="{{ @$staticPage->service_facilitation_button_text }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Link</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_facilitation_button_link" value="{{@$staticPage->service_facilitation_button_link}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_facilitation_button_link"
+                                                        value="{{ @$staticPage->service_facilitation_button_link }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="fw-bold border-bottom pb-2 mb-3">Learning Detail</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input file-upload" name ="service_learning_image" 
-                                                accept="image/*" data-default="{{@$staticPage->service_learning_image}}">
+                                                <input type="file" class="file-input file-upload"
+                                                    name="service_learning_image" accept="image/*"
+                                                    data-default="{{ @$staticPage->service_learning_image }}">
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Headline</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_learning_headline" value="{{@$staticPage->service_learning_headline}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_learning_headline"
+                                                        value="{{ @$staticPage->service_learning_headline }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
                                                     <textarea class="form-control" id="ckeditor_classic_empty" name="service_learning_text">
-                                                        {{@$staticPage->service_learning_text}}
+                                                        {{ @$staticPage->service_learning_text }}
                                                     </textarea>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_learning_button_text" value="{{@$staticPage->service_learning_button_text}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_learning_button_text"
+                                                        value="{{ @$staticPage->service_learning_button_text }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Link</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="service_learning_button_link" value="{{@$staticPage->service_learning_button_link}}">
+                                                    <input type="text" class="form-control"
+                                                        name="service_learning_button_link"
+                                                        value="{{ @$staticPage->service_learning_button_link }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -216,13 +296,15 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Numbers</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_number_1" value="{{@$staticPage->statistic_number_1}}">
+                                                    <input type="text" class="form-control" name="statistic_number_1"
+                                                        value="{{ @$staticPage->statistic_number_1 }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_text_1" value="{{@$staticPage->statistic_text_1}}">
+                                                    <input type="text" class="form-control" name="statistic_text_1"
+                                                        value="{{ @$staticPage->statistic_text_1 }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -231,13 +313,15 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Numbers</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_number_2" value="{{@$staticPage->statistic_number_2}}">
+                                                    <input type="text" class="form-control" name="statistic_number_2"
+                                                        value="{{ @$staticPage->statistic_number_2 }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_text_2" value="{{@$staticPage->statistic_text_2}}">
+                                                    <input type="text" class="form-control" name="statistic_text_2"
+                                                        value="{{ @$staticPage->statistic_text_2 }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -246,13 +330,15 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Numbers</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_number_3" value="{{@$staticPage->statistic_number_3}}">
+                                                    <input type="text" class="form-control" name="statistic_number_3"
+                                                        value="{{ @$staticPage->statistic_number_3 }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_text_3" value="{{@$staticPage->statistic_text_3}}">
+                                                    <input type="text" class="form-control" name="statistic_text_3"
+                                                        value="{{ @$staticPage->statistic_text_3 }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -261,13 +347,15 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Numbers</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_number_4" value="{{@$staticPage->statistic_number_4}}">
+                                                    <input type="text" class="form-control" name="statistic_number_4"
+                                                        value="{{ @$staticPage->statistic_number_4 }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="statistic_text_4" value="{{@$staticPage->statistic_text_4}}">
+                                                    <input type="text" class="form-control" name="statistic_text_4"
+                                                        value="{{ @$staticPage->statistic_text_4 }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -291,25 +379,29 @@
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Title</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="contact_title" value="{{@$staticPage->contact_title}}">
+                                                    <input type="text" class="form-control" name="contact_title"
+                                                        value="{{ @$staticPage->contact_title }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Subtitle</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="contact_subtitle" value="{{@$staticPage->contact_subtitle}}">
+                                                    <input type="text" class="form-control" name="contact_subtitle"
+                                                        value="{{ @$staticPage->contact_subtitle }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Text</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="contact_button_text" value="{{@$staticPage->contact_button_text}}">
+                                                    <input type="text" class="form-control" name="contact_button_text"
+                                                        value="{{ @$staticPage->contact_button_text }}">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-form-label col-lg-3">Button Link</label>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" name="contact_button_link" value="{{@$staticPage->contact_button_link}}">
+                                                    <input type="text" class="form-control" name="contact_button_link"
+                                                        value="{{ @$staticPage->contact_button_link }}">
                                                 </div>
                                             </div>
                                         </div>
