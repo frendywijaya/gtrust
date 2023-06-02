@@ -39,7 +39,7 @@
                                     <div class="col-lg-6">
                                         <p class="fw-semibold">Logo</p>
                                         <div class="parent-file">
-                                            <input type="file" class="file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                            <input type="file" class="file-input file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
                                                 data-show-remove="false" name="company_logo" data-default="{{@$staticPage->company_logo}}">
                                         </div>
                                     </div>
@@ -122,7 +122,7 @@
                     <h5 class="modal-title">Tambah Link</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                
+
                 <form action="{{route('admin.otherservice.store') }}" method="POST" class="form-horizontal">
                     @csrf
                     <input type="hidden" name="_method" value="POST">

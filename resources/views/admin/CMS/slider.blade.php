@@ -71,9 +71,9 @@
                     <input type="hidden" name="_method" value="POST">
                     <div class="modal-body">
                         <div class="row mb-3 mt-2 pb-3 border-bottom">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12 justify-content-center">
                                 <p class="fw-semibold">Slider Image</p>
-                                <input type="file" class="form-dynamic file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                <input type="file" class="form-dynamic file-input file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
                                     data-show-remove="false" id="file-input-company-logo" name="image">
                             </div>
                         </div>

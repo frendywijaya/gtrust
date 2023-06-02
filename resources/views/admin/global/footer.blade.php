@@ -39,7 +39,7 @@
                                     <div class="col-lg-6">
                                         <p class="fw-semibold">Background Image</p>
                                         <div class="parent-file">
-                                            <input type="file" class="file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                            <input type="file" class="file-input file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
                                                 data-show-remove="false" name="backround_image" data-default="">
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                     <div class="col-lg-6">
                                         <p class="fw-semibold">Footer Logo</p>
                                         <div class="parent-file">
-                                            <input type="file" class="file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
+                                            <input type="file" class="file-input file-upload" data-show-caption="true" data-show-upload="false" accept="image/*"
                                                 data-show-remove="false" name="footer_logo" data-default="{{@$staticPage->footer_logo}}">
                                         </div>
                                     </div>
