@@ -19,6 +19,7 @@ class BlogController extends BaseController
         return view('frontend.blog' , [
             'blogs' => $blogs,
             'path' => Blog::PATH,
+            'isSearch' => false,
             'categories' => $categories
         ]);
     }
