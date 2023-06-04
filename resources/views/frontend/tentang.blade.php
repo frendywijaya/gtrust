@@ -30,15 +30,15 @@
                     <div class="about-img-wrap">
                         <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_1)}}" alt="" class="wow fadeInRight"
                             data-wow-delay=".4s">
-                        {{-- <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_2)}}" alt="" class="wow fadeInRight"
-                            data-wow-delay=".2s"> --}}
+                        <img src="{{ asset('uploads/staticpage/'.@$staticAbout->about_company_image_2)}}" alt="" class="wow fadeInRight"
+                            data-wow-delay=".2s">
                         <div class="about-experiences-wrap">
                             <div class="experiences-item">
                                 <div class="icon">
                                     <img src="{{ asset('frontend/img/icon/about_icon01.svg') }}" alt="">
                                 </div>
                                 <div class="content">
-                                    <h6 class="title">We have more than 10 years of experiences</h6>
+                                    <h6 class="title">{{@$staticAbout->about_company_image_text_1}}</h6>
                                 </div>
                             </div>
                             <div class="experiences-item">
@@ -46,7 +46,7 @@
                                     <img src="{{ asset('frontend/img/icon/about_icon02.svg') }}" alt="">
                                 </div>
                                 <div class="content">
-                                    <h6 class="title">We use professional and experienced person</h6>
+                                    <h6 class="title">{{@$staticAbout->about_company_image_text_2}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -55,11 +55,11 @@
                 <div class="col-xl-5 col-lg-6">
                     <div class="about-content">
                         <div class="section-title mb-25">
-                            <span class="sub-title">{{@$staticAbout->about_company_subtitle}}</span>
+                            <span class="sub-title">{{@$staticAbout->about_company_section_subtitle}}</span>
                             <h2 class="title">{{@$staticAbout->about_company_title}}</h2>
                         </div>
                         <p>
-                            {{@$staticAbout->about_company_section_text}}
+                            {!! @$staticAbout->about_company_section_text !!}
                         </p>
                         <div class="about-list">
                             <ul class="list-wrap">

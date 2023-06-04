@@ -25,8 +25,17 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend/custom.css') }}">
+    
+    <style>
+        @media (max-width: 1500px) {
+            .navbar-wrap ul li a {
+                padding: 42px 10px;
+            }
+        }
+    </style>
 
     @yield('css')
+
 </head>
 
 <body>
