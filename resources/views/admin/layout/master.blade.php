@@ -259,6 +259,10 @@
                     } else {
                         // set value form input
                         $(v).val(item[v.name]);
+                          // check ckeditor
+                        if ($(v).attr('id') == 'ckeditor_classic_empty'){
+                            CKEditorClassic.refreshData();
+                        }
                     }
                 });
 

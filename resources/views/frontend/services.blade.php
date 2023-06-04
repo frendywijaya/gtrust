@@ -28,7 +28,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-6 order-0 order-lg-2">
                     <div class="about-img-wrap">
-                        <img src="{{ asset('uploads/staticpage/'.@$staticService->about_facilitation_image_cover) }}" alt=""
+                        <img src="{{ asset('uploads/staticpage/'.@$staticService->about_service_image_cover) }}" alt=""
                             class="wow fadeInRight" data-wow-delay=".4s">
                         <div class="about-experiences-wrap">
                             <div class="experiences-item">
@@ -56,7 +56,9 @@
                             <span class="sub-title">{{@$staticService->about_section_subtitle}}</span>
                             <h2 class="title">{{@$staticService->about_section_title}}</h2>
                         </div>
-                        <p>{{@$staticService->about_section_text}}</p>
+                        <div class="ckeditorview">
+                            {!! @$staticService->about_section_text !!}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,8 +72,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center mb-50">
-                        <span class="sub-title">Our Approaches</span>
-                        <h2 class="title">Our Process of Excellence</h2>
+                        <span class="sub-title">Development Process</span>
+                        <h2 class="title">Steps to Accomplish Your Objectives</h2>
                     </div>
                 </div>
             </div>
@@ -181,8 +183,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center mb-60">
-                        <span class="sub-title">Our Method</span>
-                        <h2 class="title">Ways to Deliver Our Services</h2>
+                        <span class="sub-title">Our Methods</span>
+                        <h2 class="title">Our Methods for Impactful Learnings</h2>
                     </div>
                 </div>
             </div>
@@ -234,7 +236,7 @@
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="services-widget">
-                                    <h4 class="widget-title">Our Brochures Download</h4>
+                                    <h4 class="widget-title">Find More Info About Us</h4>
                                     <div class="download-wrap">
                                         <a href="#" download target="_blank"><i
                                                 class="{{@$staticService->download_icon_1}}"></i>Service Details.pdf<br>65 KB</a>
@@ -266,7 +268,7 @@
                     <div class="col-lg-8">
                         <div class="section-title text-center mb-60">
                             <span class="sub-title">Latest Projects</span>
-                            <h2 class="title">Explore Our Latest Projects</h2>
+                            <h2 class="title">Discover Our Previous Projects with Our Precious Clients</h2>
                         </div>
                     </div>
                 </div>

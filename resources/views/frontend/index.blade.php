@@ -144,23 +144,15 @@
                                         <div class="section-title mb-30">
                                             <h2 class="title">{{@$staticHome->service_facilitation_headline}}</h2>
                                         </div>
-                                        <p>
-                                            {{@$staticHome->service_facilitation_text}}
-                                        </p>
-                                        <div class="services-list">
-                                            <ul class="list-wrap">
-                                                <li><i class="fas fa-check-circle"></i>Business improvement</li>
-                                                <li><i class="fas fa-check-circle"></i>Business improvement</li>
-                                                <li><i class="fas fa-check-circle"></i>Network Administration</li>
-                                                <li><i class="fas fa-check-circle"></i>Network Administration</li>
-                                            </ul>
+                                        <div class="ckeditorview">
+                                            {!! @$staticHome->service_facilitation_text !!}
                                         </div>
                                         <a href="{{@$staticHome->service_facilitation_button_link}}" class="btn">{{@$staticHome->service_facilitation_button_text}}</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="building-tab-pane" role="tabpanel"
-                                aria-labelledby="building-tab" tabindex="0">
+                            <div class="tab-pane" id="maintenance-tab-pane" role="tabpanel"
+                                aria-labelledby="maintenance-tab" tabindex="0">
                                 <div class="services-item-three">
                                     <div class="services-thumb-three">
                                         <img src="{{ asset('uploads/staticpage/'.@$staticHome->service_learning_image) }}"
@@ -170,16 +162,8 @@
                                         <div class="section-title mb-30">
                                             <h2 class="title">{{@$staticHome->service_learning_headline}}</h2>
                                         </div>
-                                        <p>
-                                            {{@$staticHome->service_learning_text}}
-                                        </p>
-                                        <div class="services-list">
-                                            <ul class="list-wrap">
-                                                <li><i class="fas fa-check-circle"></i>Business improvement</li>
-                                                <li><i class="fas fa-check-circle"></i>Business improvement</li>
-                                                <li><i class="fas fa-check-circle"></i>Network Administration</li>
-                                                <li><i class="fas fa-check-circle"></i>Network Administration</li>
-                                            </ul>
+                                        <div class="ckeditorview">
+                                            {!! @$staticHome->service_learning_text !!}
                                         </div>
                                         <a href="{{@$staticHome->service_learning_button_link}}" class="btn">{{@$staticHome->service_learning_button_text}}</a>
                                     </div>

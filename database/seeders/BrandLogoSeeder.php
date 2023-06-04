@@ -21,12 +21,12 @@ class BrandLogoSeeder extends Seeder
                 'image' => '9-h2_brand_img02.png'
             ],
             [
-                'title' => 'Kompas',
-                'image' => 'h2_brand_img01.png'
+                'title' => 'Flexo',
+                'image' => '9-h2_brand_img01.png'
             ],
             [
-                'title' => 'Pertamina',
-                'image' => 'h2_brand_img03.png'
+                'title' => 'Geant',
+                'image' => '9-h2_brand_img03.png'
             ]
         ];
 

@@ -24,7 +24,6 @@ const CKEditorClassic = function() {
             return;
         }
 
-        console.log($('#ckeditor_classic_empty') );
         document.querySelectorAll( '#ckeditor_classic_empty' ).forEach( ( node, index ) => {
             ClassicEditor
                 .create( node, {
@@ -48,6 +47,21 @@ const CKEditorClassic = function() {
         } );
     };
 
+    // refresh data
+    const _refreshData = function() {
+        if (typeof ClassicEditor == 'undefined') {
+            console.warn('Warning - ckeditor_classic.js is not loaded.');
+            return;
+        }
+
+        // remove all editors
+        document.querySelectorAll( '#ckeditor_classic_empty' ).forEach( ( node, index ) => {
+            $(node).parent().find('div:first-child').remove()
+        });
+
+        _componentCKEditorClassic();
+    };
+
 
     //
     // Return objects assigned to module
@@ -56,6 +70,9 @@ const CKEditorClassic = function() {
     return {
         init: function() {
             _componentCKEditorClassic();
+        },
+        refreshData: function() {
+            _refreshData();
         }
     }
 }();

@@ -18,7 +18,7 @@ class CreateTestimonisTable extends Migration
             $table->string('image')->nullable();
             $table->string('name');
             $table->string('position')->nullable();
-            $table->string('testimoni');
+            $table->text('testimoni');
             $table->timestamps();
         });
     }

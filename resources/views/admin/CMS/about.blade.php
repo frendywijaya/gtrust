@@ -239,7 +239,7 @@
                                                 <label class="col-form-label col-lg-3">Section Text</label>
                                                 <div class="col-lg-9">
                                                     <textarea class="form-control" id="ckeditor_classic_empty" name="history_section_text">
-                                                        {{@$staticPage->history_section_subtitle}}
+                                                        {{@$staticPage->history_section_text}}
                                                     </textarea>
                                                 </div>
                                             </div>

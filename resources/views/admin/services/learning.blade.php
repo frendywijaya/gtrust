@@ -93,8 +93,8 @@
                                         <div class="col-xl-6">
                                             <div class="fw-bold border-bottom pb-2 mb-3">Learning Image Cover</div>
                                             <div class="row mb-3">
-                                                <input type="file" class="file-input file-upload" name="about_learning_image_cover" 
-                                                    accept="image/*" data-default="{{@$staticPage->about_learning_image_cover}}">
+                                                <input type="file" class="file-input file-upload" name="about_service_image_cover" 
+                                                    accept="image/*" data-default="{{@$staticPage->about_service_image_cover}}">
                                             </div>
                                         </div>
                                     </div>

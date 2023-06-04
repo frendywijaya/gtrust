@@ -58,15 +58,8 @@
                             <span class="sub-title">{{@$staticAbout->about_company_section_subtitle}}</span>
                             <h2 class="title">{{@$staticAbout->about_company_title}}</h2>
                         </div>
-                        <p>
+                        <div class="ckeditorview-inline">
                             {!! @$staticAbout->about_company_section_text !!}
-                        </p>
-                        <div class="about-list">
-                            <ul class="list-wrap">
-                                <li><i class="fas fa-check"></i>32k Partners have worked us.</li>
-                                <li><i class="fas fa-check"></i>Professional and experienced human resources.</li>
-                                <li><i class="fas fa-check"></i>Provide the best consulting services</li>
-                            </ul>
                         </div>
                         {{-- <a href="about.html" class="btn">Learn More</a> --}}
                     </div>
@@ -82,8 +75,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center mb-50">
-                        <span class="sub-title">Our Approaches</span>
-                        <h2 class="title">Our Process of Excellence</h2>
+                        <span class="sub-title">Development Process</span>
+                        <h2 class="title">Steps to Accomplish Your Objectives</h2>
                     </div>
                 </div>
             </div>
@@ -176,16 +169,8 @@
                             <h2 class="title">{{@$staticAbout->history_section_title}}</h2>
                         </div>
                         <p>
-                            {{@$staticAbout->history_section_subtitle}}
+                            {!! @$staticAbout->history_section_text !!}
                         </p>
-                        <div class="history-list">
-                            <ul class="list-wrap">
-                                <li><i class="fas fa-check-circle"></i>Technology management</li>
-                                <li><i class="fas fa-check-circle"></i>Consulting Solutions</li>
-                                <li><i class="fas fa-check-circle"></i>Modern Worker Working here</li>
-                                <li><i class="fas fa-check-circle"></i>Quick Response</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -262,7 +247,7 @@
                                                 <i class="fas fa-star"></i>
                                             </div>
                                         </div>
-                                        <p>{{$testimonial->testimoni}}.</p>
+                                        <p>{!! $testimonial->testimoni !!}</p>
                                         <div class="content-bottom">
                                             <h4 class="title">{{$testimonial->name}}</h4>
                                             <span>{{$testimonial->position}}</span>

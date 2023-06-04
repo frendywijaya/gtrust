@@ -15,13 +15,12 @@
                         tambah testimoni</a>
                 </div>
             </div>
-            <table class="table datatable-key-basic">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>No.</th>
                         <th>Nama</th>
                         <th>Jabatan</th>
-                        <th>Testimonial</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -34,7 +33,6 @@
                         <td>{{$no++}}</td>
                         <td>{{$testimony->name}}</td>
                         <td>{{$testimony->position}}</td>
-                        <td>{{$testimony->testimoni}}</td>
                         <td class="text-center">
                             <div class="d-inline-flex">
                                 <a href="#" class="text-body btn-edit" data-bs-popup="tooltip" aria-label="Edit"

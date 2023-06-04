@@ -203,6 +203,20 @@
     <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 
+    <script>
+        // document ready function
+        $(document).ready(function() {
+            // edit ckeditor view
+            $('.ckeditorview').addClass('services-list');
+            $('.ckeditorview').find('ul').addClass('list-wrap');
+            $('.ckeditorview li').prepend('<i class="fas fa-check-circle"></i>');
+
+            // edit ckeditor view inline
+            $('.ckeditorview-inline').addClass('about-list');
+            $('.ckeditorview-inline').find('ul').addClass('list-wrap');
+            $('.ckeditorview-inline li').prepend('<i class="fas fa-check"></i>');
+        });
+    </script>
     @yield('script')
 </body>
 
