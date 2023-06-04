@@ -17,11 +17,11 @@ class BulletSeeder extends Seeder
         // add data bullet points
         $data_bullets = [
             [
-                'title' => 'Value Proposition Here',
+                'title' => 'Generating Qualified Workforce to Fuel your company',
                 'image' => '57-h2_about_icon01.svg'
             ],
             [
-                'title' => 'Our Core Time Values Lenthlyness',
+                'title' => 'Time Management Efficiency',
                 'image' => '64-h2_about_icon02.svg'
             ]
         ];

@@ -122,9 +122,9 @@
                                         </li>
                                         <li><a href="/about">About us</a>
                                         </li>
-                                        <li><a href="/blog">Blog</a>
+                                        <li><a href="/blog">News & Articles</a>
                                         </li>
-                                        <li><a href="/kontak">Kontak</a></li>
+                                        <li><a href="/kontak">Contact Us</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-md-block">

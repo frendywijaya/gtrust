@@ -26,18 +26,18 @@
                             <div class="footer-link">
                                 <ul class="list-wrap">
                                     <li><a href="{{route('home')}}"><i class="fas fa-angle-double-right"></i>Home</a></li>
-                                    <li><a href="{{route('about')}}"><i class="fas fa-angle-double-right"></i>Tentang Kami</a></li>
-                                    <li><a href="{{route('servicesFacilitation')}}"><i class="fas fa-angle-double-right"></i>Facilitation</a></li>
-                                    <li><a href="{{route('servicesLearning')}}"><i class="fas fa-angle-double-right"></i>Learning</a></li>
-                                    <li><a href="{{route('blog.index')}}"><i class="fas fa-angle-double-right"></i>Blog</a></li>
-                                    <li><a href="{{route('kontak')}}"><i class="fas fa-angle-double-right"></i>Kontak Kami</a></li>
+                                    <li><a href="{{route('about')}}"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                                    <li><a href="{{route('servicesFacilitation')}}"><i class="fas fa-angle-double-right"></i>Strategic Facilitation</a></li>
+                                    <li><a href="{{route('servicesLearning')}}"><i class="fas fa-angle-double-right"></i>Professional Learning</a></li>
+                                    <li><a href="{{route('blog.index')}}"><i class="fas fa-angle-double-right"></i>News & Articles</a></li>
+                                    <li><a href="{{route('kontak')}}"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                         <div class="footer-widget">
-                            <h2 class="fw-title">Kontak Kami</h2>
+                            <h2 class="fw-title">Get In Touch With Us!</h2>
                             <div class="footer-link">
                                 <ul class="list-wrap">
                                     <li><a href="contact.html"><i class="fas fa-phone"></i>{{@$staticContactInfo->company_phone}}</a></li>

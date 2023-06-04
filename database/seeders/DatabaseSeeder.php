@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BulletSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(TeamSeeder::class);
+        $this->call(BlogSeeder::class);
     }
 }

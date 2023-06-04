@@ -17,12 +17,20 @@ class SliderSeeder extends Seeder
         // add slider
         $sliders = [
             [
-                'title' => 'Fun Way to Challenge Serious Problems',
-                'subtitle' => 'Company Facilitation',
-                'content' => 'Our mbrace change are thriving, building bigger, better,faster, and products than ever Our mbrace.',
+                'title' => 'Immersive Assistance to Uncover Solutions',
+                'subtitle' => 'Strategic Facilitation',
+                'content' => 'We strive to provide comprehensive facilitation to assist you in accomplishing your company purposes.',
                 'image' => '74-slider03.jpg',
                 'button_text' => 'Discover More',
-                'button_link' => 'http://localhost:8000/kontak',
+                'button_link' => '#',
+            ],
+            [
+                'title' => 'Upskill Your Team with Experience Based Learnings',
+                'subtitle' => 'Learning',
+                'content' => 'Our cutting-edge curriculums engage your team with fun and extensive learning experiences to stimulate their professional development.',
+                'image' => '80-slider02.jpg',
+                'button_text' => 'Discover More',
+                'button_link' => '#',
             ]
         ];
 

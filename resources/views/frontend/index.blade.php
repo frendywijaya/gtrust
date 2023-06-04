@@ -124,12 +124,12 @@
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="building-tab" data-bs-toggle="tab"
                                     data-bs-target="#building-tab-pane" type="button" role="tab"
-                                    aria-controls="building-tab-pane" aria-selected="true">Facilitation</button>
+                                    aria-controls="building-tab-pane" aria-selected="true">Strategic Facilitation</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="maintenance-tab" data-bs-toggle="tab"
                                     data-bs-target="#maintenance-tab-pane" type="button" role="tab"
-                                    aria-controls="maintenance-tab-pane" aria-selected="false">Learning</button>
+                                    aria-controls="maintenance-tab-pane" aria-selected="false">Professional Learning</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -244,7 +244,7 @@
                     <div class="col-lg-8">
                         <div class="section-title text-center mb-60">
                             <span class="sub-title">Latest Projects</span>
-                            <h2 class="title">Explore Our Latest Projects</h2>
+                            <h2 class="title">Discover Our Previous Projects with Our Precious Clients</h2>
                         </div>
                     </div>
                 </div>
@@ -307,8 +307,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center mb-60">
-                        <span class="sub-title">Our News</span>
-                        <h2 class="title">Read Our Latest News & Blog</h2>
+                        <span class="sub-title">News & Articles</span>
+                        <h2 class="title">Get Updated News With Us!</h2>
                     </div>
                 </div>
             </div>

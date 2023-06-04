@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class CategoryData extends Seeder
+class BlogSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,15 +13,15 @@ class CategoryData extends Seeder
      */
     public function run()
     {
-        // create category seed
-        $categories = [
+        // add blog seed
+        $blogs = [
             [
-                'title' => 'Business Analyst',
+                'r' => 's'
             ]
         ];
 
-        foreach ($categories as $category) {
-            \App\Models\Category::create($category);
+        foreach ($blogs as $blog) {
+            \App\Models\Blog::create($blog);
         }
     }
 }
