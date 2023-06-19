@@ -28,7 +28,7 @@ class StaticPageSeeder extends Seeder
             [
                 'section' => 'homestatic',
                 'data' => [
-                    "about_title" => "We build professionals to uplift your business",
+                    "about_title" => "Strengthening Your Business Through Strategic Behavioral Encouragement",
                     "about_subtitle" => "About G-Trust",
                     "about_text" => "GTrust offers tailor-made professional development programs for individuals or teams to aligned with your strategic goals. We established fun environment as an essential element to dig up creative solutions for your company’s objectives.",
                     "about_button_text" => "Learn More",
@@ -68,7 +68,7 @@ class StaticPageSeeder extends Seeder
                 'section' => 'footer',
                 'data' => [
                     "footer_title" => "About Us",
-                    "footer_text" => "We are G-Trust, We develop qualified professionals to help you  accomplish your company’s objectives through fun and creative learning methods.",
+                    "footer_text" => "We are G-Trust, We help you accomplish your company objectives through fun and innovative methods.",
                     "footer_tagline" => "We deliver fun ways to tackle serious issues",
                     "footer_logo" => "1685284018-w_logo.png"
                 ]
@@ -76,9 +76,9 @@ class StaticPageSeeder extends Seeder
             [
                 'section' => 'socialmedia',
                 'data' => [
-                    "facebook" => "#",
-                    "instagram" => null,
-                    "linkedin" => null,
+                    "facebook" => "https://www.facebook.com/G-Trust-Consultant-110804466954744%20",
+                    "instagram" => "https://www.instagram.com/gtrust.learning/",
+                    "linkedin" => "https://www.linkedin.com/company/26625479/admin/?welcome=true",
                     "youtube" => null,
                     "tiktok" => null
                 ]
@@ -219,7 +219,7 @@ class StaticPageSeeder extends Seeder
             [
                 'section' => 'contactinfo',
                 'data' => [
-                    "company_phone" => "+62 81231313",
+                    "company_phone" => "+62 811 9515 079",
                     "company_email" => "info@gtrust.id",
                     "company_address" => "Jln. Pahlawan 1 No.30 Jakarta"
                 ]

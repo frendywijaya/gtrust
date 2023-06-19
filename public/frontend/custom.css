@@ -94,6 +94,10 @@
     max-width: 180px;
 }
 
+.slider-content .title {
+    font-size: 46px;
+}
+
 .slider-shape {
     z-index: 0;
     top: -100px;

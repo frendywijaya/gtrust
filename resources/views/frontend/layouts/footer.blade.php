@@ -47,33 +47,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-xl-4 col-lg-5 col-md-6">
-                        <div class="footer-widget">
-                            <h2 class="fw-title">Instagram Posts</h2>
-                            <div class="footer-instagram">
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#"><img src="{{ asset('frontend/img/instagram/f_insta_img01.jpg') }}" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="{{ asset('frontend/img/instagram/f_insta_img02.jpg') }}" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="{{ asset('frontend/img/instagram/f_insta_img03.jpg') }}" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="{{ asset('frontend/img/instagram/f_insta_img04.jpg') }}" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="{{ asset('frontend/img/instagram/f_insta_img05.jpg') }}" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="{{ asset('frontend/img/instagram/f_insta_img06.jpg') }}" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
                 <div class="footer-logo-area">
                     <div class="row align-items-center">
@@ -85,11 +58,11 @@
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="footer-contact">
                                 <div class="icon">
-                                    <i class="fas fa-phone-alt"></i>
+                                    <i class="ph ph-whatsapp-logo"></i>
                                 </div>
                                 <div class="content">
                                     <span>Phone No</span>
-                                    <a href="tel:0123456789">+000 (123) 456 88</a>
+                                    <a href="https://api.whatsapp.com/send?phone={{ str_replace(' ','', @$staticContactInfo->company_phone) }}&text=Hello Gtrust!">{{@$staticContactInfo->company_phone}}</a>
                                 </div>
                             </div>
                         </div>

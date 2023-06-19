@@ -54,7 +54,7 @@
                             </div>
                             <div class="mb-3 pb-3 border-bottom">
                                 <label class="form-label">Slideshow Images:</label>
-                                <input type="file" class="form-control file-upload" name='image' accept="image/*" data-path="{{@$path}}" data-default="{{ $isedit ? $project->image : '' }}">
+                                <input type="file" class="form-control file-upload file-input" name='image' accept="image/*" data-path="{{@$path}}" data-default="{{ $isedit ? $project->image : '' }}">
                                 <div class="form-text text-muted">Accepted formats: png, jpg. Max file size 2Mb</div>
                             </div>
                             <div class="mb-3">

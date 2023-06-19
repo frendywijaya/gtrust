@@ -11,6 +11,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/favicon.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <!-- CSS here -->
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/animate.min.css') }}">
@@ -25,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend/custom.css') }}">
-    
+
     <style>
         @media (max-width: 1500px) {
             .navbar-wrap ul li a {
@@ -69,7 +71,7 @@
                         <div class="header-top-left">
                             <ul class="list-wrap">
                                 <li>{{@$staticHeaderData->welcome_text}}</li>
-                                <li><i class="fas fa-phone-alt"></i><a href="tel:{{@$staticContactInfo->company_phone}}">{{@$staticContactInfo->company_phone}}</a></li>
+                                <li><i class="fas fa-phone-alt"></i><a href="https://api.whatsapp.com/send?phone={{ str_replace(' ','', @$staticContactInfo->company_phone) }}&text=Hello Gtrust!">{{@$staticContactInfo->company_phone}}</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:{{@$staticContactInfo->company_email}}">{{@$staticContactInfo->company_email}}</a>
                                 </li>
                             </ul>

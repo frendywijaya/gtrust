@@ -52,14 +52,14 @@
                             <label class="form-label">Timestamp:</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="ph-calendar"></i></span>
-                                
+
                                 <input type="text" class="form-control daterange-single" name="date" value="{{ $isedit ? old('date', date('m/d/Y', strtotime($blog->date))) : old('date') }}" >
                             </div>
                         </div>
                     </div>
                     <div class="mb-3 pb-3 border-bottom">
                         <label class="form-label">Blog Cover Image:</label>
-                        <input type="file" class="form-control file-upload" name='image' accept="image/*" data-path="{{@$path}}" data-default="{{ $isedit ? $blog->image : '' }}">
+                        <input type="file" class="form-control file-upload file-input" name='image' accept="image/*" data-path="{{@$path}}" data-default="{{ $isedit ? $blog->image : '' }}">
                         <div class="form-text text-muted">Accepted formats: png, jpg. Max file size 2Mb</div>
                     </div>
 
