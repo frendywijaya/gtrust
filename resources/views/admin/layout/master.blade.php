@@ -105,7 +105,13 @@
                     var initialPreviewConfig =  [
                         {caption: filename , showDrag: false, showZoom: true, showRemove: false},
                     ];
-                    var url = "{{ asset('uploads/staticpage') }}/" + filename;
+
+                    var datapath = $(fileUpload[i]).attr('data-path');
+                    if (datapath == null || datapath == ''){
+                        datapath = 'uploads/staticpage/';
+                    }
+
+                    var url = "{{ asset('') }}" + datapath + filename;
                     fileUpload[i].setAttribute('data-initial-preview', url);
                     fileUpload[i].setAttribute('data-initial-caption', filename);
                     fileUpload[i].setAttribute('data-initial-preview-as-data', true);
