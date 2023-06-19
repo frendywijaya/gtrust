@@ -39,7 +39,8 @@ class ProjectController extends Controller
         return view('admin.project.project_detail', [
             'categories' => $categories,
             'action' => $action,
-            'isedit' => false
+            'isedit' => false,
+            'path' => Project::PATH
         ]);
     }
 
@@ -125,7 +126,8 @@ class ProjectController extends Controller
             'project' => $project,
             'categories' => $categories,
             'action' => $action,
-            'isedit' => true
+            'isedit' => true,
+            'path' => Project::PATH
         ]);
     }
 

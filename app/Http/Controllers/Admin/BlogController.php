@@ -40,7 +40,8 @@ class BlogController extends Controller
         return view('admin.blog.blog_detail', [
             'categories' => $categories,
             'action' => $action,
-            'isedit' => false
+            'isedit' => false,
+            'path' => Blog::PATH
         ]);
     }
 
