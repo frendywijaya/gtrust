@@ -19,9 +19,15 @@ class BlogController extends Controller
     {
         // get blog list
         $blogs = Blog::all();
+        
+        $breadcrumbs = [
+            ['name' => 'Blog'],
+        ];
 
         return view('admin.blog.blog_list', [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Blog List'
         ]);
     }
 
@@ -37,11 +43,18 @@ class BlogController extends Controller
         // create action
         $action = route('admin.blog.store');
 
+        $breadcrumbs = [
+            ['name' => 'Blog' , 'url' => route('admin.blog.index')],
+            ['name' => 'Create Blog'],
+        ];
+
         return view('admin.blog.blog_detail', [
             'categories' => $categories,
             'action' => $action,
             'isedit' => false,
-            'path' => Blog::PATH
+            'path' => Blog::PATH,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Create Blog'
         ]);
     }
 
@@ -120,12 +133,19 @@ class BlogController extends Controller
         // update action
         $action = route('admin.blog.update', $id);
 
+        $breadcrumbs = [
+            ['name' => 'Blog' , 'url' => route('admin.blog.index')],
+            ['name' => 'Edit Blog'],
+        ];
+
         return view('admin.blog.blog_detail', [
             'blog' => $blog,
             'categories' => $categories,
             'action' => $action,
             'isedit' => true,
-            'path' => Blog::PATH
+            'path' => Blog::PATH,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Edit Blog'
         ]);
     }
 
@@ -159,12 +179,13 @@ class BlogController extends Controller
                 if($blog->image){
                     unlink(public_path(Blog::PATH.$blog->image));
                 }
-                $image = $request->file('image');
-                $image_name = time().".".$image->getClientOriginalExtension();
-                $destination = Blog::PATH;
-                $image->move($destination, $image_name);
-                $blog->image = $image_name;
             }
+
+            $image = $request->file('image');
+            $image_name = time().".".$image->getClientOriginalExtension();
+            $destination = Blog::PATH;
+            $image->move($destination, $image_name);
+            $blog->image = $image_name;
         }
 
         $blog->writer = $request->writer;

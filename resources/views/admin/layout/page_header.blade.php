@@ -3,7 +3,8 @@
     <div class="page-header-content d-lg-flex">
         <div class="d-flex">
             <h4 class="page-title mb-0">
-                Datatables - <span class="fw-normal">Key Table</span>
+                <!-- cek breadbrum  -->
+                {{@$title}} <span class="fw-normal"></span>
             </h4>
 
             <a href="#page_header" class="btn btn-light align-self-center collapsed d-lg-none border-transparent rounded-pill p-0 ms-auto" data-bs-toggle="collapse">
@@ -16,9 +17,17 @@
     <div class="page-header-content d-lg-flex border-top">
         <div class="d-flex">
             <div class="breadcrumb py-2">
-                <a href="index.html" class="breadcrumb-item"><i class="ph-house"></i></a>
-                <a href="#" class="breadcrumb-item">Datatables</a>
-                <span class="breadcrumb-item active">Key table</span>
+                <a href="{{route('admin.dashboard')}}" class="breadcrumb-item"><i class="ph-house"></i></a>
+                @if (!empty($breadcrumbs))
+                    @foreach($breadcrumbs as $breadcrumb)
+                        @if(!empty($breadcrumb['url']))
+                            <a href="{{$breadcrumb['url']}}" class="breadcrumb-item">{{$breadcrumb['name']}}</a>
+                        @else
+                            <span class="breadcrumb-item active">{{$breadcrumb['name']}}</span>
+                        @endif
+                    @endforeach
+                @endif
+
             </div>
 
             <a href="#breadcrumb_elements" class="btn btn-light align-self-center collapsed d-lg-none border-transparent rounded-pill p-0 ms-auto" data-bs-toggle="collapse">

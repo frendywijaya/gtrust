@@ -32,7 +32,7 @@
                                 <div class="row mb-3">
                                     <label class="col-form-label col-lg-3">Company Address</label>
                                     <div class="col-lg-9">
-                                        <textarea rows="3" cols="3" class="form-control" name="company_address" placeholder="Default textarea">
+                                        <textarea rows="3" cols="3" class="form-control" id="ckeditor_classic_empty" name="company_address" placeholder="Default textarea">
                                             {{@$staticPage->company_address}}
                                         </textarea>
                                     </div>
