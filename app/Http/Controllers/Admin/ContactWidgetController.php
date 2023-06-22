@@ -18,8 +18,15 @@ class ContactWidgetController extends Controller
         // get data from static_page table
         $staticContactWidgetData = StaticPage::getData('contactwidget');
 
+        $breadcrumbs = [
+            ['name' => 'Global Section'],
+            ['name' => 'Contact Widget'],
+        ];
+
         return view('admin.global.contactwidget', [
             'staticPage' => $staticContactWidgetData,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Contact Widget'
         ]);
     }
 

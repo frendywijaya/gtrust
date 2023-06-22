@@ -19,8 +19,14 @@ class ProjectController extends Controller
         // get all projects
         $projects = Project::all();
 
+        $breadcrumbs = [
+            ['name' => 'Projects'],
+        ];
+
         return view('admin.project.project_list', [
-            'projects' => $projects
+            'projects' => $projects,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Projects Management'
         ]);
     }
 
@@ -36,7 +42,14 @@ class ProjectController extends Controller
         // create action
         $action = route('admin.project.store');
 
+        $breadcrumbs = [
+            ['name' => 'Projects', 'url' => route('admin.project.index')],
+            ['name' => 'Create Project'],
+        ];
+
         return view('admin.project.project_detail', [
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Create New Project',
             'categories' => $categories,
             'action' => $action,
             'isedit' => false,
@@ -82,7 +95,7 @@ class ProjectController extends Controller
         } else {
             $project->status = 1;
         }
-        
+
         // upload image jika ada
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -122,7 +135,14 @@ class ProjectController extends Controller
         // create action
         $action = route('admin.project.update', $id);
 
+        $breadcrumbs = [
+            ['name' => 'Projects', 'url' => route('admin.project.index')],
+            ['name' => 'Edit Project'],
+        ];
+
         return view('admin.project.project_detail', [
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Edit Project',
             'project' => $project,
             'categories' => $categories,
             'action' => $action,
@@ -158,7 +178,7 @@ class ProjectController extends Controller
         $project->description = $request->description;
         $project->category = $request->category;
         $project->project_date = date('Y-m-d', strtotime($request->project_date));
-        
+
 
         // cek apakah ada image yang di upload
         if ($request->hasFile('image')) {

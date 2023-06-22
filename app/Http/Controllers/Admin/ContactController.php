@@ -18,8 +18,15 @@ class ContactController extends Controller
 
         $staticAbout = StaticPage::getData('contactstatic');
 
+        $breadcrumbs = [
+            ['name' => 'Pages CMS'],
+            ['name' => 'Contact Us'],
+        ];
+
         return view('admin.cms.contact', [
             'staticPage' => $staticAbout,
+            'breadcrumbs' => $breadcrumbs,
+            'title'=>'Contact Us Page'
         ]);
     }
 

@@ -23,9 +23,16 @@ class HeaderController extends Controller
         // get other services data
         $otherServices = OtherService::all();
 
+        $breadcrumbs = [
+            ['name' => 'Global Section'],
+            ['name' => 'Header'],
+        ];
+
         return view('admin.global.header', [
             'staticPage' => $staticHeaderData,
             'otherServices' => $otherServices,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Header CMS'
         ]);
     }
 

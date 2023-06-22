@@ -19,7 +19,7 @@ class BlogController extends Controller
     {
         // get blog list
         $blogs = Blog::all();
-        
+
         $breadcrumbs = [
             ['name' => 'Blog'],
         ];
@@ -44,7 +44,7 @@ class BlogController extends Controller
         $action = route('admin.blog.store');
 
         $breadcrumbs = [
-            ['name' => 'Blog' , 'url' => route('admin.blog.index')],
+            ['name' => 'Blog', 'url' => route('admin.blog.index')],
             ['name' => 'Create Blog'],
         ];
 
@@ -84,9 +84,9 @@ class BlogController extends Controller
         $blog->description = $request->description;
 
         // save image
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $image_name = time().".".$image->getClientOriginalExtension();
+            $image_name = time() . "." . $image->getClientOriginalExtension();
             $destination = Blog::PATH;
             $image->move($destination, $image_name);
             $blog->image = $image_name;
@@ -134,7 +134,7 @@ class BlogController extends Controller
         $action = route('admin.blog.update', $id);
 
         $breadcrumbs = [
-            ['name' => 'Blog' , 'url' => route('admin.blog.index')],
+            ['name' => 'Blog', 'url' => route('admin.blog.index')],
             ['name' => 'Edit Blog'],
         ];
 
@@ -173,16 +173,16 @@ class BlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->description = $request->description;
         // cek memilik image
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             if ($request->image == $blog->image) {
                 // cek apakah image lama ada
-                if($blog->image){
-                    unlink(public_path(Blog::PATH.$blog->image));
+                if ($blog->image) {
+                    unlink(public_path(Blog::PATH . $blog->image));
                 }
             }
 
             $image = $request->file('image');
-            $image_name = time().".".$image->getClientOriginalExtension();
+            $image_name = time() . "." . $image->getClientOriginalExtension();
             $destination = Blog::PATH;
             $image->move($destination, $image_name);
             $blog->image = $image_name;
@@ -223,6 +223,5 @@ class BlogController extends Controller
         // redirect to blog list
 
         return redirect()->route('admin.blog.index')->with('success', 'Blog deleted successfully.');
-
     }
 }

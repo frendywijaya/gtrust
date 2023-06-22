@@ -18,9 +18,16 @@ class SliderController extends Controller
         // get all sliders
         $sliders = Slider::all();
 
+        $breadcrumbs = [
+            ['name' => 'Pages CMS'],
+            ['name' => 'Slider'],
+        ];
+
         return view('admin.cms.slider', [
             'sliders' => $sliders,
+            'breadcrumbs' => $breadcrumbs,
             'path' => Slider::PATH,
+            'title' => 'Home Slider'
         ]);
     }
 

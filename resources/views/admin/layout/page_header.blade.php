@@ -17,7 +17,8 @@
     <div class="page-header-content d-lg-flex border-top">
         <div class="d-flex">
             <div class="breadcrumb py-2">
-                <a href="{{route('admin.dashboard')}}" class="breadcrumb-item"><i class="ph-house"></i></a>
+                {{-- <a href="{{route('admin.dashboard')}}" class="breadcrumb-item"><i class="ph-house"></i></a> --}}
+                <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
                 @if (!empty($breadcrumbs))
                     @foreach($breadcrumbs as $breadcrumb)
                         @if(!empty($breadcrumb['url']))

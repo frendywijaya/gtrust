@@ -18,8 +18,15 @@ class SocialMediaController extends Controller
         // get data from static_page table
         $staticSocialMediaData = StaticPage::getData('socialmedia');
 
+        $breadcrumbs = [
+            ['name' => 'Global Section'],
+            ['name' => 'Social Media'],
+        ];
+
         return view('admin.socialmedia.social', [
             'staticPage' => $staticSocialMediaData,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Social Media Links'
         ]);
     }
 

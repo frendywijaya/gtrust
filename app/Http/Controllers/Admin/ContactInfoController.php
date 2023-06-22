@@ -18,8 +18,15 @@ class ContactInfoController extends Controller
         // get data from static_page table
         $staticContactInfo = StaticPage::getData('contactinfo');
 
+        $breadcrumbs = [
+            ['name' => 'Global Section'],
+            ['name' => 'Contact Information'],
+        ];
+
         return view('admin.global.contactinfo',[
             'staticPage' => $staticContactInfo,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Contact Information'
         ]);
     }
 

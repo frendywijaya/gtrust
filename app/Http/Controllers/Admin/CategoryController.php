@@ -18,8 +18,14 @@ class CategoryController extends Controller
         // get data from table categories
         $categories = Category::all();
 
+        $breadcrumbs = [
+            ['name' => 'Blog Category'],
+        ];
+
         return view('admin.blog.blog_category', [
             'categories' => $categories,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Blog Category'
         ]);
     }
 

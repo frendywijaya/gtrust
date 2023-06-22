@@ -117,6 +117,12 @@
     background: #e7f6ff;
 }
 
+.project-thumb-four img {
+    object-fit: cover;
+    height: 380px;
+}
+
+
 @media (max-width: 1800px) {
     .slider-area {
         padding: 0px 0 0 440px;

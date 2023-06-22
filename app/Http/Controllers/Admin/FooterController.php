@@ -18,8 +18,15 @@ class FooterController extends Controller
         // get data from static_page table
         $staticFooterData = StaticPage::getData('footer');
 
+        $breadcrumbs = [
+            ['name' => 'Global Section'],
+            ['name' => 'Footer'],
+        ];
+
         return view('admin.global.footer', [
             'staticPage' => $staticFooterData,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Footer CMS'
         ]);
     }
 

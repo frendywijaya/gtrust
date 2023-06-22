@@ -28,14 +28,14 @@
             <ul class="nav nav-sidebar" data-nav-type="accordion">
 
                 <!-- Main -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="/dashboard" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="ph-house"></i>
                         <span>
                             Dashboard
                         </span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item-header">
                     <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Content Management</div>

@@ -18,8 +18,15 @@ class BrandLogoController extends Controller
         // get data from table brand_logos
         $brandLogos = BrandLogo::all();
 
+        $breadcrumbs = [
+            ['name' => 'Global Section'],
+            ['name' => 'Brand Logo'],
+        ];
+
         return view('admin.brand.brand' , [
             'brandLogos' => $brandLogos,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Brand Logo'
         ]);
     }
 
@@ -51,7 +58,7 @@ class BrandLogoController extends Controller
 
         // create filename unique untuk image
         $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-        
+
         $image->move('uploads/brand-logo/', $image_name);
 
         $brandLogo_data = [
@@ -101,7 +108,7 @@ class BrandLogoController extends Controller
             'image' => 'required',
         ]);
 
-        $brandLogo = BrandLogo::find($id); 
+        $brandLogo = BrandLogo::find($id);
         // cek jika image sama dengan di database
         if ($request->file('image')->getClientOriginalName() == $brandLogo->image) {
             $image_name = $brandLogo->image;

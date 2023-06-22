@@ -18,14 +18,20 @@ class LearningController extends Controller
     {
         // get data from static_page table
         $staticLearning = StaticPage::getData('servicelearning');
+        $breadcrumbs = [
+            ['name' => 'Main Services'],
+            ['name' => 'Learning'],
+        ];
 
-        // get subServiceLists where 
+        // get subServiceLists where
         $subServiceLists = SubService::where('category', 'learning')->get();
 
         return view('admin.services.learning', [
             'staticPage' => $staticLearning,
             'subServiceLists' => $subServiceLists,
             'path' => SubService::PATH,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Learning Page CMS'
         ]);
     }
 

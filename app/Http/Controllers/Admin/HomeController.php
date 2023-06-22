@@ -21,10 +21,17 @@ class HomeController extends Controller
         // get data bullet points
         $bulletPoints = BulletPoint::all();
 
+        $breadcrumbs = [
+            ['name' => 'Pages CMS'],
+            ['name' => 'Home Page'],
+        ];
+
         return view('admin.cms.home', [
             'staticPage' => $staticHomeStatic,
+            'breadcrumbs' => $breadcrumbs,
             'bullets' => $bulletPoints,
             'path' => BulletPoint::PATH,
+            'title' => 'Home CMS'
         ]);
     }
 

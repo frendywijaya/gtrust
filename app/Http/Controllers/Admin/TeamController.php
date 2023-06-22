@@ -18,9 +18,16 @@ class TeamController extends Controller
         // get all team data
         $teams = Team::all();
 
+        $breadcrumbs = [
+            ['name' => 'Pages CMS'],
+            ['name' => 'Our Team CMS'],
+        ];
+
         return view('admin.cms.team' , [
             'teams' => $teams,
             'path' => Team::PATH,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Our Team'
         ]);
     }
 
@@ -55,7 +62,7 @@ class TeamController extends Controller
 
             // create filename unique untuk image
             $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-            
+
             $image->move(Team::PATH, $image_name);
         }
 
@@ -132,7 +139,7 @@ class TeamController extends Controller
                 $image->move(Team::PATH, $image_name);
                 $team->image = $image_name;
             }
-        }   
+        }
 
         $team->save();
 
@@ -149,7 +156,7 @@ class TeamController extends Controller
     {
         // destroy data
         $team = Team::find($id);
-        
+
         // hapus image jika ada di folder uploads/team
         if ($team->image) {
             if(file_exists(public_path(Team::PATH . $team->image))) {

@@ -19,12 +19,20 @@ class FacilitationController extends Controller
         // get data from static_page table
         $staticFacilitation = StaticPage::getData('servicefacilitation');
 
-        // get subServiceLists where 
+        $breadcrumbs = [
+            ['name' => 'Main Services'],
+            ['name' => 'Facilitation'],
+        ];
+
+        // get subServiceLists where
         $subServiceLists = SubService::where('category', 'facilitation')->get();
         return view('admin.services.facilitation', [
             'staticPage' => $staticFacilitation,
             'subServiceLists' => $subServiceLists,
             'path' => SubService::PATH,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Facilitation Page CMS'
+
         ]);
     }
 

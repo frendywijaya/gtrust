@@ -18,10 +18,17 @@ class TestimoniController extends Controller
         // get all testimoni data
         $testimonies = Testimoni::all();
 
+        $breadcrumbs = [
+            ['name' => 'Pages CMS'],
+            ['name' => 'Testimoni'],
+        ];
+
         return view('admin.cms.testimoni',
             [
                 'testimonies' => $testimonies,
                 'path' => Testimoni::PATH,
+                'breadcrumbs' => $breadcrumbs,
+                'title' => 'Testimoni'
             ]
         );
     }
@@ -56,7 +63,7 @@ class TestimoniController extends Controller
 
             // create filename unique untuk image
             $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-            
+
             $image->move(Testimoni::PATH, $image_name);
         }
 
@@ -121,7 +128,7 @@ class TestimoniController extends Controller
 
             // create filename unique untuk image
             $image_name = rand(1,100) . '-' . $image->getClientOriginalName();
-            
+
             $image->move(Testimoni::PATH, $image_name);
         }
 

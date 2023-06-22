@@ -18,8 +18,15 @@ class AboutController extends Controller
         // get data from static_page table
         $staticAbout = StaticPage::getData('aboutstatic');
 
+        $breadcrumbs = [
+            ['name' => 'Pages CMS'],
+            ['name' => 'About Page'],
+        ];
+
         return view('admin.cms.about', [
             'staticPage' => $staticAbout,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'About Page CMS'
         ]);
     }
 

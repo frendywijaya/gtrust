@@ -14,12 +14,18 @@ class InboxController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         //get all iboxs
         $inboxs = Inbox::all();
 
+        $breadcrumbs = [
+            ['name' => 'Inbox'],
+        ];
+
         return view('admin.inbox.inbox', [
-            'inboxs' => $inboxs
+            'inboxs' => $inboxs,
+            'breadcrumbs' => $breadcrumbs,
+            'title' => 'Messages Inbox'
         ]);
     }
 
