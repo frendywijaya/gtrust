@@ -11,6 +11,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/favicon.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
+    @if (Str::startsWith($current = url()->current(), 'https://www'))
+        <link rel="canonical" href="{{ str_replace('https://www.', 'https://', $current) }}">
+    @else
+        <link rel="canonical" href="{{ url()->current() }}">
+    @endif
+
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <!-- CSS here -->
@@ -70,9 +76,12 @@
                     <div class="col-xl-8 col-lg-9">
                         <div class="header-top-left">
                             <ul class="list-wrap">
-                                <li>{{@$staticHeaderData->welcome_text}}</li>
-                                <li><i class="fas fa-phone-alt"></i><a href="https://api.whatsapp.com/send?phone={{ str_replace(' ','', @$staticContactInfo->company_phone) }}&text=Hello Gtrust!">{{@$staticContactInfo->company_phone}}</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:{{@$staticContactInfo->company_email}}">{{@$staticContactInfo->company_email}}</a>
+                                <li>{{ @$staticHeaderData->welcome_text }}</li>
+                                <li><i class="fas fa-phone-alt"></i><a
+                                        href="https://api.whatsapp.com/send?phone={{ str_replace(' ', '', @$staticContactInfo->company_phone) }}&text=Hello Gtrust!">{{ @$staticContactInfo->company_phone }}</a>
+                                </li>
+                                <li><i class="fas fa-envelope"></i><a
+                                        href="mailto:{{ @$staticContactInfo->company_email }}">{{ @$staticContactInfo->company_email }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -81,20 +90,25 @@
                         <div class="header-top-right">
                             <div class="header-social">
                                 <ul class="list-wrap">
-                                    @if(@$staticSocialMediaData->facebook)
-                                    <li><a href="{{$staticSocialMediaData->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                                    @if (@$staticSocialMediaData->facebook)
+                                        <li><a href="{{ $staticSocialMediaData->facebook }}"><i
+                                                    class="fab fa-facebook-f"></i></a></li>
                                     @endif
-                                    @if(@$staticSocialMediaData->instagram)
-                                    <li><a href="{{$staticSocialMediaData->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                    @if (@$staticSocialMediaData->instagram)
+                                        <li><a href="{{ $staticSocialMediaData->instagram }}"><i
+                                                    class="fab fa-instagram"></i></a></li>
                                     @endif
-                                    @if(@$staticSocialMediaData->linkedin)
-                                    <li><a href="{{$staticSocialMediaData->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                    @if (@$staticSocialMediaData->linkedin)
+                                        <li><a href="{{ $staticSocialMediaData->linkedin }}"><i
+                                                    class="fab fa-linkedin-in"></i></a></li>
                                     @endif
-                                    @if(@$staticSocialMediaData->youtube)
-                                    <li><a href="{{$staticSocialMediaData->youtube}}"><i class="fab fa-youtube"></i></a></li>
+                                    @if (@$staticSocialMediaData->youtube)
+                                        <li><a href="{{ $staticSocialMediaData->youtube }}"><i
+                                                    class="fab fa-youtube"></i></a></li>
                                     @endif
-                                    @if(@$staticSocialMediaData->tiktok)
-                                    <li><a href="{{$staticSocialMediaData->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
+                                    @if (@$staticSocialMediaData->tiktok)
+                                        <li><a href="{{ $staticSocialMediaData->tiktok }}"><i
+                                                    class="fab fa-tiktok"></i></a></li>
                                     @endif
                                 </ul>
                             </div>
@@ -111,7 +125,8 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="/"><img src="{{ asset('uploads/staticpage/'.@$staticHeaderData->company_logo) }}"
+                                    <a href="/"><img
+                                            src="{{ asset('uploads/staticpage/' . @$staticHeaderData->company_logo) }}"
                                             alt="Logo"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
@@ -120,14 +135,15 @@
                                         </li>
                                         <li class="menu-item-has-children"><a href="#">Services</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{route('servicesFacilitation')}}">Facilitation</a></li>
-                                                <li><a href="{{route('servicesLearning')}}">Learning</a></li>
+                                                <li><a href="{{ route('servicesFacilitation') }}">Facilitation</a></li>
+                                                <li><a href="{{ route('servicesLearning') }}">Learning</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children"><a href="#">Other Services</a>
                                             <ul class="sub-menu">
                                                 @foreach ($otherServices as $item)
-                                                <li><a href="{{$item->link}}" target="__blank">{{$item->title}}</a></li>
+                                                    <li><a href="{{ $item->link }}"
+                                                            target="__blank">{{ $item->title }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -140,7 +156,8 @@
                                 </div>
                                 <div class="header-action d-none d-md-block">
                                     <ul class="list-wrap">
-                                        <li class="header-btn"><a href="{{@$staticHeaderData->button_link}}" class="btn">{{@$staticHeaderData->button_text}}</a>
+                                        <li class="header-btn"><a href="{{ @$staticHeaderData->button_link }}"
+                                                class="btn">{{ @$staticHeaderData->button_text }}</a>
                                         </li>
                                     </ul>
                                 </div>
