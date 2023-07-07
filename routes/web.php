@@ -48,8 +48,16 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
+    // SEO
+    Route::group(['as' => 'SEO.', 'prefix' => '/SEO'], function () {
+        Route::get('/', [App\Http\Controllers\Admin\SEOController::class, 'index'])->name('index');
+        Route::post('/update', [App\Http\Controllers\Admin\SEOController::class, 'update'])->name('update');
+    });
+
+
+
     // category
-    Route::group(['as' => 'category.', 'prefix' => '/category'], function(){
+    Route::group(['as' => 'category.', 'prefix' => '/category'], function () {
         Route::get('/', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('index');
         Route::post('/store', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('store');
         Route::patch('/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('update');
@@ -177,7 +185,7 @@ Route::group(['as' => 'admin.', 'prefix' => '/admin', 'middleware' => 'auth'], f
     });
 
     // static page
-    Route::group(['as' => 'staticpage.','prefix' => 'staticpage'], function () {
+    Route::group(['as' => 'staticpage.', 'prefix' => 'staticpage'], function () {
         Route::post('/{section}/store', [App\Http\Controllers\StaticPageController::class, 'save'])->name('save');
     });
 

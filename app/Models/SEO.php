@@ -18,7 +18,7 @@ class SEO extends Model
      */
     public static function getData($page)
     {
-        $data = StaticPage::where('page', $page)->first();
+        $data = SEO::where('page', $page)->first();
         if (!empty($data)) {
             $data = json_decode($data->data);
         } else {

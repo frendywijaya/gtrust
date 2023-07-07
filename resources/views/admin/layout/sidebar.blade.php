@@ -98,6 +98,14 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route("admin.SEO.index") }}" class="nav-link {{ request()->routeIs('admin.SEO.index') ? 'active' : '' }}">
+                        <i class="ph-newspaper-clipping"></i>
+                        <span>
+                            SEO
+                        </span>
+                    </a>
+                </li>
                 <li class="nav-item-header">
                     <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Services</div>
                     <i class="ph-dots-three sidebar-resize-show"></i>
