@@ -8,6 +8,7 @@ use App\Models\BulletPoint;
 use App\Models\Project;
 use App\Models\Slider;
 use App\Models\StaticPage;
+use App\Models\SEO;
 use Illuminate\Http\Request;
 
 class HomeController extends BaseController
@@ -15,6 +16,8 @@ class HomeController extends BaseController
 
     public function index()
     {
+        // get data from table SEO
+        $SEO = SEO::getData('home');
         // get data from table brand_logos
         $brandLogos = BrandLogo::all();
         // get all slider
@@ -29,6 +32,7 @@ class HomeController extends BaseController
         $bulletPoints = BulletPoint::all();
 
         return view('frontend.index' , [
+            'meta' => $SEO,
             'brandLogos' => $brandLogos,
             'brandLogoPath' => BrandLogo::PATH,
             'sliders' => $sliders,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SEO;
 use App\Models\Inbox;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
@@ -11,10 +12,13 @@ class KontakController extends BaseController
     //
     public function index()
     {
+        // get data from table SEO
+        $SEO = SEO::getData('home');
         // get static page
         $staticKontak = StaticPage::getData('contactstatic');
 
         return view('frontend.kontak', [
+            'meta' => $SEO,
             'staticKontak' => $staticKontak
         ]);
     }
@@ -45,5 +49,5 @@ class KontakController extends BaseController
         // redirect back with success message
         return redirect()->route('kontak')->with('success', 'Static Page berhasil ditambahkan');
     }
-    
+
 }

@@ -5,7 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>GTrust Learning</title>
-    <meta name="description" content="GTrust Learning">
+    <meta name="title" content="{{ @$meta->title }}">
+    <meta name="description" content="{{ @$meta->description }}">
+    <meta name="keywords" content="{{ @$meta->keywords }}">
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:title" content="{{ @$meta->title }}">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:description" content="{{ @$meta->description }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="GTrust Learning">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/favicon.png') }}">
